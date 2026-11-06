@@ -1,0 +1,484 @@
+{
+    "frames": {
+        "genearlBaseBg.png": {
+            "frame": {
+                "h": 250,
+                "idx": 0,
+                "w": 194,
+                "x": 420,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 250,
+                "w": 194
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "genearlBaseBg1.png": {
+            "frame": {
+                "h": 250,
+                "idx": 0,
+                "w": 194,
+                "x": 225,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 250,
+                "w": 194
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_-.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 479,
+                "y": 641
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_0.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 634,
+                "y": 48
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_1.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 634,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_2.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 343,
+                "y": 545
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_3.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 300,
+                "y": 593
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_4.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 300,
+                "y": 545
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_5.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 658,
+                "y": 192
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_6.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 615,
+                "y": 192
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_7.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 658,
+                "y": 144
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_8.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 615,
+                "y": 144
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_9.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 42,
+                "x": 634,
+                "y": 96
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "hurt_Bg.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 128,
+                "x": 541,
+                "y": 599
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 128
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seat_bottom_YJCMprojection.png": {
+            "frame": {
+                "h": 262,
+                "idx": 0,
+                "w": 206,
+                "x": 207,
+                "y": 282
+            },
+            "sourceSize": {
+                "h": 262,
+                "w": 206
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seat_bottom_YJCMprojection_2.png": {
+            "frame": {
+                "h": 262,
+                "idx": 0,
+                "w": 206,
+                "x": 0,
+                "y": 282
+            },
+            "sourceSize": {
+                "h": 262,
+                "w": 206
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seat_bottom_projection.png": {
+            "frame": {
+                "h": 281,
+                "idx": 0,
+                "w": 224,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 281,
+                "w": 224
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seat_bottom_select_general.png": {
+            "frame": {
+                "h": 215,
+                "idx": 0,
+                "w": 162,
+                "x": 414,
+                "y": 251
+            },
+            "sourceSize": {
+                "h": 215,
+                "w": 162
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatBg.png": {
+            "frame": {
+                "h": 134,
+                "idx": 0,
+                "w": 18,
+                "x": 615,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 134,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatEquipBg.png": {
+            "frame": {
+                "h": 159,
+                "idx": 0,
+                "w": 149,
+                "x": 150,
+                "y": 545
+            },
+            "sourceSize": {
+                "h": 159,
+                "w": 149
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatEquipBg2.png": {
+            "frame": {
+                "h": 159,
+                "idx": 0,
+                "w": 149,
+                "x": 0,
+                "y": 545
+            },
+            "sourceSize": {
+                "h": 159,
+                "w": 149
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "state_card_bg.png": {
+            "frame": {
+                "h": 55,
+                "idx": 0,
+                "w": 53,
+                "x": 300,
+                "y": 641
+            },
+            "sourceSize": {
+                "h": 55,
+                "w": 53
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "tuoyu_fengtian_card_bg.png": {
+            "frame": {
+                "h": 173,
+                "idx": 0,
+                "w": 126,
+                "x": 414,
+                "y": 467
+            },
+            "sourceSize": {
+                "h": 173,
+                "w": 126
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "tuoyu_fengtian_name_bg.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 124,
+                "x": 354,
+                "y": 664
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 124
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "tuoyu_junshan_card_bg.png": {
+            "frame": {
+                "h": 173,
+                "idx": 0,
+                "w": 126,
+                "x": 577,
+                "y": 425
+            },
+            "sourceSize": {
+                "h": 173,
+                "w": 126
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "tuoyu_junshan_name_bg.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 124,
+                "x": 354,
+                "y": 641
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 124
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "tuoyu_qingqu_card_bg.png": {
+            "frame": {
+                "h": 173,
+                "idx": 0,
+                "w": 126,
+                "x": 577,
+                "y": 251
+            },
+            "sourceSize": {
+                "h": 173,
+                "w": 126
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "tuoyu_qingqu_name_bg.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 124,
+                "x": 225,
+                "y": 251
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 124
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "meta": {
+        "image": "seat_bottom.png",
+        "prefix": "seat_bottom/"
+    }
+}

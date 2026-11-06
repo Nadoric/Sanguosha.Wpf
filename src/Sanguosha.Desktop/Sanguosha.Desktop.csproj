@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <AssemblyName>山河弈</AssemblyName>
+        <RootNamespace>Sanguosha.Desktop</RootNamespace>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="../Sanguosha.Core/Sanguosha.Core.csproj" />
+        <Resource Include="Assets/Official/**/*.png" />
+        <Resource Include="Assets/Official/**/*.atlas" />
+        <None Update="Assets/Official/Audio/**/*"
+              CopyToOutputDirectory="PreserveNewest"
+              CopyToPublishDirectory="PreserveNewest" />
+    </ItemGroup>
+</Project>

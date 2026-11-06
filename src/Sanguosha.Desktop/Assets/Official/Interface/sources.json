@@ -1,0 +1,113 @@
+{
+  "verifiedOn": "2026-11-06",
+  "files": [
+    {
+      "id": "battle-background-house.png",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/battleBg/nongjiaxiaowu_beijing.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/battle-background-house.png",
+      "bytes": 342788,
+      "sha256": "2982c2849c7624f9c8a66573b0f8d99c6f3c24f05578bb6b6706cc592624b9ae"
+    },
+    {
+      "id": "battle-background.png",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/battleBg/guanxingbeijing_m.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/battle-background.png",
+      "bytes": 52776,
+      "sha256": "9c558088ae3027f490d3553580eced58c7b86d1b5c6884cab316ee90024b0c94"
+    },
+    {
+      "id": "gameBase.atlas",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/gameBase.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/gameBase.atlas",
+      "bytes": 39428,
+      "sha256": "2fb8d2ad2b2c5c390c3a331fd19c9327c2ab8089feed082944879ead24781201"
+    },
+    {
+      "id": "gameBase.png",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/gameBase.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/gameBase.png",
+      "bytes": 1503833,
+      "sha256": "aef8ae155b71d2145016941338f60ddb8d02315a6eed7358ae0a773b3b16e797"
+    },
+    {
+      "id": "seat.atlas",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/seat.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/seat.atlas",
+      "bytes": 149991,
+      "sha256": "32bf9ad7fd4bab9f58baaef706b6e0a7278c98171bc49193115afc40dc5eb4f9"
+    },
+    {
+      "id": "seat.png",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/seat.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/seat.png",
+      "bytes": 1178685,
+      "sha256": "83e6aaca96c028acdf4bd77269e395d3630b2da781ac8dad81f3632275b12bdc"
+    },
+    {
+      "id": "seat_bottom.atlas",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/seat_bottom.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/seat_bottom.atlas",
+      "bytes": 11685,
+      "sha256": "fe4ea45c703dee023b06e5a43be445fad6b3900d387527a823619053fab4f5b0"
+    },
+    {
+      "id": "seat_bottom.png",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/seat_bottom.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/seat_bottom.png",
+      "bytes": 188194,
+      "sha256": "113ec1494ee1413bb8b67176df65baf9f6750ee92d950bf35b570ea7149c07ed"
+    },
+    {
+      "id": "selfseat.atlas",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/selfseat.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/selfseat.atlas",
+      "bytes": 53556,
+      "sha256": "86c811296a49bec5fe7f65bae80d5ccdcbf0607869e667d65d6160a4bd5b5e76"
+    },
+    {
+      "id": "selfseat.png",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/selfseat.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/selfseat.png",
+      "bytes": 276048,
+      "sha256": "8173b4d829a1ab9ee532bff149c1977b27486fd6c52663bca38c196245509721"
+    },
+    {
+      "id": "yjcmSeat.atlas",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/yjcmSeat.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/yjcmSeat.atlas",
+      "bytes": 165957,
+      "sha256": "5bbd9369d90393e0e0bd90c4e8058c74727edb5d2348246b96b01beed164902c"
+    },
+    {
+      "id": "yjcmSeat.png",
+      "category": "interface",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/game/yjcmSeat.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/yjcmSeat.png",
+      "bytes": 1449342,
+      "sha256": "a47b069082c4a923049931738fab33f0558e2a28d0c6b26ece8eb11beb3ba135"
+    }
+  ]
+}

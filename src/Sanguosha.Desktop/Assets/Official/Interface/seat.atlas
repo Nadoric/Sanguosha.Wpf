@@ -1,0 +1,6162 @@
+{
+    "frames": {
+        "DecideBingLiangCunDuan.png": {
+            "frame": {
+                "h": 51,
+                "idx": 0,
+                "w": 51,
+                "x": 441,
+                "y": 839
+            },
+            "sourceSize": {
+                "h": 51,
+                "w": 51
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "DecideBingLinChengXia.png": {
+            "frame": {
+                "h": 51,
+                "idx": 0,
+                "w": 51,
+                "x": 929,
+                "y": 616
+            },
+            "sourceSize": {
+                "h": 51,
+                "w": 51
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "DecideFei.png": {
+            "frame": {
+                "h": 42,
+                "idx": 0,
+                "w": 42,
+                "x": 595,
+                "y": 856
+            },
+            "sourceSize": {
+                "h": 42,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "DecideLeBuSiShu.png": {
+            "frame": {
+                "h": 51,
+                "idx": 0,
+                "w": 51,
+                "x": 337,
+                "y": 820
+            },
+            "sourceSize": {
+                "h": 51,
+                "w": 51
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "DecideShanDian.png": {
+            "frame": {
+                "h": 51,
+                "idx": 0,
+                "w": 51,
+                "x": 389,
+                "y": 839
+            },
+            "sourceSize": {
+                "h": 51,
+                "w": 51
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_BaGuaZhen.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 773,
+                "y": 633
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_BaiYinShiZi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 610
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ChiTu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 587
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_CiBi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 564
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_CiXiongShuangGuJian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 541
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_DaGongChe.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 518
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_DaWan.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 495
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_DiLu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 728
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_FangTianHuaJi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 449
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_FeiJiangShenWei.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 426
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_FuMoJinGang.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 403
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_GongQiao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 843
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_GuDingDao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 797
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_GuanShiFu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 820
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_HanBingJian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 774
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_HongDuanQiang.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 751
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_HongLianZiJin.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 679
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_HuaLiu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 929,
+                "y": 545
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_HuaShang.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 929,
+                "y": 522
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_HunDuWangBi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 929,
+                "y": 499
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_JinHe.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 929,
+                "y": 476
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_JuZhi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 929,
+                "y": 430
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_JueYing.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 929,
+                "y": 453
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_LieCuiDao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 863
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_MuNiuLiuMa.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 840
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_NanManRuQin.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 817
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_NuMa.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 794
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_NvZhuang.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 771
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_PiLiChe.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 748
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_QiBaoDao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 725
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_QiLinGong.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 702
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_QingGangJian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 472
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_QingLongYanYueDao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 929,
+                "y": 568
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_RenDao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 368,
+                "y": 655
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_RenWangDun.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 695
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_RenXin.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 672
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_RenXinLieZhuan.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 503,
+                "y": 649
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_RuYiJinGuBang.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 503,
+                "y": 626
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_SanJianLiangRenDao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 474,
+                "y": 603
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ShenDianWeiWeapon1.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 474,
+                "y": 580
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ShenDianWeiWeapon2.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 498,
+                "y": 557
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ShuiBoJian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 389,
+                "y": 816
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_TaiPinYaoShu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 368,
+                "y": 632
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_TengJia.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 389,
+                "y": 770
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_TianLeiRen.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 389,
+                "y": 747
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_TouShiChe.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 389,
+                "y": 724
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_WuFengJian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 389,
+                "y": 701
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_WuLiuJian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 389,
+                "y": 678
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_WuShuangXiuLuo.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 389,
+                "y": 793
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_XiChuanHongJinPao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 705
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_XiangYuDao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 604,
+                "y": 521
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_YaJiaoQiang.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 682
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_YeXingYi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 659,
+                "y": 659
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_YinFengJia.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 638,
+                "y": 636
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_YinYi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 638,
+                "y": 613
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_YouHuoShePo.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 609,
+                "y": 590
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_YunTi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 633,
+                "y": 567
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZZKaiTianBaoJian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 787
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZZPanLongZhanPao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 764
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZZRuYiBang.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 741
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZhangBaSheMao.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 633,
+                "y": 544
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZheJi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 718
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZhenZhuGeLianNu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 604,
+                "y": 498
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZhuGeLianNu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 604,
+                "y": 452
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZhuGeLianNu3v3.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 620,
+                "y": 429
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZhuQueYuShan.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 833
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZhuaHuangFeiDian.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 604,
+                "y": 475
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Equip_ZiXing.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 524,
+                "y": 810
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_ChengZhu.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 971,
+                "y": 668
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Cool_Master.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 973,
+                "y": 758
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Cool_Winger.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 364,
+                "y": 379
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_DiZhu.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 41,
+                "x": 929,
+                "y": 668
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Enemy.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1013,
+                "y": 663
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_FanZei_Face.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1013,
+                "y": 708
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_HuLao_LianJun.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 41,
+                "x": 981,
+                "y": 616
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_HuLao_Lvbu.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 41,
+                "x": 929,
+                "y": 715
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_LianJun.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1015,
+                "y": 753
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_baixing.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 299,
+                "y": 959
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_chengqiang.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 284,
+                "y": 1004
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_duyou.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 326,
+                "y": 1004
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_hanjun.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 341,
+                "y": 959
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_huangjin.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 368,
+                "y": 1004
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_laoban.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 971,
+                "y": 806
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_shangren.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 971,
+                "y": 851
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_shangwu.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1015,
+                "y": 798
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_shike.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1013,
+                "y": 843
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_shoujun.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1013,
+                "y": 888
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_taishou.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 971,
+                "y": 896
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_yuanjun.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 971,
+                "y": 713
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Liezhuan_zuike.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1013,
+                "y": 933
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Mask_None.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 322,
+                "y": 379
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_NeiJian_Face.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 929,
+                "y": 852
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_NongMin.png": {
+            "frame": {
+                "h": 45,
+                "idx": 0,
+                "w": 41,
+                "x": 929,
+                "y": 806
+            },
+            "sourceSize": {
+                "h": 45,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Self.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 857,
+                "y": 271
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Teamer.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1043,
+                "y": 225
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Teamer_Master.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1043,
+                "y": 270
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Warm_Master.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 1023,
+                "y": 616
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_Warm_Winger.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 406,
+                "y": 379
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_ZhongChen_Face.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 739,
+                "y": 452
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Figure_ZhuGong_Face.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 41,
+                "x": 739,
+                "y": 497
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveComboBg.png": {
+            "frame": {
+                "h": 51,
+                "idx": 0,
+                "w": 100,
+                "x": 227,
+                "y": 848
+            },
+            "sourceSize": {
+                "h": 51,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_0.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 1071,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_1.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 927,
+                "y": 1002
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_2.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 601,
+                "y": 1048
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_3.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 1044,
+                "y": 988
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_4.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 1062,
+                "y": 988
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_5.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 909,
+                "y": 1002
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_6.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 894,
+                "y": 316
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_7.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 684,
+                "y": 1050
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_8.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 1071,
+                "y": 69
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_9.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 1071,
+                "y": 46
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GiveCombo_x.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 17,
+                "x": 1071,
+                "y": 23
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatAlphaImg.png": {
+            "frame": {
+                "h": 8,
+                "idx": 0,
+                "w": 8,
+                "x": 328,
+                "y": 848
+            },
+            "sourceSize": {
+                "h": 8,
+                "w": 8
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundOtherState_1.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 72,
+                "x": 711,
+                "y": 866
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 72
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundOtherState_2.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 72,
+                "x": 638,
+                "y": 891
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 72
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundOtherState_3.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 72,
+                "x": 711,
+                "y": 891
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 72
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundOtherState_4.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 72,
+                "x": 638,
+                "y": 866
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 72
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundOtherState_5.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 72,
+                "x": 784,
+                "y": 886
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 72
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundOtherState_6.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 72,
+                "x": 784,
+                "y": 911
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 72
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_JueXing.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 749,
+                "y": 972
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_Talent.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 651,
+                "y": 964
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_XianDing.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 1057,
+                "y": 784
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_XianDing_Grey.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 1057,
+                "y": 813
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_XianQu.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 738,
+                "y": 1030
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_YYYue.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 796,
+                "y": 1038
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_Yang.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 767,
+                "y": 1009
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_Yang_YaoYi.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 796,
+                "y": 1009
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_Yin.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 825,
+                "y": 1009
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_Yin_YaoYi.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 767,
+                "y": 1038
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_ZhiZaiBiDe.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 825,
+                "y": 1038
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatSate_ZhuLian.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 854,
+                "y": 1009
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateButton_Over.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 57,
+                "x": 410,
+                "y": 922
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateButton_Over_black.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 57,
+                "x": 534,
+                "y": 887
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateButton_Over_red.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 57,
+                "x": 857,
+                "y": 919
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateButton_normal.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 57,
+                "x": 352,
+                "y": 891
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateButton_normal_black.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 57,
+                "x": 410,
+                "y": 891
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateButton_normal_red.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 57,
+                "x": 352,
+                "y": 922
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateClub.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 663,
+                "y": 1052
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateDiamond.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 642,
+                "y": 1046
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateFixedButtonBg.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 34,
+                "x": 870,
+                "y": 950
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 34
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateHeart.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 744,
+                "y": 590
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateSpade.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 908,
+                "y": 633
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateTextBg_black.png": {
+            "frame": {
+                "h": 29,
+                "idx": 0,
+                "w": 57,
+                "x": 383,
+                "y": 953
+            },
+            "sourceSize": {
+                "h": 29,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateTextBg_normal.png": {
+            "frame": {
+                "h": 29,
+                "idx": 0,
+                "w": 57,
+                "x": 468,
+                "y": 902
+            },
+            "sourceSize": {
+                "h": 29,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatStateTextBg_red.png": {
+            "frame": {
+                "h": 29,
+                "idx": 0,
+                "w": 57,
+                "x": 468,
+                "y": 932
+            },
+            "sourceSize": {
+                "h": 29,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_GouChen.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 1055,
+                "y": 872
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_HouTu.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 1055,
+                "y": 901
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_XinShengQun.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 1055,
+                "y": 930
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_XinShengShu.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 1055,
+                "y": 959
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_XinShengWei.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 971,
+                "y": 973
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_XinShengWu.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 709,
+                "y": 1023
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_YuQing.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 1055,
+                "y": 843
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatState_ZiWei.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 854,
+                "y": 1038
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_0.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 191,
+                "y": 364
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_1.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 199,
+                "y": 250
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_2.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 912,
+                "y": 228
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_3.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 96,
+                "y": 874
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_4.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 96,
+                "y": 760
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_Enemy.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 907,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_Master.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 96,
+                "y": 646
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_Team.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 96,
+                "y": 532
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_Winger.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 912,
+                "y": 114
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "Seat_Dead_ZhengBei.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 148,
+                "x": 507,
+                "y": 248
+            },
+            "sourceSize": {
+                "h": 62,
+                "w": 148
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TSAskSkillBg.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 35,
+                "x": 526,
+                "y": 918
+            },
+            "sourceSize": {
+                "h": 44,
+                "w": 35
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatDiZhu.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 128,
+                "x": 830,
+                "y": 374
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 128
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndexGreenBg.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 94,
+                "x": 812,
+                "y": 248
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 94
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndexRedBg.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 94,
+                "x": 330,
+                "y": 356
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 94
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_1.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 57,
+                "x": 410,
+                "y": 1044
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_2.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 58,
+                "x": 227,
+                "y": 966
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 58
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_3.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 57,
+                "x": 785,
+                "y": 958
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_4.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 56,
+                "x": 536,
+                "y": 979
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 56
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_5.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 58,
+                "x": 785,
+                "y": 936
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 58
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_6.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 57,
+                "x": 284,
+                "y": 1049
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_7.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 57,
+                "x": 342,
+                "y": 1049
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 57
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatIndex_8.png": {
+            "frame": {
+                "h": 21,
+                "idx": 0,
+                "w": 58,
+                "x": 912,
+                "y": 897
+            },
+            "sourceSize": {
+                "h": 21,
+                "w": 58
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatMingPai.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 30,
+                "x": 653,
+                "y": 916
+            },
+            "sourceSize": {
+                "h": 47,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatNameBg.png": {
+            "frame": {
+                "h": 29,
+                "idx": 0,
+                "w": 146,
+                "x": 507,
+                "y": 345
+            },
+            "sourceSize": {
+                "h": 29,
+                "w": 146
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableSeatNongMing.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 128,
+                "x": 953,
+                "y": 342
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 128
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TouchSkillTipsBg.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 175,
+                "x": 656,
+                "y": 310
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 175
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TurnOverMask.png": {
+            "frame": {
+                "h": 249,
+                "idx": 0,
+                "w": 188,
+                "x": 199,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 249,
+                "w": 188
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "askTaoDot.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 22,
+                "x": 623,
+                "y": 994
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 22
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "avatarLeftMask.png": {
+            "frame": {
+                "h": 54,
+                "idx": 0,
+                "w": 20,
+                "x": 950,
+                "y": 919
+            },
+            "sourceSize": {
+                "h": 54,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "avatarMask.png": {
+            "frame": {
+                "h": 54,
+                "idx": 0,
+                "w": 30,
+                "x": 763,
+                "y": 397
+            },
+            "sourceSize": {
+                "h": 54,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "avatarRightMask.png": {
+            "frame": {
+                "h": 54,
+                "idx": 0,
+                "w": 20,
+                "x": 1065,
+                "y": 371
+            },
+            "sourceSize": {
+                "h": 54,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardCategorize_normal.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 12,
+                "x": 781,
+                "y": 483
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 12
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardCategorize_over.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 12,
+                "x": 781,
+                "y": 452
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 12
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNumBg1.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 36,
+                "x": 712,
+                "y": 916
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 36
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNumBg2.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 36,
+                "x": 614,
+                "y": 955
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 36
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNumBg3.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 36,
+                "x": 712,
+                "y": 955
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 36
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNumBg4.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 36,
+                "x": 462,
+                "y": 962
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 36
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNumBg5.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 36,
+                "x": 499,
+                "y": 963
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 36
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNumBg6.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 36,
+                "x": 462,
+                "y": 1001
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 36
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_0.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 441,
+                "y": 953
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_1.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 623,
+                "y": 1018
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_2.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 856,
+                "y": 316
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_3.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 875,
+                "y": 316
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_4.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 1068,
+                "y": 586
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_5.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 773,
+                "y": 603
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_6.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 642,
+                "y": 1022
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_7.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 661,
+                "y": 1022
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_8.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 680,
+                "y": 1026
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cardNum_9.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 18,
+                "x": 623,
+                "y": 1042
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceBg.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 62,
+                "x": 767,
+                "y": 334
+            },
+            "sourceSize": {
+                "h": 62,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_qun1.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 367,
+                "y": 872
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_qun2.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 350,
+                "y": 872
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_shu1.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 552,
+                "y": 1056
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_shu2.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 535,
+                "y": 1056
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_wei1.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 721,
+                "y": 1052
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_wei2.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 963,
+                "y": 1025
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_wu1.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 569,
+                "y": 1055
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForceMin_wu2.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 16,
+                "x": 963,
+                "y": 1042
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_qun1.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 738,
+                "y": 1001
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_qun2.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 709,
+                "y": 994
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_shu1.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 680,
+                "y": 997
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_shu2.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 651,
+                "y": 993
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_wei1.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 836,
+                "y": 980
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_wei2.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 807,
+                "y": 980
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_wu1.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 778,
+                "y": 980
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarForce_wu2.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 28,
+                "x": 680,
+                "y": 968
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWarFuNameBg.png": {
+            "frame": {
+                "h": 123,
+                "idx": 0,
+                "w": 22,
+                "x": 1043,
+                "y": 101
+            },
+            "sourceSize": {
+                "h": 123,
+                "w": 22
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_Dead_1.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 781,
+                "y": 134
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_Dead_2.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 650,
+                "y": 134
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_Dead_3.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 519,
+                "y": 134
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_Dead_4.png": {
+            "frame": {
+                "h": 113,
+                "idx": 0,
+                "w": 130,
+                "x": 388,
+                "y": 134
+            },
+            "sourceSize": {
+                "h": 113,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_Dead_6.png": {
+            "frame": {
+                "h": 105,
+                "idx": 0,
+                "w": 121,
+                "x": 330,
+                "y": 250
+            },
+            "sourceSize": {
+                "h": 105,
+                "w": 121
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_empBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 425,
+                "y": 356
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_greenBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 925,
+                "y": 1052
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_halfBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 904,
+                "y": 1052
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_redBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 883,
+                "y": 1052
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "countryWar_yellowBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 20,
+                "x": 383,
+                "y": 983
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 20
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "distance_label.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 60,
+                "x": 534,
+                "y": 856
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 60
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "distance_num.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 200,
+                "x": 656,
+                "y": 283
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 200
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "empBlood.png": {
+            "frame": {
+                "h": 19,
+                "idx": 0,
+                "w": 17,
+                "x": 1065,
+                "y": 641
+            },
+            "sourceSize": {
+                "h": 19,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_abolish_other.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 134,
+                "x": 794,
+                "y": 656
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_abolish_self.png": {
+            "frame": {
+                "h": 27,
+                "idx": 0,
+                "w": 149,
+                "x": 507,
+                "y": 375
+            },
+            "sourceSize": {
+                "h": 27,
+                "w": 149
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_baowu.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 16,
+                "x": 945,
+                "y": 1002
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_fangju.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 16,
+                "x": 946,
+                "y": 1025
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_jianyima.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 32,
+                "x": 1043,
+                "y": 315
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 32
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_jiayima.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 32,
+                "x": 620,
+                "y": 403
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 32
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_wuqi.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 16,
+                "x": 946,
+                "y": 1048
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_wuqi_ex.png": {
+            "frame": {
+                "h": 22,
+                "idx": 0,
+                "w": 16,
+                "x": 962,
+                "y": 1002
+            },
+            "sourceSize": {
+                "h": 22,
+                "w": 16
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameGeneralJieFlag.png": {
+            "frame": {
+                "h": 51,
+                "idx": 0,
+                "w": 27,
+                "x": 684,
+                "y": 916
+            },
+            "sourceSize": {
+                "h": 51,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameSeat_spriteTag.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 30,
+                "x": 1055,
+                "y": 722
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "generalHalfMask.png": {
+            "frame": {
+                "h": 52,
+                "idx": 0,
+                "w": 30,
+                "x": 191,
+                "y": 478
+            },
+            "sourceSize": {
+                "h": 52,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "generalLurkMask.png": {
+            "frame": {
+                "h": 270,
+                "idx": 0,
+                "w": 190,
+                "x": 0,
+                "y": 261
+            },
+            "sourceSize": {
+                "h": 270,
+                "w": 190
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "generalLurkMask2.png": {
+            "frame": {
+                "h": 269,
+                "idx": 0,
+                "w": 95,
+                "x": 0,
+                "y": 802
+            },
+            "sourceSize": {
+                "h": 269,
+                "w": 95
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "generalLurkMask3.png": {
+            "frame": {
+                "h": 269,
+                "idx": 0,
+                "w": 95,
+                "x": 0,
+                "y": 532
+            },
+            "sourceSize": {
+                "h": 269,
+                "w": 95
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_1.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 593,
+                "y": 979
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_2.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 434,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_3.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 423,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_4.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 412,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_5.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 401,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_6.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 368,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_7.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 379,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "general_mask_8.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 10,
+                "x": 390,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gongjiMask.png": {
+            "frame": {
+                "h": 252,
+                "idx": 0,
+                "w": 30,
+                "x": 337,
+                "y": 433
+            },
+            "sourceSize": {
+                "h": 252,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gradeCountryBg1.png": {
+            "frame": {
+                "h": 184,
+                "idx": 0,
+                "w": 54,
+                "x": 282,
+                "y": 478
+            },
+            "sourceSize": {
+                "h": 184,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gradeCountryBg2.png": {
+            "frame": {
+                "h": 184,
+                "idx": 0,
+                "w": 54,
+                "x": 227,
+                "y": 663
+            },
+            "sourceSize": {
+                "h": 184,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gradeCountryBg3.png": {
+            "frame": {
+                "h": 184,
+                "idx": 0,
+                "w": 54,
+                "x": 227,
+                "y": 478
+            },
+            "sourceSize": {
+                "h": 184,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gradeCountryBg4.png": {
+            "frame": {
+                "h": 184,
+                "idx": 0,
+                "w": 54,
+                "x": 282,
+                "y": 663
+            },
+            "sourceSize": {
+                "h": 184,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gradeCountryBg5.png": {
+            "frame": {
+                "h": 184,
+                "idx": 0,
+                "w": 54,
+                "x": 452,
+                "y": 248
+            },
+            "sourceSize": {
+                "h": 184,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gradeHpBg.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 32,
+                "x": 1038,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 32
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "greenBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 18,
+                "x": 927,
+                "y": 1025
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "handCardsBg.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 38,
+                "x": 614,
+                "y": 916
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 38
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "handCardsLine.png": {
+            "frame": {
+                "h": 1,
+                "idx": 0,
+                "w": 30,
+                "x": 388,
+                "y": 248
+            },
+            "sourceSize": {
+                "h": 1,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "lack_distance_label.png": {
+            "frame": {
+                "h": 31,
+                "idx": 0,
+                "w": 122,
+                "x": 830,
+                "y": 342
+            },
+            "sourceSize": {
+                "h": 31,
+                "w": 122
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "lijian_first_icon.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 112,
+                "x": 507,
+                "y": 403
+            },
+            "sourceSize": {
+                "h": 35,
+                "w": 112
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "lijian_second_icon.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 112,
+                "x": 654,
+                "y": 334
+            },
+            "sourceSize": {
+                "h": 35,
+                "w": 112
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "limitFreeTag.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 114,
+                "x": 929,
+                "y": 591
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 114
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "nezhaBlood1.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 17,
+                "x": 979,
+                "y": 1002
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "nezhaBlood2.png": {
+            "frame": {
+                "h": 19,
+                "idx": 0,
+                "w": 19,
+                "x": 749,
+                "y": 916
+            },
+            "sourceSize": {
+                "h": 19,
+                "w": 19
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "nezhaBlood3.png": {
+            "frame": {
+                "h": 16,
+                "idx": 0,
+                "w": 17,
+                "x": 493,
+                "y": 839
+            },
+            "sourceSize": {
+                "h": 16,
+                "w": 17
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_10.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 23,
+                "x": 929,
+                "y": 403
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_2.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1064,
+                "y": 532
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_3.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 601,
+                "y": 1021
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_4.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 601,
+                "y": 994
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_5.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 579,
+                "y": 1028
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_6.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 579,
+                "y": 1001
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_7.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 557,
+                "y": 1028
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_8.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 557,
+                "y": 1001
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_9.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 535,
+                "y": 1029
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_A.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 535,
+                "y": 1002
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_J.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 905,
+                "y": 1025
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_K.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 883,
+                "y": 1025
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_black_Q.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 887,
+                "y": 998
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_club.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 23,
+                "x": 1044,
+                "y": 591
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_diamond.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 23,
+                "x": 1064,
+                "y": 453
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_heart.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 23,
+                "x": 832,
+                "y": 310
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_10.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 23,
+                "x": 1065,
+                "y": 426
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_2.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 328,
+                "y": 872
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_3.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1064,
+                "y": 559
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_4.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1064,
+                "y": 478
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_5.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1064,
+                "y": 505
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_6.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1000,
+                "y": 978
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_7.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1022,
+                "y": 978
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_8.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1066,
+                "y": 101
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_9.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1066,
+                "y": 128
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_A.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1066,
+                "y": 155
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_J.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 1066,
+                "y": 182
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_K.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 865,
+                "y": 980
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_red_Q.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 21,
+                "x": 887,
+                "y": 971
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 21
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "other_spade.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 23,
+                "x": 1065,
+                "y": 616
+            },
+            "sourceSize": {
+                "h": 24,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "qihuanHpBg.png": {
+            "frame": {
+                "h": 65,
+                "idx": 0,
+                "w": 71,
+                "x": 227,
+                "y": 900
+            },
+            "sourceSize": {
+                "h": 65,
+                "w": 71
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "qihuanHpIcon.png": {
+            "frame": {
+                "h": 31,
+                "idx": 0,
+                "w": 31,
+                "x": 971,
+                "y": 941
+            },
+            "sourceSize": {
+                "h": 31,
+                "w": 31
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "qun.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 368,
+                "y": 573
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "qunBg.png": {
+            "frame": {
+                "h": 133,
+                "idx": 0,
+                "w": 25,
+                "x": 446,
+                "y": 433
+            },
+            "sourceSize": {
+                "h": 133,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "qunFu.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 498,
+                "y": 439
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "redBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 18,
+                "x": 702,
+                "y": 1052
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatArrow.png": {
+            "frame": {
+                "h": 45,
+                "idx": 0,
+                "w": 40,
+                "x": 493,
+                "y": 856
+            },
+            "sourceSize": {
+                "h": 45,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatAudioIcon.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 43,
+                "x": 929,
+                "y": 762
+            },
+            "sourceSize": {
+                "h": 43,
+                "w": 43
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatCanSelect.png": {
+            "frame": {
+                "h": 260,
+                "idx": 0,
+                "w": 198,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 260,
+                "w": 198
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatLookonBtnDown.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 25,
+                "x": 562,
+                "y": 918
+            },
+            "sourceSize": {
+                "h": 60,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatLookonBtnNormal.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 25,
+                "x": 1055,
+                "y": 661
+            },
+            "sourceSize": {
+                "h": 60,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatLookonBtnOver.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 25,
+                "x": 410,
+                "y": 983
+            },
+            "sourceSize": {
+                "h": 60,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkinBtnDown.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 25,
+                "x": 436,
+                "y": 983
+            },
+            "sourceSize": {
+                "h": 60,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkinBtnNormal.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 25,
+                "x": 588,
+                "y": 918
+            },
+            "sourceSize": {
+                "h": 60,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkinBtnOver.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 25,
+                "x": 768,
+                "y": 542
+            },
+            "sourceSize": {
+                "h": 60,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatStateJing.png": {
+            "frame": {
+                "h": 32,
+                "idx": 0,
+                "w": 54,
+                "x": 857,
+                "y": 886
+            },
+            "sourceSize": {
+                "h": 32,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatTacticalSignalBtn1_normal.png": {
+            "frame": {
+                "h": 32,
+                "idx": 0,
+                "w": 34,
+                "x": 468,
+                "y": 1040
+            },
+            "sourceSize": {
+                "h": 32,
+                "w": 34
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatTacticalSignalBtn1_over.png": {
+            "frame": {
+                "h": 32,
+                "idx": 0,
+                "w": 34,
+                "x": 915,
+                "y": 919
+            },
+            "sourceSize": {
+                "h": 32,
+                "w": 34
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seat_skinNumBg.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 155,
+                "x": 656,
+                "y": 248
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 155
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatui_directline.png": {
+            "frame": {
+                "h": 12,
+                "idx": 0,
+                "w": 26,
+                "x": 604,
+                "y": 544
+            },
+            "sourceSize": {
+                "h": 12,
+                "w": 26
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatui_directline_new0.png": {
+            "frame": {
+                "h": 66,
+                "idx": 0,
+                "w": 518,
+                "x": 388,
+                "y": 67
+            },
+            "sourceSize": {
+                "h": 66,
+                "w": 518
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatui_directline_new1.png": {
+            "frame": {
+                "h": 66,
+                "idx": 0,
+                "w": 518,
+                "x": 388,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 66,
+                "w": 518
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selectSkinDefault.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 141,
+                "x": 507,
+                "y": 311
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 141
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selectSkinDynamic.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 35,
+                "x": 499,
+                "y": 1002
+            },
+            "sourceSize": {
+                "h": 35,
+                "w": 35
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selectSkinStatic.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 35,
+                "x": 749,
+                "y": 936
+            },
+            "sourceSize": {
+                "h": 35,
+                "w": 35
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shen.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 551,
+                "y": 439
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shenBg.png": {
+            "frame": {
+                "h": 133,
+                "idx": 0,
+                "w": 25,
+                "x": 420,
+                "y": 439
+            },
+            "sourceSize": {
+                "h": 133,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shu.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 1012,
+                "y": 371
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shuBg.png": {
+            "frame": {
+                "h": 133,
+                "idx": 0,
+                "w": 25,
+                "x": 368,
+                "y": 439
+            },
+            "sourceSize": {
+                "h": 133,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shuFu.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 710,
+                "y": 370
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "soonActionFlag.png": {
+            "frame": {
+                "h": 75,
+                "idx": 0,
+                "w": 187,
+                "x": 96,
+                "y": 988
+            },
+            "sourceSize": {
+                "h": 75,
+                "w": 187
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "statelessBg.png": {
+            "frame": {
+                "h": 133,
+                "idx": 0,
+                "w": 25,
+                "x": 394,
+                "y": 439
+            },
+            "sourceSize": {
+                "h": 133,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wei.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 551,
+                "y": 498
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "weiBg.png": {
+            "frame": {
+                "h": 133,
+                "idx": 0,
+                "w": 25,
+                "x": 337,
+                "y": 686
+            },
+            "sourceSize": {
+                "h": 133,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "weiFu.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 299,
+                "y": 900
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_countdown.png": {
+            "frame": {
+                "h": 29,
+                "idx": 0,
+                "w": 25,
+                "x": 844,
+                "y": 950
+            },
+            "sourceSize": {
+                "h": 29,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_shield.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 27,
+                "x": 1057,
+                "y": 753
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_shield_broke.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 31,
+                "x": 503,
+                "y": 1038
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 31
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_0.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 994,
+                "y": 1023
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_1.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 997,
+                "y": 1005
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_2.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 592,
+                "y": 899
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_3.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 586,
+                "y": 1055
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_4.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 980,
+                "y": 1041
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_5.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 980,
+                "y": 1023
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_6.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 322,
+                "y": 460
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_7.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 322,
+                "y": 442
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_8.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 769,
+                "y": 916
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "whlw_num_9.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 13,
+                "x": 322,
+                "y": 424
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 13
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wu.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 959,
+                "y": 371
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wuBg.png": {
+            "frame": {
+                "h": 133,
+                "idx": 0,
+                "w": 25,
+                "x": 363,
+                "y": 686
+            },
+            "sourceSize": {
+                "h": 133,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wuFu.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 421,
+                "y": 573
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "yeXin.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 657,
+                "y": 370
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "yeXinBg.png": {
+            "frame": {
+                "h": 133,
+                "idx": 0,
+                "w": 25,
+                "x": 472,
+                "y": 433
+            },
+            "sourceSize": {
+                "h": 133,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "yeXinFu.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 52,
+                "x": 498,
+                "y": 498
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "yellowBlood.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 18,
+                "x": 909,
+                "y": 974
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "meta": {
+        "image": "seat.png",
+        "prefix": "seat/"
+    }
+}

@@ -1,0 +1,9 @@
+<Solution>
+    <Folder Name="/src/">
+        <Project Path="src/Sanguosha.Core/Sanguosha.Core.csproj" />
+        <Project Path="src/Sanguosha.Desktop/Sanguosha.Desktop.csproj" />
+    </Folder>
+    <Folder Name="/tests/">
+        <Project Path="tests/Sanguosha.Verify/Sanguosha.Verify.csproj" />
+    </Folder>
+</Solution>

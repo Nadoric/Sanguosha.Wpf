@@ -1,0 +1,306 @@
+{
+  "effects": {
+    "slash": "Effects/slash.mp3",
+    "dodge": "Effects/dodge.mp3",
+    "peach": "Effects/peach.mp3",
+    "duel": "Effects/duel.mp3",
+    "drawtwo": "Effects/drawtwo.mp3",
+    "dismantle": "Effects/card.mp3",
+    "steal": "Effects/card.mp3",
+    "barbarians": "Effects/barbarians.mp3",
+    "arrows": "Effects/card.mp3",
+    "feast": "Effects/feast.mp3",
+    "indulgence": "Effects/card.mp3",
+    "weapon": "Effects/weapon.mp3",
+    "armor": "Effects/armor.mp3",
+    "horse": "Effects/horse.mp3",
+    "bagua": "Effects/bagua.mp3",
+    "hurt": "Effects/hurt.mp3",
+    "death": "Effects/death.mp3",
+    "dying": "Effects/dying.mp3",
+    "win": "Effects/win.mp3",
+    "lose": "Effects/lose.mp3",
+    "click": "Effects/click.mp3",
+    "start": "Effects/start.mp3",
+    "card": "Effects/card.mp3"
+  },
+  "voices": {
+    "liubei": {
+      "仁德": [
+        "Voices/liubei/spell31_1.mp3",
+        "Voices/liubei/spell31_2.mp3"
+      ],
+      "激将": [
+        "Voices/liubei/spell32_1.mp3",
+        "Voices/liubei/spell32_2.mp3"
+      ],
+      "death": [
+        "Voices/liubei/death.mp3"
+      ]
+    },
+    "guanyu": {
+      "武圣": [
+        "Voices/guanyu/spell33_1.mp3",
+        "Voices/guanyu/spell33_2.mp3"
+      ],
+      "death": [
+        "Voices/guanyu/death.mp3"
+      ]
+    },
+    "zhangfei": {
+      "咆哮": [
+        "Voices/zhangfei/ZhangFei_PaoXiao_01.mp3",
+        "Voices/zhangfei/ZhangFei_PaoXiao_02.mp3"
+      ],
+      "death": [
+        "Voices/zhangfei/death.mp3"
+      ]
+    },
+    "zhaoyun": {
+      "龙胆": [
+        "Voices/zhaoyun/spell37_1.mp3",
+        "Voices/zhaoyun/spell37_2.mp3"
+      ],
+      "death": [
+        "Voices/zhaoyun/death.mp3"
+      ]
+    },
+    "caocao": {
+      "奸雄": [
+        "Voices/caocao/spell42_1.mp3",
+        "Voices/caocao/spell42_2.mp3"
+      ],
+      "护驾": [
+        "Voices/caocao/spell43_1.mp3",
+        "Voices/caocao/spell43_2.mp3"
+      ],
+      "death": [
+        "Voices/caocao/death.mp3"
+      ]
+    },
+    "sunquan": {
+      "制衡": [
+        "Voices/sunquan/spell53_1.mp3",
+        "Voices/sunquan/spell53_2.mp3"
+      ],
+      "救援": [
+        "Voices/sunquan/spell54_1.mp3",
+        "Voices/sunquan/spell54_2.mp3"
+      ],
+      "death": [
+        "Voices/sunquan/death.mp3"
+      ]
+    },
+    "simayi": {
+      "反馈": [
+        "Voices/simayi/spell47_1.mp3",
+        "Voices/simayi/spell47_2.mp3"
+      ],
+      "鬼才": [
+        "Voices/simayi/spell48_1.mp3",
+        "Voices/simayi/spell48_2.mp3"
+      ],
+      "death": [
+        "Voices/simayi/death.mp3"
+      ]
+    },
+    "xiahoudun": {
+      "刚烈": [
+        "Voices/xiahoudun/XiaHouDun_GangLie_01.mp3",
+        "Voices/xiahoudun/XiaHouDun_GangLie_02.mp3"
+      ],
+      "death": [
+        "Voices/xiahoudun/death.mp3"
+      ]
+    },
+    "zhangliao": {
+      "突袭": [
+        "Voices/zhangliao/spell44_1.mp3",
+        "Voices/zhangliao/spell44_2.mp3"
+      ],
+      "death": [
+        "Voices/zhangliao/death.mp3"
+      ]
+    },
+    "xuchu": {
+      "裸衣": [
+        "Voices/xuchu/spell50_1.mp3",
+        "Voices/xuchu/spell50_2.mp3"
+      ],
+      "death": [
+        "Voices/xuchu/death.mp3"
+      ]
+    },
+    "guojia": {
+      "天妒": [
+        "Voices/guojia/spell51_1.mp3",
+        "Voices/guojia/spell51_2.mp3"
+      ],
+      "遗计": [
+        "Voices/guojia/spell52_1.mp3",
+        "Voices/guojia/spell52_2.mp3"
+      ],
+      "death": [
+        "Voices/guojia/death.mp3"
+      ]
+    },
+    "zhenji": {
+      "洛神": [
+        "Voices/zhenji/spell45_1.mp3",
+        "Voices/zhenji/spell45_2.mp3"
+      ],
+      "倾国": [
+        "Voices/zhenji/spell46_1.mp3",
+        "Voices/zhenji/spell46_2.mp3"
+      ],
+      "death": [
+        "Voices/zhenji/death.mp3"
+      ]
+    },
+    "zhugeliang": {
+      "观星": [
+        "Voices/zhugeliang/spell35_1.mp3",
+        "Voices/zhugeliang/spell35_2.mp3"
+      ],
+      "空城": [
+        "Voices/zhugeliang/spell36_1.mp3",
+        "Voices/zhugeliang/spell36_2.mp3"
+      ],
+      "death": [
+        "Voices/zhugeliang/death.mp3"
+      ]
+    },
+    "machao": {
+      "铁骑": [
+        "Voices/machao/spell38_1.mp3",
+        "Voices/machao/spell38_2.mp3"
+      ],
+      "death": [
+        "Voices/machao/death.mp3"
+      ]
+    },
+    "huangyueying": {
+      "集智": [
+        "Voices/huangyueying/spell39_1.mp3",
+        "Voices/huangyueying/spell39_2.mp3"
+      ],
+      "death": [
+        "Voices/huangyueying/death.mp3"
+      ]
+    },
+    "ganning": {
+      "奇袭": [
+        "Voices/ganning/spell57_1.mp3",
+        "Voices/ganning/spell57_2.mp3"
+      ],
+      "death": [
+        "Voices/ganning/death.mp3"
+      ]
+    },
+    "lvmeng": {
+      "克己": [
+        "Voices/lvmeng/LvMengPo_KeJi_01.mp3",
+        "Voices/lvmeng/LvMengPo_KeJi_02.mp3"
+      ],
+      "death": [
+        "Voices/lvmeng/death.mp3"
+      ]
+    },
+    "huanggai": {
+      "苦肉": [
+        "Voices/huanggai/HuangGaiPo_KuRouPo_01.mp3",
+        "Voices/huanggai/HuangGaiPo_KuRouPo_02.mp3"
+      ],
+      "death": [
+        "Voices/huanggai/death.mp3"
+      ]
+    },
+    "zhouyu": {
+      "英姿": [
+        "Voices/zhouyu/spell55_1.mp3",
+        "Voices/zhouyu/spell55_2.mp3"
+      ],
+      "反间": [
+        "Voices/zhouyu/spell56_1.mp3",
+        "Voices/zhouyu/spell56_2.mp3"
+      ],
+      "death": [
+        "Voices/zhouyu/death.mp3"
+      ]
+    },
+    "daqiao": {
+      "国色": [
+        "Voices/daqiao/spell60_1.mp3",
+        "Voices/daqiao/spell60_2.mp3"
+      ],
+      "流离": [
+        "Voices/daqiao/spell61_1.mp3",
+        "Voices/daqiao/spell61_2.mp3"
+      ],
+      "death": [
+        "Voices/daqiao/death.mp3"
+      ]
+    },
+    "luxun": {
+      "谦逊": [
+        "Voices/luxun/LuXun_Qianxun_01.mp3",
+        "Voices/luxun/LuXun_Qianxun_02.mp3"
+      ],
+      "连营": [
+        "Voices/luxun/LuXun_Lianying_01.mp3",
+        "Voices/luxun/LuXun_Lianying_02.mp3"
+      ],
+      "death": [
+        "Voices/luxun/death.mp3"
+      ]
+    },
+    "sunshangxiang": {
+      "枭姬": [
+        "Voices/sunshangxiang/spell41_1.mp3",
+        "Voices/sunshangxiang/spell41_2.mp3"
+      ],
+      "结姻": [
+        "Voices/sunshangxiang/spell69_1.mp3",
+        "Voices/sunshangxiang/spell69_2.mp3"
+      ],
+      "death": [
+        "Voices/sunshangxiang/death.mp3"
+      ]
+    },
+    "lvbu": {
+      "无双": [
+        "Voices/lvbu/LvBu_WuShuang_01.mp3",
+        "Voices/lvbu/LvBu_WuShuang_02.mp3"
+      ],
+      "death": [
+        "Voices/lvbu/death.mp3"
+      ]
+    },
+    "huatuo": {
+      "急救": [
+        "Voices/huatuo/HuaTuo_JiJiu_01.mp3",
+        "Voices/huatuo/HuaTuo_JiJiu_02.mp3"
+      ],
+      "青囊": [
+        "Voices/huatuo/HuaTuo_QingNang_01.mp3",
+        "Voices/huatuo/HuaTuo_QingNang_02.mp3"
+      ],
+      "death": [
+        "Voices/huatuo/death.mp3"
+      ]
+    },
+    "diaochan": {
+      "闭月": [
+        "Voices/diaochan/spell67_1.mp3",
+        "Voices/diaochan/spell67_2.mp3"
+      ],
+      "离间": [
+        "Voices/diaochan/spell68_1.mp3",
+        "Voices/diaochan/spell68_2.mp3"
+      ],
+      "death": [
+        "Voices/diaochan/death.mp3"
+      ]
+    }
+  }
+}

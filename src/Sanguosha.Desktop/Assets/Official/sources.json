@@ -1,0 +1,275 @@
+{
+  "source": "Sanguosha official website public assets",
+  "retrievedOn": "2026-11-05",
+  "portraits": 25,
+  "files": [
+    {
+      "id": "liubei",
+      "name": "刘备",
+      "page": "https://x.sanguosha.com/hero/1.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100101.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/liubei.png",
+      "category": "portrait",
+      "sha256": "36f69370df66b197265b8903272704a2a176f28d03897e5f7576068b6a089dc0",
+      "bytes": 195685
+    },
+    {
+      "id": "guanyu",
+      "name": "关羽",
+      "page": "https://x.sanguosha.com/hero/2.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100201.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/guanyu.png",
+      "category": "portrait",
+      "sha256": "3598659c81d8cf9dc7a4a96f4b7b07b1a87a7e488894398decdb0da10b82376f",
+      "bytes": 185891
+    },
+    {
+      "id": "zhangfei",
+      "name": "张飞",
+      "page": "https://x.sanguosha.com/hero/3.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100301.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/zhangfei.png",
+      "category": "portrait",
+      "sha256": "f9db9a162836594a5e4d3c2dad303a8c5da68d82252f8f710e74541902f794a2",
+      "bytes": 186250
+    },
+    {
+      "id": "zhaoyun",
+      "name": "赵云",
+      "page": "https://x.sanguosha.com/hero/5.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100501.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/zhaoyun.png",
+      "category": "portrait",
+      "sha256": "1ac616a68c4ee9778ea4dbb1c92c1ff4c00fc29ca1ca1ff2a04d5c70c889294a",
+      "bytes": 197644
+    },
+    {
+      "id": "caocao",
+      "name": "曹操",
+      "page": "https://x.sanguosha.com/hero/16.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101601.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/caocao.png",
+      "category": "portrait",
+      "sha256": "34fd8bb52d1c871497b2411cef4b94a6896cc33e673c92e816fcec12e16bd3de",
+      "bytes": 186633
+    },
+    {
+      "id": "sunquan",
+      "name": "孙权",
+      "page": "https://x.sanguosha.com/hero/8.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100801.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/sunquan.png",
+      "category": "portrait",
+      "sha256": "c948a9eb5552c08caf7516da0b3446a397e686f12e308e39313a3061753aee90",
+      "bytes": 223474
+    },
+    {
+      "id": "simayi",
+      "name": "司马懿",
+      "page": "https://x.sanguosha.com/hero/17.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101701.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/simayi.png",
+      "category": "portrait",
+      "sha256": "b00793c0e2f5574b81c004b2982eaa71e20ee5f133194ec413643b73550fa730",
+      "bytes": 210233
+    },
+    {
+      "id": "xiahoudun",
+      "name": "夏侯惇",
+      "page": "https://x.sanguosha.com/hero/18.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101801.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/xiahoudun.png",
+      "category": "portrait",
+      "sha256": "f1feeec027a5273488659e7aced8951159a72845795080c8876ca7505c517107",
+      "bytes": 252953
+    },
+    {
+      "id": "zhangliao",
+      "name": "张辽",
+      "page": "https://x.sanguosha.com/hero/19.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101901.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/zhangliao.png",
+      "category": "portrait",
+      "sha256": "73986e1d7ed97662acdc756e20c64fa99c0a3d976a23b4a0ad58ba9a7ecf3e2b",
+      "bytes": 629859
+    },
+    {
+      "id": "xuchu",
+      "name": "许褚",
+      "page": "https://x.sanguosha.com/hero/20.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/102001.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/xuchu.png",
+      "category": "portrait",
+      "sha256": "07056e53f291171443a990aa84d65a268cda1b03b4321cc64b10051d2686a46e",
+      "bytes": 617858
+    },
+    {
+      "id": "guojia",
+      "name": "郭嘉",
+      "page": "https://x.sanguosha.com/hero/21.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/102101.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/guojia.png",
+      "category": "portrait",
+      "sha256": "c8640f1f293bcd0f240fe246f6ce3b020cf022029d3d8ce059d86ea9cb038a63",
+      "bytes": 193922
+    },
+    {
+      "id": "zhenji",
+      "name": "甄姬",
+      "page": "https://x.sanguosha.com/hero/22.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/102201.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/zhenji.png",
+      "category": "portrait",
+      "sha256": "13f8821f91034cf60128a57a950c3d3e09c9e625c7cddb9cc72928803515f272",
+      "bytes": 215690
+    },
+    {
+      "id": "zhugeliang",
+      "name": "诸葛亮",
+      "page": "https://x.sanguosha.com/hero/4.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100401.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/zhugeliang.png",
+      "category": "portrait",
+      "sha256": "add9992b5a68e9b05837bd265f3a87488b375ba81c331da09701391254677ee3",
+      "bytes": 222549
+    },
+    {
+      "id": "machao",
+      "name": "马超",
+      "page": "https://x.sanguosha.com/hero/6.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100601.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/machao.png",
+      "category": "portrait",
+      "sha256": "884851a841c73286eb7b99af4aea8075f9c567b5561565415adf62b734593d6b",
+      "bytes": 209083
+    },
+    {
+      "id": "huangyueying",
+      "name": "黄月英",
+      "page": "https://x.sanguosha.com/hero/7.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100701.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/huangyueying.png",
+      "category": "portrait",
+      "sha256": "8eeab156b3574258fccc2bdd08082d642f5f3c125fe28a47a297daa8bc659340",
+      "bytes": 197542
+    },
+    {
+      "id": "ganning",
+      "name": "甘宁",
+      "page": "https://x.sanguosha.com/hero/9.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/100901.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/ganning.png",
+      "category": "portrait",
+      "sha256": "17816097555c93018da55a7c076cdfd83a467ff13bf5cfaed51ef29f0b83e048",
+      "bytes": 236409
+    },
+    {
+      "id": "lvmeng",
+      "name": "吕蒙",
+      "page": "https://x.sanguosha.com/hero/10.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101001.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/lvmeng.png",
+      "category": "portrait",
+      "sha256": "73b18eeef852231c4545137e920a9bf21ec14528bd35d3882c3ebd15f662a281",
+      "bytes": 178944
+    },
+    {
+      "id": "huanggai",
+      "name": "黄盖",
+      "page": "https://x.sanguosha.com/hero/11.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101101.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/huanggai.png",
+      "category": "portrait",
+      "sha256": "d0a5fc20a2ff29c40a2121a045456ee72991bb5d96e5add44f081dff36e6b57f",
+      "bytes": 207631
+    },
+    {
+      "id": "zhouyu",
+      "name": "周瑜",
+      "page": "https://x.sanguosha.com/hero/12.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101201.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/zhouyu.png",
+      "category": "portrait",
+      "sha256": "4f1c444985c03bb4fff2cfd68f5539a282cc1a4ba3b779bd8df4a6046ac571be",
+      "bytes": 206705
+    },
+    {
+      "id": "daqiao",
+      "name": "大乔",
+      "page": "https://x.sanguosha.com/hero/13.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101301.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/daqiao.png",
+      "category": "portrait",
+      "sha256": "b930ae93df7693b5eb85fdb1270a36e9e39c39f98d1d6af65c714e0171ac0995",
+      "bytes": 698622
+    },
+    {
+      "id": "luxun",
+      "name": "陆逊",
+      "page": "https://x.sanguosha.com/hero/14.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101401.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/luxun.png",
+      "category": "portrait",
+      "sha256": "7a5ef864222837964110a1b5885bef9e83170b90b750490b3c3d1f0e6f0b799d",
+      "bytes": 171520
+    },
+    {
+      "id": "sunshangxiang",
+      "name": "孙尚香",
+      "page": "https://x.sanguosha.com/hero/15.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/101501.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/sunshangxiang.png",
+      "category": "portrait",
+      "sha256": "2a39f2fb2d824e15420e6228d171940af3b4abcaad86a9dee8e8ac60ff557b06",
+      "bytes": 656233
+    },
+    {
+      "id": "lvbu",
+      "name": "吕布",
+      "page": "https://x.sanguosha.com/hero/24.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/102401.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/lvbu.png",
+      "category": "portrait",
+      "sha256": "73b3a1dd40803d8e4245cfbfb888a5d319a1beaf6139e96fe5c954b0341e1b52",
+      "bytes": 262878
+    },
+    {
+      "id": "huatuo",
+      "name": "华佗",
+      "page": "https://x.sanguosha.com/hero/23.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/102301.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/huatuo.png",
+      "category": "portrait",
+      "sha256": "314eb0c4cf3cbd6002382f6cd994cf631d4f0382af591f620e8e34d03ebc3618",
+      "bytes": 216811
+    },
+    {
+      "id": "diaochan",
+      "name": "貂蝉",
+      "page": "https://x.sanguosha.com/hero/25.html",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/general/big/static/102501.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Portraits/diaochan.png",
+      "category": "portrait",
+      "sha256": "49fecc13df9a97d8cf8f0119b9fe7da2bb057a50ffcc724aed0b37b30f9313f7",
+      "bytes": 187608
+    },
+    {
+      "id": "card.png",
+      "category": "cards",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/cards/normal/card.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Cards/card.png",
+      "sha256": "16e7509e46588c47ea0f11e615db04627abe9a9077f7f7e0b50f20aa6cf4b49d",
+      "bytes": 4447777
+    },
+    {
+      "id": "card.atlas",
+      "category": "cards",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/cards/normal/card.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Cards/card.atlas",
+      "sha256": "5d02b3520f518beaeedd7e9ec965eab1e65acda2f715c0fca9c9f7e9c8d34b8f",
+      "bytes": 109135
+    }
+  ]
+}

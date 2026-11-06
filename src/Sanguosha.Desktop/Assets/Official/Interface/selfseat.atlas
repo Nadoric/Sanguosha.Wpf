@@ -1,0 +1,2184 @@
+{
+    "frames": {
+        "ChatViewBtn_down.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 209,
+                "y": 451
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "ChatViewBtn_normal.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 168,
+                "y": 451
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "ChatViewBtn_over.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 866,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "ChatViewBtn_select.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 825,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "FastBackwardBtn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 662,
+                "y": 473
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "FastBackwardBtn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 693,
+                "y": 438
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "FastForwardBtn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 689,
+                "y": 508
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "FastForwardBtn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 703,
+                "y": 473
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "RecordPauseBtn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 775,
+                "y": 431
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "RecordPauseBtn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 744,
+                "y": 473
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "RecordPlayBtn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 730,
+                "y": 508
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "RecordPlayBtn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 783,
+                "y": 396
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "RecordRePlayBtn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 812,
+                "y": 501
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "RecordRePlayBtn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 771,
+                "y": 508
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "ReplaySpeedBg.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 652,
+                "y": 438
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundState_1.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 93,
+                "x": 648,
+                "y": 417
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 93
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundState_2.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 93,
+                "x": 735,
+                "y": 375
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 93
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundState_3.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 93,
+                "x": 641,
+                "y": 375
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 93
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundState_4.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 93,
+                "x": 648,
+                "y": 396
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 93
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundState_5.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 93,
+                "x": 595,
+                "y": 555
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 93
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SeatRoundState_6.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 93,
+                "x": 595,
+                "y": 534
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 93
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SpellOptCancelButton_diabled.png": {
+            "frame": {
+                "h": 48,
+                "idx": 0,
+                "w": 152,
+                "x": 134,
+                "y": 263
+            },
+            "sourceSize": {
+                "h": 48,
+                "w": 152
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SpellOptCancelButton_normal.png": {
+            "frame": {
+                "h": 48,
+                "idx": 0,
+                "w": 152,
+                "x": 134,
+                "y": 312
+            },
+            "sourceSize": {
+                "h": 48,
+                "w": 152
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SpellOptCancelButton_over.png": {
+            "frame": {
+                "h": 48,
+                "idx": 0,
+                "w": 152,
+                "x": 134,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 48,
+                "w": 152
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SpellOptSelectorButton_disabled.png": {
+            "frame": {
+                "h": 48,
+                "idx": 0,
+                "w": 132,
+                "x": 287,
+                "y": 245
+            },
+            "sourceSize": {
+                "h": 48,
+                "w": 132
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SpellOptSelectorButton_normal.png": {
+            "frame": {
+                "h": 48,
+                "idx": 0,
+                "w": 132,
+                "x": 160,
+                "y": 402
+            },
+            "sourceSize": {
+                "h": 48,
+                "w": 132
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "SpellOptSelectorButton_over.png": {
+            "frame": {
+                "h": 48,
+                "idx": 0,
+                "w": 132,
+                "x": 883,
+                "y": 196
+            },
+            "sourceSize": {
+                "h": 48,
+                "w": 132
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberCutLine.png": {
+            "frame": {
+                "h": 2,
+                "idx": 0,
+                "w": 270,
+                "x": 689,
+                "y": 574
+            },
+            "sourceSize": {
+                "h": 2,
+                "w": 270
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberInGameBg.png": {
+            "frame": {
+                "h": 70,
+                "idx": 0,
+                "w": 70,
+                "x": 405,
+                "y": 294
+            },
+            "sourceSize": {
+                "h": 70,
+                "w": 70
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberOver.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 270,
+                "x": 134,
+                "y": 361
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 270
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberViewBtn_down.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 702,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberViewBtn_normal.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 743,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberViewBtn_over.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 661,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberViewBtn_select.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 40,
+                "x": 784,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 73,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "TableMemberViewTipFrame.png": {
+            "frame": {
+                "h": 158,
+                "idx": 0,
+                "w": 253,
+                "x": 715,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 158,
+                "w": 253
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "aihelp_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 293,
+                "y": 402
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "aihelp_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 250,
+                "y": 451
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "aihelp_btn_selected_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 333,
+                "y": 507
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "aihelp_btn_selected_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 333,
+                "y": 472
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "bar_left_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 32,
+                "x": 867,
+                "y": 446
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 32
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "bar_left_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 32,
+                "x": 853,
+                "y": 537
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 32
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "bar_right_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 32,
+                "x": 886,
+                "y": 537
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 32
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "bar_right_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 32,
+                "x": 893,
+                "y": 393
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 32
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "cancel_trusteeship.png": {
+            "frame": {
+                "h": 184,
+                "idx": 0,
+                "w": 714,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 184,
+                "w": 714
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "fangtong_bg.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 54,
+                "x": 829,
+                "y": 375
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_audio_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 532,
+                "y": 542
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_audio_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 532,
+                "y": 507
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_bianta_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 734,
+                "y": 438
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_bianta_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 742,
+                "y": 396
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_chat_btn_close_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 376,
+                "y": 402
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_chat_btn_close_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 333,
+                "y": 437
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_chat_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 250,
+                "y": 521
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_chat_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 82,
+                "x": 250,
+                "y": 486
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_emoji_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 785,
+                "y": 466
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_emoji_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 816,
+                "y": 431
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "game_in_lookon.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 129,
+                "x": 656,
+                "y": 206
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 129
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "mvpNormal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 812,
+                "y": 536
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "mvpOver.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 40,
+                "x": 826,
+                "y": 466
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "restore_normal.png": {
+            "frame": {
+                "h": 36,
+                "idx": 0,
+                "w": 81,
+                "x": 786,
+                "y": 206
+            },
+            "sourceSize": {
+                "h": 36,
+                "w": 81
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "restore_over.png": {
+            "frame": {
+                "h": 36,
+                "idx": 0,
+                "w": 81,
+                "x": 168,
+                "y": 525
+            },
+            "sourceSize": {
+                "h": 36,
+                "w": 81
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "save_record_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 102,
+                "x": 476,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 102
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "save_record_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 102,
+                "x": 287,
+                "y": 294
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 102
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkill_JueXing.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 26,
+                "x": 980,
+                "y": 393
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 26
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkill_SuoDing.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 26,
+                "x": 751,
+                "y": 543
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 26
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkill_XianDing.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 26,
+                "x": 778,
+                "y": 543
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 26
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkill_ZhuanHuan_Yang.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 26,
+                "x": 926,
+                "y": 393
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 26
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seatSkill_ZhuanHuan_Ying.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 26,
+                "x": 953,
+                "y": 393
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 26
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seat_distance_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 469,
+                "y": 508
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "seat_distance_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 522,
+                "y": 402
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfMsgTextBg.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 655,
+                "x": 0,
+                "y": 185
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 655
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatAddBtnNormal.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 35,
+                "x": 857,
+                "y": 410
+            },
+            "sourceSize": {
+                "h": 35,
+                "w": 35
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatAddBtnOver.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 35,
+                "x": 853,
+                "y": 501
+            },
+            "sourceSize": {
+                "h": 35,
+                "w": 35
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatAllSelectedBtnNormal.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 50,
+                "x": 591,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 50
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatAllSelectedBtnOver.png": {
+            "frame": {
+                "h": 28,
+                "idx": 0,
+                "w": 50,
+                "x": 354,
+                "y": 329
+            },
+            "sourceSize": {
+                "h": 28,
+                "w": 50
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatAudioBg.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 18,
+                "x": 203,
+                "y": 562
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatAudioCloseIcon.png": {
+            "frame": {
+                "h": 52,
+                "idx": 0,
+                "w": 52,
+                "x": 469,
+                "y": 402
+            },
+            "sourceSize": {
+                "h": 52,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatAudioOpenIcon.png": {
+            "frame": {
+                "h": 52,
+                "idx": 0,
+                "w": 52,
+                "x": 416,
+                "y": 490
+            },
+            "sourceSize": {
+                "h": 52,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCancelBtn_disable.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 167,
+                "x": 715,
+                "y": 159
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 167
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCancelBtn_normal.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 167,
+                "x": 0,
+                "y": 477
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 167
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCancelBtn_over.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 167,
+                "x": 0,
+                "y": 524
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 167
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCountDown0.png": {
+            "frame": {
+                "h": 14,
+                "idx": 0,
+                "w": 34,
+                "x": 168,
+                "y": 562
+            },
+            "sourceSize": {
+                "h": 14,
+                "w": 34
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCountDown1.png": {
+            "frame": {
+                "h": 10,
+                "idx": 0,
+                "w": 602,
+                "x": 420,
+                "y": 245
+            },
+            "sourceSize": {
+                "h": 10,
+                "w": 602
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCountDown2.png": {
+            "frame": {
+                "h": 10,
+                "idx": 0,
+                "w": 602,
+                "x": 420,
+                "y": 256
+            },
+            "sourceSize": {
+                "h": 10,
+                "w": 602
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCountDown3.png": {
+            "frame": {
+                "h": 10,
+                "idx": 0,
+                "w": 602,
+                "x": 420,
+                "y": 267
+            },
+            "sourceSize": {
+                "h": 10,
+                "w": 602
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCountdownBar.png": {
+            "frame": {
+                "h": 9,
+                "idx": 0,
+                "w": 502,
+                "x": 420,
+                "y": 278
+            },
+            "sourceSize": {
+                "h": 9,
+                "w": 502
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCountdownBg.png": {
+            "frame": {
+                "h": 13,
+                "idx": 0,
+                "w": 506,
+                "x": 134,
+                "y": 388
+            },
+            "sourceSize": {
+                "h": 13,
+                "w": 506
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatCountdownLight.png": {
+            "frame": {
+                "h": 17,
+                "idx": 0,
+                "w": 29,
+                "x": 824,
+                "y": 410
+            },
+            "sourceSize": {
+                "h": 17,
+                "w": 29
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatHandCardBg.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 102,
+                "x": 287,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 102
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatIgnoreBtn_mormal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 112,
+                "x": 908,
+                "y": 323
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 112
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatIgnoreBtn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 112,
+                "x": 908,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 112
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatMicCloseIcon.png": {
+            "frame": {
+                "h": 52,
+                "idx": 0,
+                "w": 52,
+                "x": 416,
+                "y": 437
+            },
+            "sourceSize": {
+                "h": 52,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatMicOpenIcon.png": {
+            "frame": {
+                "h": 52,
+                "idx": 0,
+                "w": 52,
+                "x": 469,
+                "y": 455
+            },
+            "sourceSize": {
+                "h": 52,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfSeatReserveCountdownBar.png": {
+            "frame": {
+                "h": 9,
+                "idx": 0,
+                "w": 502,
+                "x": 405,
+                "y": 365
+            },
+            "sourceSize": {
+                "h": 9,
+                "w": 502
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_equip_baowu.png": {
+            "frame": {
+                "h": 27,
+                "idx": 0,
+                "w": 23,
+                "x": 889,
+                "y": 481
+            },
+            "sourceSize": {
+                "h": 27,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_equip_fangju.png": {
+            "frame": {
+                "h": 27,
+                "idx": 0,
+                "w": 23,
+                "x": 889,
+                "y": 509
+            },
+            "sourceSize": {
+                "h": 27,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_equip_jianyima.png": {
+            "frame": {
+                "h": 27,
+                "idx": 0,
+                "w": 23,
+                "x": 900,
+                "y": 446
+            },
+            "sourceSize": {
+                "h": 27,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_equip_jiayima.png": {
+            "frame": {
+                "h": 27,
+                "idx": 0,
+                "w": 23,
+                "x": 913,
+                "y": 474
+            },
+            "sourceSize": {
+                "h": 27,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_equip_wuqi.png": {
+            "frame": {
+                "h": 27,
+                "idx": 0,
+                "w": 23,
+                "x": 924,
+                "y": 446
+            },
+            "sourceSize": {
+                "h": 27,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_equip_wuqi_ex.png": {
+            "frame": {
+                "h": 27,
+                "idx": 0,
+                "w": 23,
+                "x": 913,
+                "y": 502
+            },
+            "sourceSize": {
+                "h": 27,
+                "w": 23
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_seat_baozhu.png": {
+            "frame": {
+                "h": 71,
+                "idx": 0,
+                "w": 159,
+                "x": 0,
+                "y": 405
+            },
+            "sourceSize": {
+                "h": 71,
+                "w": 159
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "self_seat_baozhu_yx.png": {
+            "frame": {
+                "h": 4,
+                "idx": 0,
+                "w": 117,
+                "x": 0,
+                "y": 571
+            },
+            "sourceSize": {
+                "h": 4,
+                "w": 117
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfseatTaoNiIcon.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 18,
+                "x": 656,
+                "y": 185
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 18
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfseat_wei_sword_an.png": {
+            "frame": {
+                "h": 190,
+                "idx": 0,
+                "w": 66,
+                "x": 0,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 190,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selfseat_wei_sword_liang.png": {
+            "frame": {
+                "h": 190,
+                "idx": 0,
+                "w": 66,
+                "x": 67,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 190,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skillLurkMask.png": {
+            "frame": {
+                "h": 39,
+                "idx": 0,
+                "w": 81,
+                "x": 579,
+                "y": 288
+            },
+            "sourceSize": {
+                "h": 39,
+                "w": 81
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skillXianDing_over.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 524,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skillXianDing_up.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 287,
+                "y": 329
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skill_common_over.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 595,
+                "y": 503
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skill_common_up.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 585,
+                "y": 472
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skill_comon_disabled.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 463,
+                "y": 543
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skill_lurk_normal.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 396,
+                "y": 543
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skill_switch_1_over.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 457,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "skill_switch_1_up.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 66,
+                "x": 390,
+                "y": 214
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "stop_normal.png": {
+            "frame": {
+                "h": 36,
+                "idx": 0,
+                "w": 81,
+                "x": 579,
+                "y": 328
+            },
+            "sourceSize": {
+                "h": 36,
+                "w": 81
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "stop_over.png": {
+            "frame": {
+                "h": 36,
+                "idx": 0,
+                "w": 81,
+                "x": 883,
+                "y": 159
+            },
+            "sourceSize": {
+                "h": 36,
+                "w": 81
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "story_pass_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 102,
+                "x": 476,
+                "y": 323
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 102
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "story_pass_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 102,
+                "x": 908,
+                "y": 358
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 102
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "surrender_btn_disabled.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 585,
+                "y": 402
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "surrender_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 585,
+                "y": 437
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "surrender_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 333,
+                "y": 542
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "trusteeshipBg.png": {
+            "frame": {
+                "h": 195,
+                "idx": 0,
+                "w": 54,
+                "x": 969,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 195,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "trusteeship_btn_normal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 522,
+                "y": 472
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "trusteeship_btn_over.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 62,
+                "x": 522,
+                "y": 437
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_process.png": {
+            "frame": {
+                "h": 8,
+                "idx": 0,
+                "w": 128,
+                "x": 893,
+                "y": 437
+            },
+            "sourceSize": {
+                "h": 8,
+                "w": 128
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_process_full.png": {
+            "frame": {
+                "h": 8,
+                "idx": 0,
+                "w": 128,
+                "x": 893,
+                "y": 428
+            },
+            "sourceSize": {
+                "h": 8,
+                "w": 128
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_processbg.png": {
+            "frame": {
+                "h": 12,
+                "idx": 0,
+                "w": 136,
+                "x": 405,
+                "y": 375
+            },
+            "sourceSize": {
+                "h": 12,
+                "w": 136
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_skill_full.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 30,
+                "x": 689,
+                "y": 543
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "wenhe_skill_unfull.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 30,
+                "x": 720,
+                "y": 543
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 30
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "meta": {
+        "image": "selfseat.png",
+        "prefix": "selfseat/"
+    }
+}

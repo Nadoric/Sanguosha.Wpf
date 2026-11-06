@@ -1,0 +1,1623 @@
+{
+    "frames": {
+        "GameEnvBg.png": {
+            "frame": {
+                "h": 150,
+                "idx": 0,
+                "w": 150,
+                "x": 962,
+                "y": 185
+            },
+            "sourceSize": {
+                "h": 150,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "GameEnvBoxBg.png": {
+            "frame": {
+                "h": 150,
+                "idx": 0,
+                "w": 150,
+                "x": 480,
+                "y": 322
+            },
+            "sourceSize": {
+                "h": 150,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "aozhan_info_normal.png": {
+            "frame": {
+                "h": 25,
+                "idx": 0,
+                "w": 25,
+                "x": 141,
+                "y": 483
+            },
+            "sourceSize": {
+                "h": 25,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "aozhan_info_over.png": {
+            "frame": {
+                "h": 25,
+                "idx": 0,
+                "w": 25,
+                "x": 650,
+                "y": 995
+            },
+            "sourceSize": {
+                "h": 25,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "equip_gift_icon.png": {
+            "frame": {
+                "h": 20,
+                "idx": 0,
+                "w": 38,
+                "x": 937,
+                "y": 763
+            },
+            "sourceSize": {
+                "h": 20,
+                "w": 38
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_0.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 782,
+                "y": 425
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_1.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 377,
+                "y": 874
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_2.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 377,
+                "y": 908
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_3.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 408,
+                "y": 822
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_4.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 436,
+                "y": 822
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_5.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 292,
+                "y": 572
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_6.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 320,
+                "y": 572
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_7.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 220,
+                "y": 744
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_8.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 220,
+                "y": 778
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "escapeWarn_9.png": {
+            "frame": {
+                "h": 33,
+                "idx": 0,
+                "w": 27,
+                "x": 1013,
+                "y": 990
+            },
+            "sourceSize": {
+                "h": 33,
+                "w": 27
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameActionBg.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 579,
+                "x": 175,
+                "y": 473
+            },
+            "sourceSize": {
+                "h": 35,
+                "w": 579
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseAiCao.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 118,
+                "x": 0,
+                "y": 624
+            },
+            "sourceSize": {
+                "h": 120,
+                "w": 118
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseBaoZhu.png": {
+            "frame": {
+                "h": 96,
+                "idx": 0,
+                "w": 43,
+                "x": 711,
+                "y": 509
+            },
+            "sourceSize": {
+                "h": 96,
+                "w": 43
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseBianPao.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 54,
+                "x": 1004,
+                "y": 664
+            },
+            "sourceSize": {
+                "h": 120,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseBianPao1.png": {
+            "frame": {
+                "h": 37,
+                "idx": 0,
+                "w": 26,
+                "x": 1092,
+                "y": 121
+            },
+            "sourceSize": {
+                "h": 37,
+                "w": 26
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseCaiye.png": {
+            "frame": {
+                "h": 110,
+                "idx": 0,
+                "w": 110,
+                "x": 358,
+                "y": 509
+            },
+            "sourceSize": {
+                "h": 110,
+                "w": 110
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseChunLian.png": {
+            "frame": {
+                "h": 84,
+                "idx": 0,
+                "w": 76,
+                "x": 944,
+                "y": 866
+            },
+            "sourceSize": {
+                "h": 84,
+                "w": 76
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseDaKaiGuangDang.png": {
+            "frame": {
+                "h": 210,
+                "idx": 0,
+                "w": 174,
+                "x": 518,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 210,
+                "w": 174
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseDaKaiNiZhuan.png": {
+            "frame": {
+                "h": 210,
+                "idx": 0,
+                "w": 174,
+                "x": 0,
+                "y": 272
+            },
+            "sourceSize": {
+                "h": 210,
+                "w": 174
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseDaKaimeng.png": {
+            "frame": {
+                "h": 210,
+                "idx": 0,
+                "w": 174,
+                "x": 305,
+                "y": 205
+            },
+            "sourceSize": {
+                "h": 210,
+                "w": 174
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseFu.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 587,
+                "y": 621
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseGuQin1.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 114,
+                "x": 1003,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 120,
+                "w": 114
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseGuQin2.png": {
+            "frame": {
+                "h": 86,
+                "idx": 0,
+                "w": 76,
+                "x": 927,
+                "y": 620
+            },
+            "sourceSize": {
+                "h": 86,
+                "w": 76
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseGuQin3.png": {
+            "frame": {
+                "h": 142,
+                "idx": 0,
+                "w": 132,
+                "x": 896,
+                "y": 477
+            },
+            "sourceSize": {
+                "h": 142,
+                "w": 132
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseGuQin4.png": {
+            "frame": {
+                "h": 88,
+                "idx": 0,
+                "w": 94,
+                "x": 0,
+                "y": 846
+            },
+            "sourceSize": {
+                "h": 88,
+                "w": 94
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseGuQin5.png": {
+            "frame": {
+                "h": 125,
+                "idx": 0,
+                "w": 125,
+                "x": 141,
+                "y": 618
+            },
+            "sourceSize": {
+                "h": 125,
+                "w": 125
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseGuiHuaJiu.png": {
+            "frame": {
+                "h": 184,
+                "idx": 0,
+                "w": 134,
+                "x": 868,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 184,
+                "w": 134
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHongBao.png": {
+            "frame": {
+                "h": 85,
+                "idx": 0,
+                "w": 142,
+                "x": 469,
+                "y": 509
+            },
+            "sourceSize": {
+                "h": 85,
+                "w": 142
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHongLian.png": {
+            "frame": {
+                "h": 80,
+                "idx": 0,
+                "w": 80,
+                "x": 1018,
+                "y": 785
+            },
+            "sourceSize": {
+                "h": 80,
+                "w": 80
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHongZao.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 88,
+                "x": 1003,
+                "y": 121
+            },
+            "sourceSize": {
+                "h": 58,
+                "w": 88
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHuiZhang1.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 267,
+                "y": 721
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHuiZhang2.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 368,
+                "y": 721
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHuiZhang3.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 119,
+                "y": 744
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHuiZhang4.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 0,
+                "y": 745
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseHuoBa.png": {
+            "frame": {
+                "h": 271,
+                "idx": 0,
+                "w": 304,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 271,
+                "w": 304
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseJiTui2.png": {
+            "frame": {
+                "h": 81,
+                "idx": 0,
+                "w": 121,
+                "x": 469,
+                "y": 788
+            },
+            "sourceSize": {
+                "h": 81,
+                "w": 121
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseJitui.png": {
+            "frame": {
+                "h": 111,
+                "idx": 0,
+                "w": 98,
+                "x": 612,
+                "y": 509
+            },
+            "sourceSize": {
+                "h": 111,
+                "w": 98
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseKaFei.png": {
+            "frame": {
+                "h": 91,
+                "idx": 0,
+                "w": 117,
+                "x": 469,
+                "y": 595
+            },
+            "sourceSize": {
+                "h": 91,
+                "w": 117
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseKongQue.png": {
+            "frame": {
+                "h": 92,
+                "idx": 0,
+                "w": 114,
+                "x": 711,
+                "y": 618
+            },
+            "sourceSize": {
+                "h": 92,
+                "w": 114
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseLine.png": {
+            "frame": {
+                "h": 5,
+                "idx": 0,
+                "w": 15,
+                "x": 480,
+                "y": 205
+            },
+            "sourceSize": {
+                "h": 5,
+                "w": 15
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseLuckFreeBg.png": {
+            "frame": {
+                "h": 31,
+                "idx": 0,
+                "w": 222,
+                "x": 90,
+                "y": 965
+            },
+            "sourceSize": {
+                "h": 31,
+                "w": 222
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseMiaoChenShi.png": {
+            "frame": {
+                "h": 140,
+                "idx": 0,
+                "w": 140,
+                "x": 968,
+                "y": 336
+            },
+            "sourceSize": {
+                "h": 140,
+                "w": 140
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseMiaoLvBu.png": {
+            "frame": {
+                "h": 140,
+                "idx": 0,
+                "w": 140,
+                "x": 755,
+                "y": 477
+            },
+            "sourceSize": {
+                "h": 140,
+                "w": 140
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseMiaoMouXuShen.png": {
+            "frame": {
+                "h": 140,
+                "idx": 0,
+                "w": 140,
+                "x": 827,
+                "y": 336
+            },
+            "sourceSize": {
+                "h": 140,
+                "w": 140
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseMiaoWuLuXun.png": {
+            "frame": {
+                "h": 140,
+                "idx": 0,
+                "w": 140,
+                "x": 0,
+                "y": 483
+            },
+            "sourceSize": {
+                "h": 140,
+                "w": 140
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBasePaoFu.png": {
+            "frame": {
+                "h": 210,
+                "idx": 0,
+                "w": 174,
+                "x": 693,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 210,
+                "w": 174
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBasePiPa.png": {
+            "frame": {
+                "h": 195,
+                "idx": 0,
+                "w": 117,
+                "x": 175,
+                "y": 272
+            },
+            "sourceSize": {
+                "h": 195,
+                "w": 117
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseQinQin.png": {
+            "frame": {
+                "h": 80,
+                "idx": 0,
+                "w": 80,
+                "x": 937,
+                "y": 785
+            },
+            "sourceSize": {
+                "h": 80,
+                "w": 80
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseShaoXiang.png": {
+            "frame": {
+                "h": 80,
+                "idx": 0,
+                "w": 80,
+                "x": 863,
+                "y": 890
+            },
+            "sourceSize": {
+                "h": 80,
+                "w": 80
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseShuiTong.png": {
+            "frame": {
+                "h": 102,
+                "idx": 0,
+                "w": 93,
+                "x": 101,
+                "y": 845
+            },
+            "sourceSize": {
+                "h": 102,
+                "w": 93
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseSmartBubbleBg.png": {
+            "frame": {
+                "h": 68,
+                "idx": 0,
+                "w": 68,
+                "x": 944,
+                "y": 951
+            },
+            "sourceSize": {
+                "h": 68,
+                "w": 68
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseSmartBubbleCircle.png": {
+            "frame": {
+                "h": 68,
+                "idx": 0,
+                "w": 68,
+                "x": 867,
+                "y": 809
+            },
+            "sourceSize": {
+                "h": 68,
+                "w": 68
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseSmartBubbleMsgBg.png": {
+            "frame": {
+                "h": 30,
+                "idx": 0,
+                "w": 31,
+                "x": 444,
+                "y": 416
+            },
+            "sourceSize": {
+                "h": 30,
+                "w": 31
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseSmartBubbleTip.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 91,
+                "x": 1013,
+                "y": 951
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 91
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseXianhua.png": {
+            "frame": {
+                "h": 95,
+                "idx": 0,
+                "w": 75,
+                "x": 1029,
+                "y": 568
+            },
+            "sourceSize": {
+                "h": 95,
+                "w": 75
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseYueBing.png": {
+            "frame": {
+                "h": 204,
+                "idx": 0,
+                "w": 212,
+                "x": 305,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 204,
+                "w": 212
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseYueBing1.png": {
+            "frame": {
+                "h": 57,
+                "idx": 0,
+                "w": 60,
+                "x": 313,
+                "y": 965
+            },
+            "sourceSize": {
+                "h": 57,
+                "w": 60
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseZhengYan.png": {
+            "frame": {
+                "h": 80,
+                "idx": 0,
+                "w": 80,
+                "x": 786,
+                "y": 809
+            },
+            "sourceSize": {
+                "h": 80,
+                "w": 80
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseZhuDeYi.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 368,
+                "y": 620
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseZhuMiMang.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 267,
+                "y": 620
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseZhuShouShang.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 826,
+                "y": 620
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseZhuTiaoWu.png": {
+            "frame": {
+                "h": 100,
+                "idx": 0,
+                "w": 100,
+                "x": 469,
+                "y": 687
+            },
+            "sourceSize": {
+                "h": 100,
+                "w": 100
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBaseZongZi.png": {
+            "frame": {
+                "h": 85,
+                "idx": 0,
+                "w": 89,
+                "x": 0,
+                "y": 935
+            },
+            "sourceSize": {
+                "h": 85,
+                "w": 89
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBase_juexing_name_bg.png": {
+            "frame": {
+                "h": 205,
+                "idx": 0,
+                "w": 48,
+                "x": 688,
+                "y": 711
+            },
+            "sourceSize": {
+                "h": 205,
+                "w": 48
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameBase_xianding_name_bg.png": {
+            "frame": {
+                "h": 205,
+                "idx": 0,
+                "w": 48,
+                "x": 737,
+                "y": 711
+            },
+            "sourceSize": {
+                "h": 205,
+                "w": 48
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameElf_1.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 150,
+                "x": 377,
+                "y": 961
+            },
+            "sourceSize": {
+                "h": 43,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameElf_2.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 150,
+                "x": 786,
+                "y": 721
+            },
+            "sourceSize": {
+                "h": 43,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameElf_3.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 150,
+                "x": 786,
+                "y": 765
+            },
+            "sourceSize": {
+                "h": 43,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameElf_4.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 150,
+                "x": 293,
+                "y": 416
+            },
+            "sourceSize": {
+                "h": 43,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameElf_5.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 150,
+                "x": 141,
+                "y": 572
+            },
+            "sourceSize": {
+                "h": 43,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameElf_6.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 150,
+                "x": 631,
+                "y": 425
+            },
+            "sourceSize": {
+                "h": 43,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gamePause.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 216,
+                "x": 141,
+                "y": 509
+            },
+            "sourceSize": {
+                "h": 62,
+                "w": 216
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gamePauseContinue.png": {
+            "frame": {
+                "h": 102,
+                "idx": 0,
+                "w": 195,
+                "x": 631,
+                "y": 322
+            },
+            "sourceSize": {
+                "h": 102,
+                "w": 195
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameSkinScoreIcon_s.png": {
+            "frame": {
+                "h": 23,
+                "idx": 0,
+                "w": 28,
+                "x": 1092,
+                "y": 159
+            },
+            "sourceSize": {
+                "h": 23,
+                "w": 28
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "gameZhushaIcon_s.png": {
+            "frame": {
+                "h": 31,
+                "idx": 0,
+                "w": 42,
+                "x": 528,
+                "y": 961
+            },
+            "sourceSize": {
+                "h": 31,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "mvpNameText.png": {
+            "frame": {
+                "h": 61,
+                "idx": 0,
+                "w": 419,
+                "x": 480,
+                "y": 211
+            },
+            "sourceSize": {
+                "h": 61,
+                "w": 419
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "operate_tips_bg.png": {
+            "frame": {
+                "h": 51,
+                "idx": 0,
+                "w": 187,
+                "x": 220,
+                "y": 822
+            },
+            "sourceSize": {
+                "h": 51,
+                "w": 187
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "selectZhuShaBg.png": {
+            "frame": {
+                "h": 26,
+                "idx": 0,
+                "w": 121,
+                "x": 528,
+                "y": 995
+            },
+            "sourceSize": {
+                "h": 26,
+                "w": 121
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_0.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 408,
+                "y": 870
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_1.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 591,
+                "y": 813
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_2.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 591,
+                "y": 722
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_3.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 499,
+                "y": 870
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_4.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 590,
+                "y": 904
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_5.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 195,
+                "y": 874
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_6.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 286,
+                "y": 874
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_7.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 681,
+                "y": 917
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_8.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 772,
+                "y": 917
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "shoupo_9.png": {
+            "frame": {
+                "h": 90,
+                "idx": 0,
+                "w": 90,
+                "x": 1029,
+                "y": 477
+            },
+            "sourceSize": {
+                "h": 90,
+                "w": 90
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "win_condition_bg.png": {
+            "frame": {
+                "h": 55,
+                "idx": 0,
+                "w": 53,
+                "x": 937,
+                "y": 707
+            },
+            "sourceSize": {
+                "h": 55,
+                "w": 53
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "win_condition_title.png": {
+            "frame": {
+                "h": 48,
+                "idx": 0,
+                "w": 481,
+                "x": 480,
+                "y": 273
+            },
+            "sourceSize": {
+                "h": 48,
+                "w": 481
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "meta": {
+        "image": "gameBase.png",
+        "prefix": "gameBase/"
+    }
+}
