@@ -25,7 +25,8 @@ public sealed partial class GameEngine
         {
             if (selected.Count >= maximum) { done(selected); return; }
             List<SkillDecisionOption> options = candidates.Where(card => !selected.Contains(card))
-                .Select(card => new SkillDecisionOption(card.Id.ToString(), CardLabel(card) + (owner.Equipment.Contains(card) ? "（装备区）" : ""))).ToList();
+                .Select(card => new SkillDecisionOption(card.Id.ToString(),
+                    CardLabel(card) + (owner.Equipment.Contains(card) ? "（装备区）" : ""), PreviewCard: card)).ToList();
             if (selected.Count >= minimum) options.Add(new("done", "完成选择"));
             string ai = selected.Count >= minimum && !(prompt.StartsWith("界仁德") && selected.Count < Math.Min(2, maximum)) ? "done" : candidates.Except(selected).MinBy(KeepValue)!.Id.ToString();
             Decide(owner, $"{prompt}（已选{selected.Count}，需{minimum}至{maximum}张）", options, ai, key =>
@@ -48,7 +49,9 @@ public sealed partial class GameEngine
     {
         List<Player> players = candidates.Where(player => player.IsAlive).ToList();
         if (players.Count == 0) { done(null); return; }
-        List<SkillDecisionOption> options = players.Select(player => new SkillDecisionOption(player.Seat.ToString(), $"{player.Seat + 1}号 · {player.Hero.Name}")).ToList();
+        List<SkillDecisionOption> options = players.Select(player => new SkillDecisionOption(
+            player.Seat.ToString(), $"{player.Seat + 1}号 · {player.Hero.Name}",
+            PreviewHeroId: player.Hero.Id)).ToList();
         if (optional) options.Add(new("no", "不发动 / 完成"));
         Player best = players.MaxBy(score)!;
         Decide(owner, prompt, options, optional && score(best) <= 0 ? "no" : best.Seat.ToString(), key =>
@@ -80,7 +83,8 @@ public sealed partial class GameEngine
             Player chooser = replacers[index];
             List<Card> cards = (((chooser.RuleId == "re_simayi" && chooser.HasAbility("鬼才")) || (chooser.RuleId == "zhangjiao" && chooser.HasAbility("鬼道"))) ? He(chooser) : chooser.Hand).Where(card => !((chooser.RuleId == "zhangjiao" && chooser.HasAbility("鬼道"))) || !RedFor(chooser, card)).ToList();
             if (cards.Count == 0) { Replace(index + 1); return; }
-            List<SkillDecisionOption> options = cards.Select(card => new SkillDecisionOption(card.Id.ToString(), CardLabel(card))).ToList();
+            List<SkillDecisionOption> options = cards.Select(card => new SkillDecisionOption(
+                card.Id.ToString(), CardLabel(card), PreviewCard: card)).ToList();
             options.Add(new("no", "不改判"));
             // Basic AI changes only a clearly beneficial delayed/armor judgment; it never sees hidden opponent cards.
             double Value(Card card) => reason switch { "乐不思蜀" => SuitFor(judged, card) == "♥" ? 1 : -1, "兵粮寸断" => SuitFor(judged, card) == "♣" ? 1 : -1, "屯田" => SuitFor(judged, card) != "♥" ? 1 : -1, "雷击" => SuitFor(judged, card) == "♠" ? -1 : 1, "闪电" => SuitFor(judged, card) == "♠" && card.Rank is >= 2 and <= 9 ? -1 : 1, "八卦阵" or "洛神" => RedFor(judged, card) == (reason == "八卦阵") ? 1 : -1, _ => 0 };
@@ -118,8 +122,8 @@ public sealed partial class GameEngine
                 EmitSkill(actor, "观星"); AddLog($"{actor.Hero.Name}观星：{top.Count}张置顶，{bottom.Count}张置底。"); done(); return;
             }
             List<SkillDecisionOption> options = remaining.SelectMany(card => new[] {
-                new SkillDecisionOption($"top:{card.Id}", $"置顶 · {CardLabel(card)}"),
-                new SkillDecisionOption($"bottom:{card.Id}", $"置底 · {CardLabel(card)}") }).ToList();
+                new SkillDecisionOption($"top:{card.Id}", $"置顶 · {CardLabel(card)}", PreviewCard: card),
+                new SkillDecisionOption($"bottom:{card.Id}", $"置底 · {CardLabel(card)}", PreviewCard: card) }).ToList();
             Card best = remaining.MaxBy(KeepValue)!;
             Decide(actor, "观星：按未来摸牌先后逐张选择牌及顶/底位置（仅你可见）", options, $"top:{best.Id}", key =>
             { string[] parts = key.Split(':'); Card card = remaining.First(card => card.Id == int.Parse(parts[1])); remaining.Remove(card); (parts[0] == "top" ? top : bottom).Add(card); Pick(); });

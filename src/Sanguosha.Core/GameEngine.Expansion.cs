@@ -241,7 +241,7 @@ namespace Sanguosha.Core
                 Card best = player.Hand.OrderByDescending(card => card.Rank).First();
                 Decide(player, $"拼点：{player.Hero.Name}请选择自己的手牌；双方选择后才公开。",
                     player.Hand.Select(card => new SkillDecisionOption(card.Id.ToString(),
-                        $"{card.Suit}{card.RankText} · {card.Name}")).ToArray(), best.Id.ToString(),
+                        $"{card.Suit}{card.RankText} · {card.Name}", PreviewCard: card)).ToArray(), best.Id.ToString(),
                     key => chosen(player.Hand.Single(card => card.Id.ToString() == key)));
             }
 
@@ -281,7 +281,7 @@ namespace Sanguosha.Core
                 // A sacrificed equipped weapon must not supply the range for its own cost.
                 .Where(card => !actor.Equipment.Contains(card) || Distance(actor, target) <= 1).ToList();
             List<SkillDecisionOption> options = weapons.Select(card => new SkillDecisionOption(
-                card.Id.ToString(), $"弃置{(actor.Equipment.Contains(card) ? "已装备" : "手牌")}{card.Name}（{card.Suit}{card.RankText}）")).ToList();
+                card.Id.ToString(), $"弃置{(actor.Equipment.Contains(card) ? "已装备" : "手牌")}{card.Name}（{card.Suit}{card.RankText}）", PreviewCard: card)).ToList();
             options.Add(new("hp", "失去1点体力"));
             options.Add(new("cancel", "取消强袭"));
             string ai = weapons.FirstOrDefault()?.Id.ToString() ?? (actor.Health > 1 ? "hp" : "cancel");

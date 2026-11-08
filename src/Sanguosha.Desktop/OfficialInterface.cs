@@ -19,6 +19,7 @@ namespace Sanguosha.Desktop
         public static BitmapSource Confirm => Get("selfseat", "SpellOptSelectorButton_normal.png");
         public static BitmapSource ConfirmHover => Get("selfseat", "SpellOptSelectorButton_over.png");
         public static BitmapSource Cancel => Get("selfseat", "SpellOptCancelButton_normal.png");
+        public static BitmapSource CancelHover => Get("selfseat", "SpellOptCancelButton_over.png");
         public static BitmapSource Skill => Get("selfseat", "skill_common_up.png");
         public static BitmapSource OwnFrame => Get("seat_bottom", "genearlBaseBg1.png");
         public static BitmapSource OwnEquipment => Get("seat_bottom", "selfSeatEquipBg.png");
@@ -29,6 +30,9 @@ namespace Sanguosha.Desktop
         public static BitmapSource OffensiveHorseSlot => Get("selfseat", "self_equip_jianyima.png");
         public static BitmapSource HandBadge => Get("seat", "handCardsBg.png");
         public static BitmapSource NameBar => Get("seat", "TableSeatNameBg.png");
+        public static BitmapSource DialogBackground => Get("newStyleWindowCommon", "newStyleWindowCommonBg.png");
+        public static BitmapSource DialogSection => Get("newStyleWindowCommon", "NSWindowSecondTitle.png");
+        public static BitmapSource CardBack => Get("cardBack", "EmptyCard_png.png");
 
         public static BitmapSource Get(string atlas, string name)
         {

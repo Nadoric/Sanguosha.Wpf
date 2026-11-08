@@ -89,7 +89,7 @@ namespace Sanguosha.Core
             List<Card> cards = actor.Hand.Concat(actor.Equipment).ToList();
             if (cards.Count == 0) { done(null); return; }
             List<SkillDecisionOption> options = cards.Select(card => new SkillDecisionOption(card.Id.ToString(),
-                $"弃置{(actor.Equipment.Contains(card) ? "装备" : "手牌")} · {card.Suit}{card.RankText} {card.Name}")).ToList();
+                $"弃置{(actor.Equipment.Contains(card) ? "装备" : "手牌")} · {card.Suit}{card.RankText} {card.Name}", PreviewCard: card)).ToList();
             options.Add(new("cancel", "取消"));
             Decide(actor, prompt, options, cards.OrderBy(KeepValue).First().Id.ToString(), key =>
             {

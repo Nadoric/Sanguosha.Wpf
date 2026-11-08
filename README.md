@@ -12,6 +12,10 @@
 
 ![武将皮肤预览](docs/screenshots/skins.png)
 
+![官方风格卡牌选择弹窗](docs/screenshots/dialog-cards.png)
+
+卡牌与技能选择窗口使用官网古卷底板、木色题栏、纹样分区和卡牌背面，以及官方确认/取消按钮。手牌、装备和判定区分开显示；制衡、拼点、改判、观星等选牌显示合法可见牌面、花色与点数，目标选择显示武将头像。“发动／不发动／完成”在底部单独排列，长列表可滚动，保留键盘操作与隐藏信息限制。
+
 ## 运行
 
 Windows 10/11，安装 **.NET 10 Windows Desktop Runtime**。开发需 .NET 10 SDK（或支持 .NET 10 的 Visual Studio）。无第三方 NuGet 包。
@@ -159,6 +163,7 @@ dotnet run --project src/Sanguosha.Desktop --configuration Release -- --verify-u
 dotnet run --project src/Sanguosha.Desktop --configuration Release -- --verify-audio artifacts/audio-verification
 dotnet run --project src/Sanguosha.Desktop --configuration Release -- --verify-effects artifacts/effects
 dotnet run --project src/Sanguosha.Desktop --configuration Release -- --verify-skins artifacts/skins
+dotnet run --project src/Sanguosha.Desktop --configuration Release -- --verify-dialogs artifacts/dialogs
 ```
 
 规则验证包含非法攻击、距离、响应、救援、胜负、技能、存档损坏检测及新增武将/界将的专项交互验证，并以固定种子运行400局，覆盖90项武将选择与四种模式（360种组合），并遍历四种玩家身份；每一步检查119张新局/108张旧档实体牌守恒。测试恢复存档时注入固定随机种子，保证重新洗牌后的模拟仍可重复。以下Windows界面验证工具使用WPF离屏渲染大厅、阵营筛选、四种对局布局、选牌、技能转换、响应及结算页，并驱动按钮处理逻辑完成一局，检查绑定错误。截图位于 `artifacts/ui`。本次Linux交叉构建与规则验证通过；新增WPF界面/音频需在Windows执行上述命令复核。

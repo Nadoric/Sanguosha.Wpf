@@ -260,7 +260,7 @@ namespace Sanguosha.Core
                 }).ToList();
                 if (choices.Count == 0) return false;
                 Phase = GamePhase.Resolving;
-                Decide(actor, "装备转化：选择已装备且可合法转化使用的牌", choices.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item))).ToList(), choices.MinBy(KeepValue)!.Id.ToString(), key =>
+                Decide(actor, "装备转化：选择已装备且可合法转化使用的牌", choices.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item), PreviewCard: item)).ToList(), choices.MinBy(KeepValue)!.Id.ToString(), key =>
                 {
                     Card selected = choices.First(item => item.Id.ToString() == key);
                     actor.Equipment.Remove(selected); actor.Hand.Add(selected); OnEquipmentLost(actor);

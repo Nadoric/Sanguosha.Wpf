@@ -187,13 +187,13 @@ namespace Sanguosha.Desktop
             HandCard_Click(new Button { Tag = chosen }, new RoutedEventArgs());
             Target_Click(new Button { Tag = 1 }, new RoutedEventArgs());
             Primary_Click(this, new RoutedEventArgs());
-            if (CardChoiceOverlay.Visibility != Visibility.Visible || CardChoiceButtons.Children.OfType<WrapPanel>().Count() != 3)
+            if (CardChoiceOverlay.Visibility != Visibility.Visible ||
+                DialogElements<WrapPanel>(CardChoiceButtons).Count(row => row.Tag is CardZone) != 3)
             {
                 throw new InvalidOperationException("Steal did not display all three target card zones.");
             }
 
-            Button[] choiceButtons = CardChoiceButtons.Children.OfType<WrapPanel>()
-                .SelectMany(row => row.Children.OfType<Button>()).ToArray();
+            Button[] choiceButtons = DialogButtons().ToArray();
             Button[] hiddenButtons = choiceButtons.Where(button => button.Tag is TargetCardOption { Zone: CardZone.Hand }).ToArray();
             if (hiddenButtons.Length != game.Players[1].Hand.Count || hiddenButtons.Any(button =>
                 button.Tag is not TargetCardOption { CardId: null, HandPosition: not null } ||
@@ -205,7 +205,7 @@ namespace Sanguosha.Desktop
                 JudgmentFace(game.Players[1], shortage) != CardKind.SupplyShortage)
                 throw new InvalidOperationException("Judgment thumbnails were incorrectly forced to Indulgence.");
             Capture(Path.Combine(directory, "09-steal-choice.png"));
-            Button button = CardChoiceButtons.Children.OfType<WrapPanel>().SelectMany(row => row.Children.OfType<Button>()).Single(item =>
+            Button button = DialogButtons().Single(item =>
                 item.Tag is TargetCardOption { Zone: CardZone.Equipment });
             button.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             if (CardChoiceOverlay.Visibility != Visibility.Collapsed ||

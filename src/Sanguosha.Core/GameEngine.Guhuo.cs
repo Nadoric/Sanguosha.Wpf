@@ -107,7 +107,7 @@ public sealed partial class GameEngine
     {
         List<Card> normal = player.Hand.Where(card => CanTransform(player, card, kind)).ToList();
         List<Card> claims = GuhuoClaims().Where(claim => kind == ResponseKind.Slash ? claim.Kind == CardKind.Slash : kind == ResponseKind.Dodge ? claim.Kind == CardKind.Dodge : claim.Kind == CardKind.Peach || claim.Kind == CardKind.Wine && dyingPlayers.LastOrDefault() == player).ToList();
-        List<SkillDecisionOption> options = normal.Select(card => new SkillDecisionOption("direct:" + card.Id, "直接响应 · " + CardLabel(card))).ToList();
+        List<SkillDecisionOption> options = normal.Select(card => new SkillDecisionOption("direct:" + card.Id, "直接响应 · " + CardLabel(card), PreviewCard: card)).ToList();
         if (CanGuhuo(player)) options.AddRange(claims.Select(claim => new SkillDecisionOption(ClaimKey(claim), "蛊惑声明 · " + claim.Name)));
         options.Add(new("no", "放弃响应"));
         string ai = normal.Count > 0 ? "direct:" + normal.MinBy(KeepValue)!.Id : CanGuhuo(player) ? ClaimKey(claims[0]) : "no";

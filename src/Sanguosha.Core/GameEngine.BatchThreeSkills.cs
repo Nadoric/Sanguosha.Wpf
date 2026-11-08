@@ -20,7 +20,7 @@ public sealed partial class GameEngine
         {
             List<Card> valid = actor.Hand.Where(item => actor.Hand.Count(other => SuitFor(actor, other) == SuitFor(actor, item)) >= 2).ToList();
             if (valid.Count < 2) return false; Phase = GamePhase.Resolving;
-            Decide(actor, "乱击：选择第一张手牌", valid.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item))).ToList(), valid.MinBy(KeepValue)!.Id.ToString(), key =>
+            Decide(actor, "乱击：选择第一张手牌", valid.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item), PreviewCard: item)).ToList(), valid.MinBy(KeepValue)!.Id.ToString(), key =>
             {
                 Card first = valid.First(item => item.Id.ToString() == key);
                 ChooseOwnCards(actor, "乱击：选择另一张同花色手牌", 1, 1, false, cards =>
@@ -58,7 +58,7 @@ public sealed partial class GameEngine
             if (!actor.Awakened || actor.Zone("田").Count == 0 || target == null || target == actor || He(target).Count() + target.Judgments.Count == 0 || ((target.RuleId == "luxun" && target.HasAbility("谦逊")))) return false;
             List<Card> choices = actor.Zone("田").ToList().Where(item => { actor.Zone("田").Remove(item); bool legal = Distance(actor, target) <= 1; actor.Zone("田").Add(item); return legal && !(((target.RuleId == "jiaxu" && target.HasAbility("乱武"))) && !item.IsRed); }).ToList();
             if (choices.Count == 0) return false; Phase = GamePhase.Resolving;
-            Decide(actor, "急袭：选择一张田当顺手牵羊（移去此田后计算距离）", choices.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item))).ToList(), choices.MinBy(KeepValue)!.Id.ToString(), key =>
+            Decide(actor, "急袭：选择一张田当顺手牵羊（移去此田后计算距离）", choices.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item), PreviewCard: item)).ToList(), choices.MinBy(KeepValue)!.Id.ToString(), key =>
                 VirtualCard(actor, CardKind.Steal, new() { choices.First(item => item.Id.ToString() == key) }, new() { target }, "急袭", done)); return true;
         }
         if (((actor.RuleId == "liushan" && actor.HasAbility("激将")))) return UseJijiang(actor, target);
@@ -113,7 +113,7 @@ public sealed partial class GameEngine
             if (actor.SkillUsed || target == null || target == actor || target.Hand.Count == 0) return false;
             actor.SkillUsed = true; Phase = GamePhase.Resolving;
             List<Card> hearts = target.Hand.Where(item => SuitFor(target, item) == "♥").ToList();
-            List<SkillDecisionOption> options = target.Hand.Select(item => new SkillDecisionOption(hearts.Contains(item) ? item.Id.ToString() : "view:" + item.Id, (hearts.Contains(item) ? "选择红桃 · " : "仅查看 · ") + CardLabel(item))).ToList(); options.Add(new("no", "只观看，不处理牌"));
+            List<SkillDecisionOption> options = target.Hand.Select(item => new SkillDecisionOption(hearts.Contains(item) ? item.Id.ToString() : "view:" + item.Id, (hearts.Contains(item) ? "选择红桃 · " : "仅查看 · ") + CardLabel(item), PreviewCard: item)).ToList(); options.Add(new("no", "只观看，不处理牌"));
             Decide(actor, "攻心：观看目标手牌，可选择红桃弃置或置顶（仅你可见）", options, hearts.Count > 0 ? hearts.MaxBy(KeepValue)!.Id.ToString() : "no", key =>
             {
                 if (key == "no" || key.StartsWith("view:")) { done(); return; } Card chosen = hearts.First(item => item.Id.ToString() == key); ShowCard(chosen);
@@ -153,7 +153,7 @@ public sealed partial class GameEngine
             int range = actor.Equipment.Contains(card) && EquipmentSlot(card) == 0 ? 1 : actor.AttackRange;
             if ((Distance(actor, target) <= range || actor.SkillIdentity == "re_guanyu" && actor.HasAbility("武圣") && SuitFor(actor, card) == "♦") && !(((target.RuleId == "zhugeliang" && target.HasAbility("空城"))) && target.Hand.Count == 0)) legal.Add((card, target));
         }
-        List<SkillDecisionOption> options = legal.Select(pair => new SkillDecisionOption($"{pair.Card.Id}:{pair.Target.Seat}", $"{CardLabel(pair.Card)} → {pair.Target.Hero.Name}")).ToList(); if (CanGuhuo(actor)) options.Add(new("guhuo", "蛊惑声明杀")); options.Add(new("no", "不使用杀"));
+        List<SkillDecisionOption> options = legal.Select(pair => new SkillDecisionOption($"{pair.Card.Id}:{pair.Target.Seat}", $"{CardLabel(pair.Card)} → {pair.Target.Hero.Name}", PreviewCard: pair.Card)).ToList(); if (CanGuhuo(actor)) options.Add(new("guhuo", "蛊惑声明杀")); options.Add(new("no", "不使用杀"));
         var best = legal.OrderByDescending(pair => Hostility(actor, pair.Target)).ThenBy(pair => KeepValue(pair.Card)).FirstOrDefault();
         Decide(actor, reason + "：选择杀及目标", options, best.Card != null && Hostility(actor, best.Target) > 0 ? $"{best.Card.Id}:{best.Target.Seat}" : "no", key =>
         {

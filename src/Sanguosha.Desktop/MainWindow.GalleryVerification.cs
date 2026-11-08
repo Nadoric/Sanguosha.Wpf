@@ -118,10 +118,13 @@ public partial class MainWindow
                         ?? throw new InvalidOperationException("Vertical gallery scrollbar missing.");
                     foreach (double value in new[] { 0d, bar.Maximum / 2, bar.Maximum, 0d })
                     {
-                        bar.RaiseEvent(new ScrollEventArgs(ScrollEventType.ThumbTrack, value) { RoutedEvent = ScrollBar.ScrollEvent });
+                        // 原生滑块通过路由命令改变偏移，Scroll事件本身仅用于通知。
+                        ScrollBar.ScrollToVerticalOffsetCommand.Execute(value, bar);
                         Layout();
                         if (Math.Abs(panel.VerticalOffset - Math.Clamp(value, 0, Math.Max(0, panel.ExtentHeight - panel.ViewportHeight))) > 1)
-                            throw new InvalidOperationException("Scrollbar thumb range does not reach all rows.");
+                            throw new InvalidOperationException($"Scrollbar thumb range does not reach all rows: " +
+                                $"faction={faction}, requested={value}, actual={panel.VerticalOffset}, " +
+                                $"barMaximum={bar.Maximum}, extent={panel.ExtentHeight}, viewport={panel.ViewportHeight}.");
                         CheckPage(panel, seen);
                     }
                     foreach (Key key in new[] { Key.Home, Key.Right, Key.Down, Key.PageDown, Key.End })

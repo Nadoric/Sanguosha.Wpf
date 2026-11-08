@@ -57,7 +57,7 @@ public sealed partial class GameEngine
                     EmitSkill(victim, "反馈");
                     if (source == victim)
                     {
-                        Decide(victim, "反馈：将自己一张装备收入手牌", source.Equipment.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item))).ToList(), source.Equipment[0].Id.ToString(), key =>
+                        Decide(victim, "反馈：将自己一张装备收入手牌", source.Equipment.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item), PreviewCard: item)).ToList(), source.Equipment[0].Id.ToString(), key =>
                         { Card selected = source.Equipment.First(item => item.Id.ToString() == key); source.Equipment.Remove(selected); Gain(source, selected); OnEquipmentLost(source); Next(index + 1); });
                     }
                     else ChooseOtherCard(victim, source, true, () => Next(index + 1));
@@ -85,7 +85,7 @@ public sealed partial class GameEngine
                     void Give()
                     {
                         if (gained.Count == 0 || given >= 2) { Next(index + 1); return; }
-                        List<SkillDecisionOption> options = gained.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item))).ToList(); options.Add(new("done", "保留剩余牌"));
+                        List<SkillDecisionOption> options = gained.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item), PreviewCard: item)).ToList(); options.Add(new("done", "保留剩余牌"));
                         Decide(victim, ((victim.SkillIdentity == "re_guojia" && victim.HasAbility("遗计"))) ? "界遗计：选择任意手牌分配（至多两张），或保留" : "遗计：选择一张新摸的牌分配，或保留", options, "done", key =>
                         {
                             if (key == "done") { Next(index + 1); return; }

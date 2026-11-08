@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Sanguosha.Desktop">
+    <Style x:Key="DialogConfirmButton" TargetType="Button">
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Height" Value="44" />
+        <Setter Property="Margin" Value="8,0,0,0" />
+        <Setter Property="Foreground" Value="#3E291A" />
+        <Setter Property="FontFamily" Value="KaiTi, SimSun" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Background">
+            <Setter.Value><ImageBrush ImageSource="{x:Static local:OfficialInterface.Confirm}" /></Setter.Value>
+        </Setter>
+        <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+            <Border x:Name="ActionSurface" Background="{TemplateBinding Background}" Padding="10,4">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsKeyboardFocused" Value="True">
+                    <Setter TargetName="ActionSurface" Property="Opacity" Value="0.8" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ActionSurface" Property="Opacity" Value="0.65" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate></Setter.Value></Setter>
+        <Style.Triggers><Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Background">
+                <Setter.Value><ImageBrush ImageSource="{x:Static local:OfficialInterface.ConfirmHover}" /></Setter.Value>
+            </Setter>
+        </Trigger></Style.Triggers>
+    </Style>
+    <Style x:Key="DialogCancelButton" TargetType="Button" BasedOn="{StaticResource DialogConfirmButton}">
+        <Setter Property="Background">
+            <Setter.Value><ImageBrush ImageSource="{x:Static local:OfficialInterface.Cancel}" /></Setter.Value>
+        </Setter>
+        <Style.Triggers><Trigger Property="IsMouseOver" Value="True">
+            <Setter Property="Background">
+                <Setter.Value><ImageBrush ImageSource="{x:Static local:OfficialInterface.CancelHover}" /></Setter.Value>
+            </Setter>
+        </Trigger></Style.Triggers>
+    </Style>
+    <Style x:Key="DialogCardButton" TargetType="Button">
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Margin" Value="0,0,6,8" />
+        <Setter Property="Width" Value="110" />
+        <Setter Property="Foreground" Value="#43321F" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="CardFrame" BorderBrush="#9E8054" BorderThickness="1"
+                            Background="#40FFF1D1" CornerRadius="4" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="CardFrame" Property="BorderBrush" Value="#B87B23" />
+                            <Setter TargetName="CardFrame" Property="Background" Value="#AAFFE8A7" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="CardFrame" Property="BorderBrush" Value="#9C551C" />
+                            <Setter TargetName="CardFrame" Property="Background" Value="#B0FFE8A7" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="CardFrame" Property="Opacity" Value="0.7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DialogOptionButton" TargetType="Button" BasedOn="{StaticResource DialogCardButton}">
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="MinWidth" Value="210" />
+        <Setter Property="MinHeight" Value="60" />
+        <Setter Property="MaxWidth" Value="430" />
+        <Setter Property="Margin" Value="0,0,12,12" />
+        <Setter Property="Padding" Value="20,12" />
+        <Setter Property="FontFamily" Value="KaiTi, SimSun" />
+        <Setter Property="FontSize" Value="19" />
+    </Style>
+</ResourceDictionary>

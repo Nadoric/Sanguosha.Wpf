@@ -9,7 +9,7 @@ namespace Sanguosha.Desktop
         {
             base.OnStartup(e);
             if (e.Args.Length == 2 && e.Args[0] is
-                "--verify-ui" or "--verify-audio" or "--verify-effects" or "--verify-skins")
+                "--verify-ui" or "--verify-audio" or "--verify-effects" or "--verify-skins" or "--verify-dialogs")
             {
                 try
                 {
@@ -17,6 +17,10 @@ namespace Sanguosha.Desktop
                     if (e.Args[0] == "--verify-ui")
                     {
                         window.RunUiVerification(Path.GetFullPath(e.Args[1]));
+                    }
+                    else if (e.Args[0] == "--verify-dialogs")
+                    {
+                        window.RunDialogVerification(Path.GetFullPath(e.Args[1]));
                     }
                     else if (e.Args[0] == "--verify-skins")
                     {

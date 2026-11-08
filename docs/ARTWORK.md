@@ -37,6 +37,8 @@
 
 ## 核验与重新下载
 
+2026-11-08补充官方弹窗素材：`newStyleBaseUI/newStyleWindowCommon.atlas/.png`与`cards/normal/cardBack.atlas/.png`。原图和坐标保持官网下载内容，在WPF中按九宫格保留边角与标题栏比例；隐藏手牌使用官方`EmptyCard`背面。新增四个文件的URL和SHA-256合并记录在 `Assets/Official/Interface/sources.json`。
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File tools/Verify-OfficialAssets.ps1
 powershell -ExecutionPolicy Bypass -File tools/Download-OfficialAssets.ps1

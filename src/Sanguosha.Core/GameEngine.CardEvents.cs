@@ -92,7 +92,7 @@ public sealed partial class GameEngine
         if (!responder.IsAlive || candidates.Count == 0 && !CanGuhuo(responder)) { Counterspell(actor, kind, target, negated, next, passed + 1, done); return; }
         bool harmful = kind is not (CardKind.DrawTwo or CardKind.Feast or CardKind.IronChain);
         bool wantsNegated = harmful ? Allied(responder, target) : !Allied(responder, target);
-        List<SkillDecisionOption> options = candidates.Select(card => new SkillDecisionOption(card.Id.ToString(), "使用无懈 · " + CardLabel(card))).ToList(); if (CanGuhuo(responder)) options.Add(new("guhuo", "蛊惑声明无懈可击")); options.Add(new("no", "不使用无懈可击"));
+        List<SkillDecisionOption> options = candidates.Select(card => new SkillDecisionOption(card.Id.ToString(), "使用无懈 · " + CardLabel(card), PreviewCard: card)).ToList(); if (CanGuhuo(responder)) options.Add(new("guhuo", "蛊惑声明无懈可击")); options.Add(new("no", "不使用无懈可击"));
         Decide(responder, $"{(negated ? "反无懈" : "无懈可击")}：{actor.Hero.Name}的{new Card(0, kind, "", 0).Name}对{target.Hero.Name}（当前{(negated ? "已被抵消" : "将生效")}）", options,
             wantsNegated != negated && candidates.Count > 0 ? candidates.MinBy(KeepValue)!.Id.ToString() : "no", key =>
         {
@@ -106,11 +106,11 @@ public sealed partial class GameEngine
     private void ResolveFireAttack(Player actor, Player target, Card card, Action done)
     {
         if (target.Hand.Count == 0 || !actor.IsAlive) { done(); return; }
-        Decide(target, "火攻：展示一张手牌", target.Hand.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item))).ToList(), target.Hand.MinBy(KeepValue)!.Id.ToString(), key =>
+        Decide(target, "火攻：展示一张手牌", target.Hand.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item), PreviewCard: item)).ToList(), target.Hand.MinBy(KeepValue)!.Id.ToString(), key =>
         {
             Card revealed = target.Hand.First(item => item.Id.ToString() == key); ShowCard(revealed); AddLog($"火攻展示：{target.Hero.Name}的{CardLabel(revealed)}。");
             List<Card> costs = actor.Hand.Where(item => SuitFor(actor, item) == SuitFor(target, revealed)).ToList();
-            List<SkillDecisionOption> options = costs.Select(item => new SkillDecisionOption(item.Id.ToString(), "弃置 · " + CardLabel(item))).ToList(); options.Add(new("no", "不弃牌，结束火攻"));
+            List<SkillDecisionOption> options = costs.Select(item => new SkillDecisionOption(item.Id.ToString(), "弃置 · " + CardLabel(item), PreviewCard: item)).ToList(); options.Add(new("no", "不弃牌，结束火攻"));
             Decide(actor, "火攻：可弃同花色手牌，造成1点火焰伤害", options, costs.Count > 0 && Hostility(actor, target) > 0 ? costs.MinBy(KeepValue)!.Id.ToString() : "no", cost =>
             { if (cost == "no") done(); else { PayCard(actor, costs.First(item => item.Id.ToString() == cost)); AfterLosses(() => ElementalDamage(actor, target, card, 1, DamageNature.Fire, done)); } });
         });

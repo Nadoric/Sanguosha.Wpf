@@ -563,21 +563,46 @@
                         </StackPanel>
                     </Border>
                 </Border>
-                <Border x:Name="CardChoiceOverlay" Grid.ColumnSpan="2" Background="#E90B0F19"
+                <Border x:Name="CardChoiceOverlay" Grid.ColumnSpan="2" Background="#AD080D13"
                         KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Contained"
                         Visibility="Collapsed">
-                    <Border Width="780" Background="{StaticResource JadePanel}" BorderBrush="{StaticResource BronzeEdge}"
-                            BorderThickness="1" CornerRadius="12" Padding="30" VerticalAlignment="Center">
-                        <StackPanel>
-                            <TextBlock x:Name="CardChoiceTitle" FontSize="23" Foreground="#D4BF8A"
-                                       TextWrapping="Wrap" Margin="0,0,0,18" />
-                            <TextBlock x:Name="CardChoiceHelp" Text="选择一张牌完成结算；手牌背面按位置选取，装备与判定牌明置。"
-                                       TextWrapping="Wrap" Foreground="#C6BFAF" Margin="0,0,0,12" />
-                            <ScrollViewer MaxHeight="470" VerticalScrollBarVisibility="Auto">
+                    <Grid x:Name="CardChoiceWindow" Width="1000" MaxHeight="780" VerticalAlignment="Center">
+                        <Grid.Effect><DropShadowEffect Color="#000000" BlurRadius="32" ShadowDepth="12" Opacity="0.8" /></Grid.Effect>
+                        <local:OfficialDialogSurface IsHitTestVisible="False" />
+                        <Grid Margin="26,0,26,42">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="52" /><RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" /><RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="CardChoiceTitle" FontFamily="KaiTi, SimSun" FontSize="25"
+                                       Foreground="#FFE2AC" VerticalAlignment="Center" Margin="8,0,170,0" />
+                            <TextBlock x:Name="CardChoiceBadge" Foreground="#E5C99A" FontSize="12"
+                                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,8,0" />
+                            <Grid Grid.Row="1" Margin="6,14,6,14">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="54" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+                                <Border x:Name="CardChoicePortrait" Width="42" Height="54" HorizontalAlignment="Left"
+                                        BorderBrush="#977342" BorderThickness="1" CornerRadius="2" />
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <TextBlock x:Name="CardChoicePrompt" FontSize="15" Foreground="#49351E"
+                                               TextWrapping="Wrap" LineHeight="23" />
+                                    <TextBlock x:Name="CardChoiceHelp" Foreground="#7C6646" FontSize="11"
+                                               TextWrapping="Wrap" Margin="0,5,0,0" />
+                                </StackPanel>
+                            </Grid>
+                            <ScrollViewer x:Name="CardChoiceScroll" Grid.Row="2" MaxHeight="480"
+                                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                                          Margin="6,0,4,0" Padding="0,0,10,0" Focusable="False">
                                 <StackPanel x:Name="CardChoiceButtons" />
                             </ScrollViewer>
-                        </StackPanel>
-                    </Border>
+                            <Grid Grid.Row="3" Margin="8,14,8,0" MinHeight="48">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                                <TextBlock x:Name="CardChoiceSummary" Foreground="#806648" FontSize="11"
+                                           VerticalAlignment="Center" TextWrapping="Wrap" Margin="0,0,12,0" />
+                                <WrapPanel x:Name="CardChoiceActions" Grid.Column="1" HorizontalAlignment="Right"
+                                           MaxWidth="650" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Border>
                 <Border x:Name="SkinsOverlay" Background="#ED0B0F19" Visibility="Collapsed">
                     <Border Width="1080" Height="660" Background="{StaticResource JadePanel}"

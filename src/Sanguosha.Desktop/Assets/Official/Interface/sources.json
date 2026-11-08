@@ -108,6 +108,38 @@
       "path": "src/Sanguosha.Desktop/Assets/Official/Interface/yjcmSeat.png",
       "bytes": 1449342,
       "sha256": "a47b069082c4a923049931738fab33f0558e2a28d0c6b26ece8eb11beb3ba135"
+    },
+    {
+      "id": "newStyleWindowCommon.atlas",
+      "category": "interface",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/newStyleBaseUI/newStyleWindowCommon.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/newStyleWindowCommon.atlas",
+      "bytes": 9919,
+      "sha256": "268e6a701662f19c4251fab2aad7feff3cd11f7c7e00d3ebd8f403e81ca84f13"
+    },
+    {
+      "id": "newStyleWindowCommon.png",
+      "category": "interface",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/newStyleBaseUI/newStyleWindowCommon.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/newStyleWindowCommon.png",
+      "bytes": 809573,
+      "sha256": "52c3f85f703fd42a6ebe8787c95f00716e72c2e7fcc62186435887203c0f8e21"
+    },
+    {
+      "id": "cardBack.atlas",
+      "category": "interface",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/cards/normal/cardBack.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/cardBack.atlas",
+      "bytes": 1811,
+      "sha256": "24bf950c39746ebfdd64f5b022d43fe197e0d81ed54c459796b444998c018c01"
+    },
+    {
+      "id": "cardBack.png",
+      "category": "interface",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/cards/normal/cardBack.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Interface/cardBack.png",
+      "bytes": 262887,
+      "sha256": "705b1600c4104c6add043eff82681787dbbb4427cf19c2fafdd47a2e918aaa41"
     }
   ]
 }

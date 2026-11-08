@@ -98,7 +98,7 @@ public sealed partial class GameEngine
         void Xiangle(Player final)
         {
             if (!((final.RuleId == "liushan" && final.HasAbility("享乐")))) { resolved(final); return; }
-            List<Card> cards = actor.Hand.Where(item => item.IsBasic).ToList(); List<SkillDecisionOption> options = cards.Select(item => new SkillDecisionOption(item.Id.ToString(), "享乐：弃基本牌 · " + CardLabel(item))).ToList(); options.Add(new("no", "不弃，此杀无效"));
+            List<Card> cards = actor.Hand.Where(item => item.IsBasic).ToList(); List<SkillDecisionOption> options = cards.Select(item => new SkillDecisionOption(item.Id.ToString(), "享乐：弃基本牌 · " + CardLabel(item), PreviewCard: item)).ToList(); options.Add(new("no", "不弃，此杀无效"));
             Decide(actor, "享乐：额外弃置一张基本牌，否则杀无效", options, cards.Count > 0 && Hostility(actor, final) > 0 ? cards.MinBy(KeepValue)!.Id.ToString() : "no", key =>
             { EmitSkill(final, "享乐"); if (key == "no") canceled(); else { PayCard(actor, cards.First(item => item.Id.ToString() == key)); AfterLosses(() => resolved(final)); } });
         }

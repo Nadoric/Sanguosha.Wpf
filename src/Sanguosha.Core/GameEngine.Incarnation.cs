@@ -38,7 +38,9 @@ public sealed partial class GameEngine
         if (!owner.IsAlive || !owner.HasAbility("化身") || owner.Incarnations.Count == 0) { done(); return; }
         List<Hero> forms = owner.Incarnations.Select(Heroes.Find).ToList();
         var best = forms.SelectMany(hero => SkillCatalog.Borrowable(hero).Select(skill => (Hero: hero, Skill: skill))).MaxBy(pair => IncarnationScore(owner, pair.Hero, pair.Skill));
-        List<SkillDecisionOption> options = forms.Select(hero => new SkillDecisionOption(hero.Id, $"{hero.Name} · {hero.Kingdom}/{(hero.IsFemale ? "女" : "男")} · {string.Join("/", SkillCatalog.Borrowable(hero).Select(skill => skill.Name))}")).ToList();
+        List<SkillDecisionOption> options = forms.Select(hero => new SkillDecisionOption(hero.Id,
+            $"{hero.Name} · {hero.Kingdom}/{(hero.IsFemale ? "女" : "男")} · {string.Join("/", SkillCatalog.Borrowable(hero).Select(skill => skill.Name))}",
+            PreviewHeroId: hero.Id)).ToList();
         if (optional) options.Add(new("no", "保持当前化身与技能"));
         Decide(owner, optional ? "化身：回合开始/结束，可换化身及其中一项技能" : "化身：选择初始武将", options,
             optional && owner.IncarnationHeroId == best.Hero.Id && owner.IncarnationSkill == best.Skill.Name ? "no" : best.Hero.Id, key =>

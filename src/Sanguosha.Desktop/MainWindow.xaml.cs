@@ -17,7 +17,7 @@ namespace Sanguosha.Desktop
         private readonly DispatcherTimer timer;
         private readonly GameAudio audio = new(
             Environment.GetCommandLineArgs().Any(argument =>
-                argument is "--verify-ui" or "--verify-audio" or "--verify-effects" or "--verify-skins"));
+                argument is "--verify-ui" or "--verify-audio" or "--verify-effects" or "--verify-skins" or "--verify-dialogs"));
         private readonly List<int> targets = new();
         private GameEngine game = new();
         private Hero selectedHero = Heroes.All[0];

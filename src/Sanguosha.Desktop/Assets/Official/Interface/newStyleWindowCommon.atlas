@@ -1,0 +1,399 @@
+{
+    "frames": {
+        "NSWindowSecondTitle.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 365,
+                "x": 867,
+                "y": 912
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 365
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWinSecondBg.png": {
+            "frame": {
+                "h": 647,
+                "idx": 0,
+                "w": 10,
+                "x": 1770,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 647,
+                "w": 10
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindow46CloseBtnNormal.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 46,
+                "x": 1178,
+                "y": 951
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 46
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindow46CloseBtnOver.png": {
+            "frame": {
+                "h": 46,
+                "idx": 0,
+                "w": 46,
+                "x": 1131,
+                "y": 951
+            },
+            "sourceSize": {
+                "h": 46,
+                "w": 46
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCloseBtnNormal.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 34,
+                "x": 1449,
+                "y": 947
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 34
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCloseBtnOver.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 34,
+                "x": 1449,
+                "y": 912
+            },
+            "sourceSize": {
+                "h": 34,
+                "w": 34
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonBg.png": {
+            "frame": {
+                "h": 507,
+                "idx": 0,
+                "w": 832,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 507,
+                "w": 832
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonBg1.png": {
+            "frame": {
+                "h": 279,
+                "idx": 0,
+                "w": 1176,
+                "x": 0,
+                "y": 508
+            },
+            "sourceSize": {
+                "h": 279,
+                "w": 1176
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonBottomBg.png": {
+            "frame": {
+                "h": 83,
+                "idx": 0,
+                "w": 41,
+                "x": 1364,
+                "y": 912
+            },
+            "sourceSize": {
+                "h": 83,
+                "w": 41
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonCloseBtnNormal.png": {
+            "frame": {
+                "h": 42,
+                "idx": 0,
+                "w": 42,
+                "x": 1406,
+                "y": 955
+            },
+            "sourceSize": {
+                "h": 42,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonCloseBtnOver.png": {
+            "frame": {
+                "h": 42,
+                "idx": 0,
+                "w": 42,
+                "x": 1406,
+                "y": 912
+            },
+            "sourceSize": {
+                "h": 42,
+                "w": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonNoticeBg.png": {
+            "frame": {
+                "h": 453,
+                "idx": 0,
+                "w": 722,
+                "x": 833,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 453,
+                "w": 722
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonTitle.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 566,
+                "x": 833,
+                "y": 454
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 566
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonTitle1.png": {
+            "frame": {
+                "h": 123,
+                "idx": 0,
+                "w": 902,
+                "x": 867,
+                "y": 788
+            },
+            "sourceSize": {
+                "h": 123,
+                "w": 902
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonTitle2.png": {
+            "frame": {
+                "h": 32,
+                "idx": 0,
+                "w": 578,
+                "x": 0,
+                "y": 976
+            },
+            "sourceSize": {
+                "h": 32,
+                "w": 578
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowCommonUpBg.png": {
+            "frame": {
+                "h": 141,
+                "idx": 0,
+                "w": 35,
+                "x": 1400,
+                "y": 454
+            },
+            "sourceSize": {
+                "h": 141,
+                "w": 35
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowSecondBG2.png": {
+            "frame": {
+                "h": 187,
+                "idx": 0,
+                "w": 866,
+                "x": 0,
+                "y": 788
+            },
+            "sourceSize": {
+                "h": 187,
+                "w": 866
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowSecondBGTitle.png": {
+            "frame": {
+                "h": 78,
+                "idx": 0,
+                "w": 45,
+                "x": 1318,
+                "y": 912
+            },
+            "sourceSize": {
+                "h": 78,
+                "w": 45
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowSecondBG_c4ac88.png": {
+            "frame": {
+                "h": 56,
+                "idx": 0,
+                "w": 52,
+                "x": 1078,
+                "y": 951
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 52
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowSecondFrame.png": {
+            "frame": {
+                "h": 84,
+                "idx": 0,
+                "w": 84,
+                "x": 1233,
+                "y": 912
+            },
+            "sourceSize": {
+                "h": 84,
+                "w": 84
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowSecondFrame2.png": {
+            "frame": {
+                "h": 59,
+                "idx": 0,
+                "w": 66,
+                "x": 1011,
+                "y": 951
+            },
+            "sourceSize": {
+                "h": 59,
+                "w": 66
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowThreeBg.png": {
+            "frame": {
+                "h": 19,
+                "idx": 0,
+                "w": 19,
+                "x": 1318,
+                "y": 991
+            },
+            "sourceSize": {
+                "h": 19,
+                "w": 19
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "newStyleWindowTitleBg.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 431,
+                "x": 579,
+                "y": 976
+            },
+            "sourceSize": {
+                "h": 38,
+                "w": 431
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "meta": {
+        "image": "newStyleWindowCommon.png",
+        "prefix": "newStyleWindowCommon/"
+    }
+}

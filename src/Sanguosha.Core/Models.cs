@@ -66,7 +66,11 @@ namespace Sanguosha.Core
         Judgment
     }
 
-    public sealed record SkillDecisionOption(string Key, string Label);
+    public sealed record SkillDecisionOption(
+        string Key,
+        string Label,
+        Card? PreviewCard = null,
+        string? PreviewHeroId = null);
 
     public sealed record SkillDecisionRequest(
         string Prompt,

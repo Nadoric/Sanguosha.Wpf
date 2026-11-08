@@ -6,7 +6,7 @@ namespace Sanguosha.Core
         {
             if (actor.Hand.Count == 0) { done(false); return; }
             List<SkillDecisionOption> options = actor.Hand.Select(card => new SkillDecisionOption(card.Id.ToString(),
-                $"弃置{card.Suit}{card.RankText} {card.Name}，跳过{phase}阶段")).ToList();
+                $"弃置{card.Suit}{card.RankText} {card.Name}，跳过{phase}阶段", PreviewCard: card)).ToList();
             options.Add(new("no", "不发动巧变"));
             string ai = aiUse ? actor.Hand.OrderBy(KeepValue).First().Id.ToString() : "no";
             Decide(actor, $"巧变 · {phase}阶段：可弃置一张手牌，跳过该阶段。", options, ai, key =>
@@ -42,7 +42,7 @@ namespace Sanguosha.Core
                 player.Hand.Count > 0 && !chosen.Contains(player.Seat)).ToList();
             if (chosen.Count == 2 || targets.Count == 0) { done(); return; }
             List<SkillDecisionOption> options = targets.Select(player => new SkillDecisionOption(player.Seat.ToString(),
-                $"获得{player.Hero.Name}一张手牌（共{player.Hand.Count}张）")).ToList();
+                $"获得{player.Hero.Name}一张手牌（共{player.Hand.Count}张）", PreviewHeroId: player.Hero.Id)).ToList();
             options.Add(new("stop", "结束选取"));
             Player best = targets.OrderByDescending(player => Hostility(actor, player)).First();
             Decide(actor, "巧变：可从至多两名不同角色各获得一张手牌。", options,
@@ -81,7 +81,8 @@ namespace Sanguosha.Core
             }
             if (movable.Count == 0) { done(); return; }
             List<SkillDecisionOption> options = movable.Select(item => new SkillDecisionOption(item.Card.Id.ToString(),
-                $"移动{item.Owner.Hero.Name}的{(item.Judgment ? (new Card(0, DelayedKind(item.Owner, item.Card), "", 0).Name) : item.Card.Name)}（{item.Card.Suit}{item.Card.RankText}）")).ToList();
+                $"移动{item.Owner.Hero.Name}的{(item.Judgment ? (new Card(0, DelayedKind(item.Owner, item.Card), "", 0).Name) : item.Card.Name)}（{item.Card.Suit}{item.Card.RankText}）",
+                PreviewCard: item.Judgment ? item.Card with { Kind = DelayedKind(item.Owner, item.Card) } : item.Card)).ToList();
             options.Add(new("stop", "不移动"));
             var best = movable.OrderByDescending(item => item.Judgment ? (Allied(actor, item.Owner) ? 10 : -10) : Hostility(actor, item.Owner)).First();
             Decide(actor, "巧变：可移动场上一张装备或判定牌。", options, best.Card.Id.ToString(), key =>
@@ -91,7 +92,8 @@ namespace Sanguosha.Core
                 List<Player> destinations = Destinations(item.Owner, item.Card, item.Judgment);
                 Player destination = destinations.OrderByDescending(player => item.Judgment ? Hostility(actor, player) : -Hostility(actor, player)).First();
                 Decide(actor, "巧变：请选择合法的目的区域。", destinations.Select(player =>
-                    new SkillDecisionOption(player.Seat.ToString(), $"{player.Hero.Name}的{(item.Judgment ? "判定" : "装备")}区")).ToArray(),
+                    new SkillDecisionOption(player.Seat.ToString(), $"{player.Hero.Name}的{(item.Judgment ? "判定" : "装备")}区",
+                        PreviewHeroId: player.Hero.Id)).ToArray(),
                     destination.Seat.ToString(), seat =>
                     {
                         Player target = destinations.Single(player => player.Seat.ToString() == seat);

@@ -43,9 +43,15 @@ public sealed class VirtualizingHeroPanel : VirtualizingPanel, IScrollInfo
             scrollInfoDirty = false;
         }
         int first = metrics.FirstIndex, last = metrics.LastIndex;
-        IItemContainerGenerator generator = ItemContainerGenerator;
+        // WPF通过InternalChildren延迟初始化生成器，必须先取得子项集合。
+        UIElementCollection children = InternalChildren;
+        // 切换筛选源时旧面板可能参与最后一轮布局，此时生成器已被WPF解除关联。
+        if (ItemContainerGenerator is not IItemContainerGenerator generator)
+        {
+            return viewport;
+        }
         // Remove outside the realized range before generating to keep generator positions consistent.
-        for (int child = InternalChildren.Count - 1; child >= 0; child--)
+        for (int child = children.Count - 1; child >= 0; child--)
         {
             GeneratorPosition position = new(child, 0);
             int item = generator.IndexFromGeneratorPosition(position);
@@ -64,12 +70,12 @@ public sealed class VirtualizingHeroPanel : VirtualizingPanel, IScrollInfo
                 for (int index = first; index <= last; index++, child++)
                 {
                     UIElement container = (UIElement)generator.GenerateNext(out bool isNew);
-                    int visualIndex = InternalChildren.IndexOf(container);
+                    int visualIndex = children.IndexOf(container);
                     HeroContainerPlacement placement = HeroGalleryLayout.Placement(isNew, visualIndex, child);
                     if (placement.Attach)
                     {
                         if (visualIndex >= 0) RemoveInternalChildRange(visualIndex, 1);
-                        if (child >= InternalChildren.Count) AddInternalChild(container);
+                        if (child >= children.Count) AddInternalChild(container);
                         else InsertInternalChild(child, container);
                     }
                     // Recycled containers need their new Content / template / IsSelected prepared,
@@ -83,11 +89,15 @@ public sealed class VirtualizingHeroPanel : VirtualizingPanel, IScrollInfo
 
     protected override Size ArrangeOverride(Size finalSize)
     {
-        IItemContainerGenerator generator = ItemContainerGenerator;
-        for (int child = 0; child < InternalChildren.Count; child++)
+        UIElementCollection children = InternalChildren;
+        if (ItemContainerGenerator is not IItemContainerGenerator generator)
+        {
+            return finalSize;
+        }
+        for (int child = 0; child < children.Count; child++)
         {
             int index = generator.IndexFromGeneratorPosition(new GeneratorPosition(child, 0));
-            InternalChildren[child].Arrange(new Rect((index % Columns) * CellWidth,
+            children[child].Arrange(new Rect((index % Columns) * CellWidth,
                 (index / Columns) * CellHeight - offset, CellWidth, CellHeight));
         }
         bringIndex = null;

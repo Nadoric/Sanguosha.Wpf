@@ -1,0 +1,76 @@
+{
+    "frames": {
+        "EmptyCard_png.png": {
+            "frame": {
+                "h": 190,
+                "idx": 0,
+                "w": 135,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 190,
+                "w": 135
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "OfficialRankEmptyCard_1_png.png": {
+            "frame": {
+                "h": 190,
+                "idx": 0,
+                "w": 135,
+                "x": 0,
+                "y": 191
+            },
+            "sourceSize": {
+                "h": 190,
+                "w": 135
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "OfficialRankEmptyCard_2_png.png": {
+            "frame": {
+                "h": 190,
+                "idx": 0,
+                "w": 135,
+                "x": 136,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 190,
+                "w": 135
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "OfficialRankEmptyCard_3_png.png": {
+            "frame": {
+                "h": 190,
+                "idx": 0,
+                "w": 135,
+                "x": 136,
+                "y": 191
+            },
+            "sourceSize": {
+                "h": 190,
+                "w": 135
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        }
+    },
+    "meta": {
+        "image": "cardBack.png",
+        "prefix": "cardBack/"
+    }
+}

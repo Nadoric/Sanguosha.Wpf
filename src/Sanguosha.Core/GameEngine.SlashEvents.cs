@@ -41,7 +41,7 @@ public sealed partial class GameEngine
                 Distance(target, player) <= range && !(((player.RuleId == "zhugeliang" && player.HasAbility("空城"))) && player.Hand.Count == 0))) choices.Add((cost, other));
         }
         if (choices.Count == 0) { Defend(target); return; }
-        List<SkillDecisionOption> options = choices.Select(choice => new SkillDecisionOption($"{choice.Cost.Id}:{choice.Target.Seat}", $"弃{CardLabel(choice.Cost)} → 转给{choice.Target.Hero.Name}")).ToList();
+        List<SkillDecisionOption> options = choices.Select(choice => new SkillDecisionOption($"{choice.Cost.Id}:{choice.Target.Seat}", $"弃{CardLabel(choice.Cost)} → 转给{choice.Target.Hero.Name}", PreviewCard: choice.Cost)).ToList();
         options.Add(new("no", "不发动流离"));
         var best = choices.MaxBy(choice => Hostility(target, choice.Target));
         Decide(target, "流离：弃一牌，将杀转移给攻击范围内除来源外的其他角色", options,
