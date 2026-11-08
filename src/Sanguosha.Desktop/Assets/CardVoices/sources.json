@@ -1,0 +1,262 @@
+{
+  "project": "https://github.com/libccy/noname",
+  "revision": "e18a8256e01ab1357e4c7472349dceb3d0aa1a3a",
+  "files": [
+    {
+      "kind": "Slash",
+      "gender": "male",
+      "file": "male/sha.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/sha.mp3",
+      "bytes": 3494,
+      "sha256": "ac6babcb2c76a704a0c218116b38801091926898d2bdcbf728709043e980d552"
+    },
+    {
+      "kind": "Slash",
+      "gender": "female",
+      "file": "female/sha.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/sha.mp3",
+      "bytes": 2972,
+      "sha256": "ad44d3e07b317ad350bb9cd1727610a6bf9a177e840c5b4278d7242ded916b0b"
+    },
+    {
+      "kind": "Dodge",
+      "gender": "male",
+      "file": "male/shan.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/shan.mp3",
+      "bytes": 3601,
+      "sha256": "e9e3bf25b2135c952955e29fd186245b9001a6fc126349e2762cae702c500821"
+    },
+    {
+      "kind": "Dodge",
+      "gender": "female",
+      "file": "female/shan.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/shan.mp3",
+      "bytes": 3601,
+      "sha256": "14ee446d82f325dc276e0c4d859c5fd111383e299c8fcf37cf711346afe0dba3"
+    },
+    {
+      "kind": "Duel",
+      "gender": "male",
+      "file": "male/juedou.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/juedou.mp3",
+      "bytes": 3187,
+      "sha256": "079662661c9ad20fdca3636e7451fde46d696b522d06ca9b1770d9bbc5c40501"
+    },
+    {
+      "kind": "Duel",
+      "gender": "female",
+      "file": "female/juedou.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/juedou.mp3",
+      "bytes": 3814,
+      "sha256": "00764c310f554a87f8e7820005b5c6998f662cfe9373ee094ecc0d25fb3e1a27"
+    },
+    {
+      "kind": "DrawTwo",
+      "gender": "male",
+      "file": "male/wuzhong.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/wuzhong.mp3",
+      "bytes": 5592,
+      "sha256": "ea5da3904e41c1efc7de547707da7ac8917aa64d049fe3ebd1bb437f12498ace"
+    },
+    {
+      "kind": "DrawTwo",
+      "gender": "female",
+      "file": "female/wuzhong.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/wuzhong.mp3",
+      "bytes": 4965,
+      "sha256": "30b8e77b7e6b8ea7bbfd52688aa209bf44137bc04c6a3acc84f248725c108d83"
+    },
+    {
+      "kind": "Dismantle",
+      "gender": "male",
+      "file": "male/guohe.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/guohe.mp3",
+      "bytes": 6319,
+      "sha256": "399f43254531858d88ee2c549ec0788c1789791e834a9f039d22d767d9ea028f"
+    },
+    {
+      "kind": "Dismantle",
+      "gender": "female",
+      "file": "female/guohe.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/guohe.mp3",
+      "bytes": 5274,
+      "sha256": "e1fd57009411c4c375b0784d18343cdd282595e7656b4f6ba725838561336bc4"
+    },
+    {
+      "kind": "Steal",
+      "gender": "male",
+      "file": "male/shunshou.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/shunshou.mp3",
+      "bytes": 6430,
+      "sha256": "9c37fc5f677bc6aad14194e49c2e0edce12bf9506212b6e886c4864d17df8e0e"
+    },
+    {
+      "kind": "Steal",
+      "gender": "female",
+      "file": "female/shunshou.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/shunshou.mp3",
+      "bytes": 5489,
+      "sha256": "82c32106ab49381ab8ef2b38490604299af8346eeebda370d614b39caaffedc0"
+    },
+    {
+      "kind": "Barbarians",
+      "gender": "male",
+      "file": "male/nanman.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/nanman.mp3",
+      "bytes": 5694,
+      "sha256": "e2f5a92229eaa91a9f8a0b6a6355001532732e87ebe0a1054dc5c7e3761d0a0a"
+    },
+    {
+      "kind": "Barbarians",
+      "gender": "female",
+      "file": "female/nanman.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/nanman.mp3",
+      "bytes": 4859,
+      "sha256": "dc43269b20d10a4770ef7242f4b3189c80471ec610c52fd0233e2bff257944bd"
+    },
+    {
+      "kind": "Arrows",
+      "gender": "male",
+      "file": "male/wanjian.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/wanjian.mp3",
+      "bytes": 83043,
+      "sha256": "b7255f33feb71568003ffdc31ccba78f15270209bfb1052337ef000266a29560"
+    },
+    {
+      "kind": "Arrows",
+      "gender": "female",
+      "file": "female/wanjian.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/wanjian.mp3",
+      "bytes": 73653,
+      "sha256": "7efe645c4c445fdd3047893274f566a635a0858c42cf5d1d103f5025f3ab18f0"
+    },
+    {
+      "kind": "Feast",
+      "gender": "male",
+      "file": "male/taoyuan.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/taoyuan.mp3",
+      "bytes": 6323,
+      "sha256": "c18cc192169abe4b94a0d8f8500c460ecc67933368beb6ba9bdfdcb2c9b0b1c9"
+    },
+    {
+      "kind": "Feast",
+      "gender": "female",
+      "file": "female/taoyuan.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/taoyuan.mp3",
+      "bytes": 5487,
+      "sha256": "5f77d9af1f101a6a55a7860fd1d7aaf9f1c6b46af197edfd67f5ad03c8f72fc6"
+    },
+    {
+      "kind": "Indulgence",
+      "gender": "male",
+      "file": "male/lebu.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/lebu.mp3",
+      "bytes": 5690,
+      "sha256": "91f9035c6c4776b1a5d7dbf8c83d2e2b3b2f0994d68d22aafd3373c463071488"
+    },
+    {
+      "kind": "Indulgence",
+      "gender": "female",
+      "file": "female/lebu.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/lebu.mp3",
+      "bytes": 6213,
+      "sha256": "9252577338130bb30367bb73213987780215218d0f8d7bfdbc67c622af086e4d"
+    },
+    {
+      "kind": "Crossbow",
+      "gender": "male",
+      "file": "male/zhuge.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/zhuge.mp3",
+      "bytes": 10910,
+      "sha256": "9e236cf2c9b47072da5b9ddc599618054bf8a031f46f5c45e6159fea78863cd1"
+    },
+    {
+      "kind": "Crossbow",
+      "gender": "female",
+      "file": "female/zhuge.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/zhuge.mp3",
+      "bytes": 9448,
+      "sha256": "073e2546f7d79e0498b550289e69ea2c4492905927bbd376ca0f249524ebf429"
+    },
+    {
+      "kind": "Blade",
+      "gender": "male",
+      "file": "male/qinglong.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/qinglong.mp3",
+      "bytes": 11955,
+      "sha256": "cdf3257bf3bb7b5d2eeec15000bf04fb9a1ebccaf8f1b1afa29c2abfa19218bb"
+    },
+    {
+      "kind": "Blade",
+      "gender": "female",
+      "file": "female/qinglong.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/qinglong.mp3",
+      "bytes": 11746,
+      "sha256": "5ce42c9d477a9b3fd1974dacdcf0c026c982b992380b2aa79023e1235e4a25bd"
+    },
+    {
+      "kind": "EightTrigrams",
+      "gender": "male",
+      "file": "male/bagua.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/bagua.mp3",
+      "bytes": 7567,
+      "sha256": "5a715c60a783dc87b6f4f12002f2bcf8a1c4b2266c40df16b6bc1c78e84f53aa"
+    },
+    {
+      "kind": "EightTrigrams",
+      "gender": "female",
+      "file": "female/bagua.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/bagua.mp3",
+      "bytes": 8194,
+      "sha256": "02fc83d3a47c8a9740a0b788a0ea3622a57769d31c4856649f27d9d8b15cdecd"
+    },
+    {
+      "kind": "Horse",
+      "gender": "male",
+      "file": "male/dilu.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/male/dilu.mp3",
+      "bytes": 5477,
+      "sha256": "f39524735b3d172814d6bef9a4e4e1fafc504a79b00f2aec5d8e397139977b70"
+    },
+    {
+      "kind": "Horse",
+      "gender": "female",
+      "file": "female/dilu.mp3",
+      "url": "https://raw.githubusercontent.com/libccy/noname/e18a8256e01ab1357e4c7472349dceb3d0aa1a3a/audio/card/female/dilu.mp3",
+      "bytes": 7358,
+      "sha256": "6f1fde9f7182aacbdb380c85a69b50809d62b8fc1b928af5c6795f1ae0530138"
+    },
+    {
+      "kind": "Peach",
+      "gender": "male",
+      "file": "original/male/peach.ogg",
+      "url": "https://raw.githubusercontent.com/Mogara/QSanguosha-v2/master/audio/card/male/peach.ogg",
+      "bytes": 38462,
+      "sha256": "f4d72ffb9f4aff18cc604ce3dff2a10c90a996778804cc607b82c4450a148736"
+    },
+    {
+      "kind": "Peach",
+      "gender": "female",
+      "file": "original/female/peach.ogg",
+      "url": "https://raw.githubusercontent.com/Mogara/QSanguosha-v2/master/audio/card/female/peach.ogg",
+      "bytes": 38462,
+      "sha256": "f4d72ffb9f4aff18cc604ce3dff2a10c90a996778804cc607b82c4450a148736"
+    }
+  ],
+  "convertedFiles": [
+    {
+      "file": "male/peach.mp3",
+      "sourceFile": "original/male/peach.ogg",
+      "conversion": "ffmpeg libmp3lame -q:a 3",
+      "bytes": 37837,
+      "sha256": "443d1855bf8c21795bca1e08e7408b4cd748cdd1d1da497aabecd0b03d5bd7f4"
+    },
+    {
+      "file": "female/peach.mp3",
+      "sourceFile": "original/female/peach.ogg",
+      "conversion": "ffmpeg libmp3lame -q:a 3",
+      "bytes": 37837,
+      "sha256": "443d1855bf8c21795bca1e08e7408b4cd748cdd1d1da497aabecd0b03d5bd7f4"
+    }
+  ]
+}

@@ -6,4 +6,9 @@
     <ItemGroup>
         <ProjectReference Include="../../src/Sanguosha.Core/Sanguosha.Core.csproj" />
     </ItemGroup>
+    <ItemGroup>
+        <Compile Include="../../src/Sanguosha.Desktop/PortraitCatalog.cs" Link="Shared/PortraitCatalog.cs" />
+        <Compile Include="../../src/Sanguosha.Desktop/HeroGalleryLayout.cs" Link="Shared/HeroGalleryLayout.cs" />
+        <Compile Include="../../src/Sanguosha.Desktop/BattleSceneLayout.cs" Link="Shared/BattleSceneLayout.cs" />
+    </ItemGroup>
 </Project>

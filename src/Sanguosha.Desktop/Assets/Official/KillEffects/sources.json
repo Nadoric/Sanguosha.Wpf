@@ -1,0 +1,341 @@
+{
+  "client": "三国杀十周年官方网页客户端",
+  "page": "https://web.sanguosha.com/10/pc/index.php",
+  "catalog": "https://web.sanguosha.com/10/pc/version.json",
+  "notes": "原图/图集/语音均为官方公开客户端文件；仅裁切复用书法字，WPF动画为本项目重现，不是Spine骨骼逐帧移植。素材版权归杭州游卡及相关权利人，非商业学习使用，不代表授权。",
+  "files": [
+    {
+      "id": "shoupo.atlas",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/shoupo.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/shoupo.atlas",
+      "bytes": 7468,
+      "sha256": "40e1a4672e9c5e440e6ea04aafe6ff6eb0e49b061930c19d714cf54deb71b5a9"
+    },
+    {
+      "id": "shoupo_3.png",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/shoupo_3.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/shoupo_3.png",
+      "bytes": 717921,
+      "sha256": "47fea2938fe1726f1ab0c3ad4663d63ed3b7d5d062c3e3357b88fcd9174b24d6"
+    },
+    {
+      "id": "lianpo.atlas",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/lianpo.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/lianpo.atlas",
+      "bytes": 6762,
+      "sha256": "dcfd2d2ab6e99190b827d5ea2a2c4ac7c03258730b25fecb58ae0fab8dc0fa94"
+    },
+    {
+      "id": "lianpo.png",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/lianpo.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/lianpo.png",
+      "bytes": 612227,
+      "sha256": "0d96782c2e394c0bd788cd2950d5556c37f4a23534f782303bb704e6a6ad879d"
+    },
+    {
+      "id": "sanpo.atlas",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/sanpo.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/sanpo.atlas",
+      "bytes": 9909,
+      "sha256": "c2ba1529b63c374c2e7a65f9cef697824e155de1deba5523e9d042eaee2d3d46"
+    },
+    {
+      "id": "sanpo.png",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/sanpo.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/sanpo.png",
+      "bytes": 635813,
+      "sha256": "09b7d860abecc360a0fae3742e5cda00a4c9bbad8308faa5cb59cc6fc7cb273f"
+    },
+    {
+      "id": "sipo.atlas",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/sipo.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/sipo.atlas",
+      "bytes": 14164,
+      "sha256": "b8b06c1445ca022f4c77aa5cb12d65a171a1b7fa2e660d30ca65dcfa9bf15766"
+    },
+    {
+      "id": "sipo_2.png",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/sipo_2.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/sipo_2.png",
+      "bytes": 841490,
+      "sha256": "1d27e8a9dbec9f02504f70bbb4a0de3dafd14f385aad7ca7b86dfa38119c85ab"
+    },
+    {
+      "id": "wupo.atlas",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/wupo.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/wupo.atlas",
+      "bytes": 12381,
+      "sha256": "07174460819fceb8b5a4eb3763fc84efe1dd8ae9b7780563dfac6f50567f29e3"
+    },
+    {
+      "id": "wupo.png",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/wupo.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/wupo.png",
+      "bytes": 637099,
+      "sha256": "4042a42fcc4c630f24299e8c39367b0758f3e424499bd69c46edd3ebe1d9f248"
+    },
+    {
+      "id": "liupo.atlas",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/liupo.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/liupo.atlas",
+      "bytes": 22339,
+      "sha256": "67eb42caafc38896a592f1ece9bfc9476a773fbfc7b74d1644c5084a7ca1e976"
+    },
+    {
+      "id": "liupo.png",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/liupo.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/liupo.png",
+      "bytes": 449418,
+      "sha256": "75d5833e3d0dbfaa79a2d78b1b238eccd77156f7f6d8d980935a83482afc4bdd"
+    },
+    {
+      "id": "qipo.atlas",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/qipo.atlas",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/qipo.atlas",
+      "bytes": 21591,
+      "sha256": "4244455eb0710e8e67cf47fbab736f246980be1fbb3069837accee7d48afec55"
+    },
+    {
+      "id": "qipo.png",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/qipo.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/qipo.png",
+      "bytes": 390930,
+      "sha256": "e4cf6f8a2e57c871cfc30d916c4caf0a79b57e226ad8d688792824b65dfa84b0"
+    },
+    {
+      "id": "newkill_shoupo.mp3",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/effect/newkill_shoupo.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/newkill_shoupo.mp3",
+      "bytes": 113280,
+      "sha256": "6a25c84d2639108ff0f0d54154a9db9fb6169027d6b76107409f2e160bf3aeae"
+    },
+    {
+      "id": "newkill_lianpo.mp3",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/effect/newkill_lianpo.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/newkill_lianpo.mp3",
+      "bytes": 108480,
+      "sha256": "a9793858a14dc381819887c30f3e875e3e940752d8414f846eb6fe3420cae8ae"
+    },
+    {
+      "id": "newkill_sanpo.mp3",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/effect/newkill_sanpo.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/newkill_sanpo.mp3",
+      "bytes": 115200,
+      "sha256": "59650c0f1074463594eff26ebd31bd3b232b325b400789b517180ca36167b282"
+    },
+    {
+      "id": "newkill_sipo.mp3",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/effect/newkill_sipo.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/newkill_sipo.mp3",
+      "bytes": 140160,
+      "sha256": "6eb36f95ebb9ae630e7399de2967d4accfd18c34bd8163034a1f3c4ecc19e065"
+    },
+    {
+      "id": "newkill_wupo.mp3",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/effect/newkill_wupo.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/newkill_wupo.mp3",
+      "bytes": 135360,
+      "sha256": "41f3b4b1813250f2ec08b6e2be831439d3a8bf4deb149af7b5afd4d8b4e91dc0"
+    },
+    {
+      "id": "newkill_liupo.mp3",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/effect/newkill_liupo.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/newkill_liupo.mp3",
+      "bytes": 176640,
+      "sha256": "f783aa82925a2aeed9c5eef3decf58329304d57e08d49b76b64f048e412c4926"
+    },
+    {
+      "id": "newkill_qipo.mp3",
+      "category": "kill-effect",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/effect/newkill_qipo.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/newkill_qipo.mp3",
+      "bytes": 172800,
+      "sha256": "7e91644a5e827cef8b74829977d6d397135a0ed3a25495a80065d42594512462"
+    },
+    {
+      "id": "lianpo_2.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/lianpo_2.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/lianpo_2.png",
+      "bytes": 636251,
+      "sha256": "bf7a2c7699035bc8129f43f45795c7316445a41a7aaacc377cec1342b5b34cd0"
+    },
+    {
+      "id": "qipo_4.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/qipo_4.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/qipo_4.png",
+      "bytes": 829912,
+      "sha256": "b45771faaa01b44d372ce9c3281f54957e70d2129eff3d56ed3ff95873c52b3c"
+    },
+    {
+      "id": "sanpo_2.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/sanpo_2.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/sanpo_2.png",
+      "bytes": 625878,
+      "sha256": "b10012cc4d6323e6c6bcf75091ec0f78bcb4d326c9f18227da5884d12a47f988"
+    },
+    {
+      "id": "shoupo_2.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/shoupo_2.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/shoupo_2.png",
+      "bytes": 751499,
+      "sha256": "25d81e69c7ddad223ec5d08183e6cf6c713ef19d6ef4a465d851e02cec1ba34a"
+    },
+    {
+      "id": "wupo_2.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/wupo_2.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/wupo_2.png",
+      "bytes": 1060510,
+      "sha256": "c0b5e03cedf8eb139d5cbf7aa92a619ff0dd0051701adaefc12aedb00ce49c42"
+    },
+    {
+      "id": "qipo_2.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/qipo_2.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/qipo_2.png",
+      "bytes": 667711,
+      "sha256": "7c8519b2674c74303116e39329ae5535fe61416ce12d38c7d059b3513ce296bf"
+    },
+    {
+      "id": "sipo.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/sipo.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/sipo.png",
+      "bytes": 674538,
+      "sha256": "e6c39fc266f907a4c62370af08012077f22269a6cf937187d5c382ad581c02af"
+    },
+    {
+      "id": "liupo_2.png",
+      "category": "kill-effect-frames",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/killEffect/liupo_2.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/liupo_2.png",
+      "bytes": 811217,
+      "sha256": "766bd5225ca034e136de07b706f2d2c431b621ec93063519fd18b9d4affbd870"
+    }
+  ],
+  "derived": [
+    {
+      "tier": 1,
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/Titles/1.png",
+      "source": "shoupo_3.png",
+      "atlas": "shoupo.atlas",
+      "region": "yijidangxian",
+      "operation": "crop atlas bounds; undo packed rotation; no repainting",
+      "bytes": 53873,
+      "sha256": "ef3d6cfbf0f0976071a63de0535117c5ec6424c6e0f8420d6745309ae66d8e7e"
+    },
+    {
+      "tier": 2,
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/Titles/2.png",
+      "source": "lianpo.png",
+      "atlas": "lianpo.atlas",
+      "region": "2/2_shiwushuang",
+      "operation": "crop atlas bounds; undo packed rotation; no repainting",
+      "bytes": 52135,
+      "sha256": "adf8d049605b3739000ba0a6df6c2cdcc0ad852436b4b3a624400efa8f88f3ae"
+    },
+    {
+      "tier": 3,
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/Titles/3.png",
+      "source": "sanpo.png",
+      "atlas": "sanpo.atlas",
+      "region": "3/zi_gsj",
+      "operation": "crop atlas bounds; undo packed rotation; no repainting",
+      "bytes": 32042,
+      "sha256": "c5adbf7152a3ace42d4c4e9574e3988c61400a0d840724a68d5661b1b682ab26"
+    },
+    {
+      "tier": 4,
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/Titles/4.png",
+      "source": "sipo_2.png",
+      "atlas": "sipo.atlas",
+      "region": "4/zi4",
+      "operation": "crop atlas bounds; undo packed rotation; no repainting",
+      "bytes": 36429,
+      "sha256": "3cf1311b053c418c814fc4bcd8629d59438fba7adf072bc392cd9555eb077813"
+    },
+    {
+      "tier": 5,
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/Titles/5.png",
+      "source": "wupo.png",
+      "atlas": "wupo.atlas",
+      "region": "5/5_tianxiawudi",
+      "operation": "crop atlas bounds; undo packed rotation; no repainting",
+      "bytes": 46355,
+      "sha256": "d637c08df3707a35f0f57ab878f6ee95c4abe40b5f41010761e2ad025316b1e1"
+    },
+    {
+      "tier": 6,
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/Titles/6.png",
+      "source": "liupo.png",
+      "atlas": "liupo.atlas",
+      "region": "6/6_tongjiuzhou",
+      "operation": "crop atlas bounds; undo packed rotation; no repainting",
+      "bytes": 54277,
+      "sha256": "a9261ed1df827b257489276aad3d2264df4b801972e1726c5504d92dfdd2a387"
+    },
+    {
+      "tier": 7,
+      "path": "src/Sanguosha.Desktop/Assets/Official/KillEffects/Titles/7.png",
+      "source": "qipo.png",
+      "atlas": "qipo.atlas",
+      "region": "7/7_qiangudiyiren",
+      "operation": "crop atlas bounds; undo packed rotation; no repainting",
+      "bytes": 41845,
+      "sha256": "d630613d7fc2b2633112637b0f86181de7929ccf2ee9c3fecc9def1157cba058"
+    }
+  ]
+}

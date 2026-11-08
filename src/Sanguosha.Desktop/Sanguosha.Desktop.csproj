@@ -6,12 +6,21 @@
         <AssemblyName>山河弈</AssemblyName>
         <RootNamespace>Sanguosha.Desktop</RootNamespace>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <ApplicationIcon>Assets/Official/Icon/app.ico</ApplicationIcon>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="../Sanguosha.Core/Sanguosha.Core.csproj" />
         <Resource Include="Assets/Official/**/*.png" />
         <Resource Include="Assets/Official/**/*.atlas" />
+        <Resource Include="Assets/Official/Icon/app.ico" />
+        <Resource Include="Assets/Branding/*.png" />
+        <Resource Include="Assets/Official/sources.json" />
+        <Resource Include="Assets/Official/Skins/sources.json" />
+        <Resource Include="Assets/Official/EffectFrames/animations.json" />
         <None Update="Assets/Official/Audio/**/*"
+              CopyToOutputDirectory="PreserveNewest"
+              CopyToPublishDirectory="PreserveNewest" />
+        <None Update="Assets/CardVoices/**/*"
               CopyToOutputDirectory="PreserveNewest"
               CopyToPublishDirectory="PreserveNewest" />
     </ItemGroup>

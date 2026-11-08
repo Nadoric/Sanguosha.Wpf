@@ -1,0 +1,1921 @@
+[
+  {
+    "key": "kill1",
+    "asset": "EffectFrames/kill1.png",
+    "duration": 1.9166666666666667,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "zi/shoupo_tx1_00",
+        "sourcePage": "shoupo_2.png",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "zi/shoupo_tx1_02",
+        "sourcePage": "shoupo_2.png",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "zi/shoupo_tx1_04",
+        "sourcePage": "shoupo_2.png",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "zi/shoupo_tx1_06",
+        "sourcePage": "shoupo_2.png",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "zi/shoupo_tx1_08",
+        "sourcePage": "shoupo_2.png",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "zi/shoupo_tx1_10",
+        "sourcePage": "shoupo_2.png",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "zi/shoupo_tx1_12",
+        "sourcePage": "shoupo_2.png",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "zi/shoupo_tx1_14",
+        "sourcePage": "shoupo_2.png",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "zi/shoupo_tx1_16",
+        "sourcePage": "shoupo_2.png",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "zi/shoupo_tx1_18",
+        "sourcePage": "shoupo_2.png",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.8333333333333334,
+        "source": "zi/shoupo_tx1_20",
+        "sourcePage": "shoupo_2.png",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9166666666666666,
+        "source": "zi/shoupo_tx1_22",
+        "sourcePage": "shoupo_2.png",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0,
+        "source": "zi/shoupo_tx1_24",
+        "sourcePage": "shoupo_2.png",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0833333333333333,
+        "source": "zi/shoupo_tx1_26",
+        "sourcePage": "shoupo_2.png",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.1666666666666667,
+        "source": "zi/shoupo_tx1_28",
+        "sourcePage": "shoupo_2.png",
+        "x": 1536,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.25,
+        "source": "zi/shoupo_tx1_30",
+        "sourcePage": "shoupo_2.png",
+        "x": 0,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.3333333333333333,
+        "source": "zi/shoupo_tx1_32",
+        "sourcePage": "shoupo_2.png",
+        "x": 384,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.4166666666666667,
+        "source": "zi/shoupo_tx1_34",
+        "sourcePage": "shoupo_2.png",
+        "x": 768,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5,
+        "source": "zi/shoupo_tx1_36",
+        "sourcePage": "shoupo_2.png",
+        "x": 1152,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5833333333333333,
+        "source": "zi/shoupo_tx1_38",
+        "sourcePage": "shoupo_2.png",
+        "x": 1536,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.6666666666666667,
+        "source": "zi/shoupo_tx1_40",
+        "sourcePage": "shoupo_2.png",
+        "x": 0,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.75,
+        "source": "zi/shoupo_tx1_42",
+        "sourcePage": "shoupo_2.png",
+        "x": 384,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.8333333333333333,
+        "source": "zi/shoupo_tx1_44",
+        "sourcePage": "shoupo_2.png",
+        "x": 768,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  },
+  {
+    "key": "kill2",
+    "asset": "EffectFrames/kill2.png",
+    "duration": 1.1666666666666667,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "2/tx/lianpo_tx1_00",
+        "sourcePage": "lianpo_2.png",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "2/tx/lianpo_tx1_02",
+        "sourcePage": "lianpo_2.png",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "2/tx/lianpo_tx1_04",
+        "sourcePage": "lianpo_2.png",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "2/tx/lianpo_tx1_06",
+        "sourcePage": "lianpo.png",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "2/tx/lianpo_tx1_08",
+        "sourcePage": "lianpo.png",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "2/tx/lianpo_tx1_10",
+        "sourcePage": "lianpo_2.png",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "2/tx/lianpo_tx1_12",
+        "sourcePage": "lianpo_2.png",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "2/tx/lianpo_tx1_14",
+        "sourcePage": "lianpo_2.png",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "2/tx/lianpo_tx1_16",
+        "sourcePage": "lianpo_2.png",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "2/tx/lianpo_tx1_18",
+        "sourcePage": "lianpo_2.png",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.8333333333333334,
+        "source": "2/tx/lianpo_tx1_20",
+        "sourcePage": "lianpo_2.png",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9166666666666666,
+        "source": "2/tx/lianpo_tx1_22",
+        "sourcePage": "lianpo.png",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0,
+        "source": "2/tx/lianpo_tx1_24",
+        "sourcePage": "lianpo_2.png",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0833333333333333,
+        "source": "2/tx/lianpo_tx1_26",
+        "sourcePage": "lianpo.png",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  },
+  {
+    "key": "kill3",
+    "asset": "EffectFrames/kill3.png",
+    "duration": 2.0833333333333335,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "3/tx/sanpo_00",
+        "sourcePage": "sanpo_2.png",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "3/tx/sanpo_02",
+        "sourcePage": "sanpo_2.png",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "3/tx/sanpo_04",
+        "sourcePage": "sanpo_2.png",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "3/tx/sanpo_06",
+        "sourcePage": "sanpo_2.png",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "3/tx/sanpo_08",
+        "sourcePage": "sanpo_2.png",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "3/tx/sanpo_10",
+        "sourcePage": "sanpo_2.png",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "3/tx/sanpo_12",
+        "sourcePage": "sanpo_2.png",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "3/tx/sanpo_14",
+        "sourcePage": "sanpo.png",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "3/tx/sanpo_16",
+        "sourcePage": "sanpo_2.png",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "3/tx/sanpo_18",
+        "sourcePage": "sanpo_2.png",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.8333333333333334,
+        "source": "3/tx/sanpo_20",
+        "sourcePage": "sanpo.png",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9166666666666666,
+        "source": "3/tx/sanpo_22",
+        "sourcePage": "sanpo.png",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0,
+        "source": "3/tx/sanpo_24",
+        "sourcePage": "sanpo_2.png",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0833333333333333,
+        "source": "3/tx/sanpo_26",
+        "sourcePage": "sanpo_2.png",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.1666666666666667,
+        "source": "3/tx/sanpo_28",
+        "sourcePage": "sanpo_2.png",
+        "x": 1536,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.25,
+        "source": "3/tx/sanpo_30",
+        "sourcePage": "sanpo_2.png",
+        "x": 0,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.3333333333333333,
+        "source": "3/tx/sanpo_32",
+        "sourcePage": "sanpo_2.png",
+        "x": 384,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.4166666666666667,
+        "source": "3/tx/sanpo_34",
+        "sourcePage": "sanpo_2.png",
+        "x": 768,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5,
+        "source": "3/tx/sanpo_36",
+        "sourcePage": "sanpo_2.png",
+        "x": 1152,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5833333333333333,
+        "source": "3/tx/sanpo_38",
+        "sourcePage": "sanpo_2.png",
+        "x": 1536,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.6666666666666667,
+        "source": "3/tx/sanpo_40",
+        "sourcePage": "sanpo_2.png",
+        "x": 0,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.75,
+        "source": "3/tx/sanpo_42",
+        "sourcePage": "sanpo_2.png",
+        "x": 384,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.8333333333333333,
+        "source": "3/tx/sanpo_44",
+        "sourcePage": "sanpo_2.png",
+        "x": 768,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.9166666666666667,
+        "source": "3/tx/sanpo_46",
+        "sourcePage": "sanpo_2.png",
+        "x": 1152,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 2.0,
+        "source": "3/tx/sanpo_48",
+        "sourcePage": "sanpo.png",
+        "x": 1536,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  },
+  {
+    "key": "kill4",
+    "asset": "EffectFrames/kill4.png",
+    "duration": 2.125,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "4/tx/zi1_00",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.041666666666666664,
+        "source": "4/tx/zi1_01",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "4/tx/zi1_02",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.125,
+        "source": "4/tx/zi1_03",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "4/tx/zi1_04",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.20833333333333334,
+        "source": "4/tx/zi1_05",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "4/tx/zi1_06",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.2916666666666667,
+        "source": "4/tx/zi1_07",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "4/tx/zi1_08",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.375,
+        "source": "4/tx/zi1_09",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "4/tx/zi1_10",
+        "sourcePage": "sipo.png",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4583333333333333,
+        "source": "4/tx/zi1_11",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "4/tx/zi1_12",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5416666666666666,
+        "source": "4/tx/zi1_13",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "4/tx/zi1_14",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.625,
+        "source": "4/tx/zi1_15",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "4/tx/zi1_16",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.7083333333333334,
+        "source": "4/tx/zi1_17",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "4/tx/zi1_18",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.7916666666666666,
+        "source": "4/tx/zi1_19",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.8333333333333334,
+        "source": "4/tx/zi1_20",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.875,
+        "source": "4/tx/zi1_21",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9166666666666666,
+        "source": "4/tx/zi1_22",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9583333333333334,
+        "source": "4/tx/zi1_23",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0,
+        "source": "4/tx/zi1_24",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0416666666666667,
+        "source": "4/tx/zi1_25",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 960,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0833333333333333,
+        "source": "4/tx/zi1_26",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 960,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.125,
+        "source": "4/tx/zi1_27",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 960,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.1666666666666667,
+        "source": "4/tx/zi1_28",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 960,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.2083333333333333,
+        "source": "4/tx/zi1_29",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 960,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.25,
+        "source": "4/tx/zi1_30",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 1152,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.2916666666666667,
+        "source": "4/tx/zi1_31",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 1152,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.3333333333333333,
+        "source": "4/tx/zi1_32",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 1152,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.375,
+        "source": "4/tx/zi1_33",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 1152,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.4166666666666667,
+        "source": "4/tx/zi1_34",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 1152,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.4583333333333333,
+        "source": "4/tx/zi1_35",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 1344,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5,
+        "source": "4/tx/zi1_36",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 1344,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5416666666666667,
+        "source": "4/tx/zi1_37",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 1344,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5833333333333333,
+        "source": "4/tx/zi1_38",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 1344,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.625,
+        "source": "4/tx/zi1_39",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 1344,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.6666666666666667,
+        "source": "4/tx/zi1_40",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 1536,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.7083333333333333,
+        "source": "4/tx/zi1_41",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 1536,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.75,
+        "source": "4/tx/zi1_42",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 1536,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.7916666666666667,
+        "source": "4/tx/zi1_43",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 1536,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.8333333333333333,
+        "source": "4/tx/zi1_44",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 1536,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.875,
+        "source": "4/tx/zi1_45",
+        "sourcePage": "sipo_2.png",
+        "x": 0,
+        "y": 1728,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.9166666666666667,
+        "source": "4/tx/zi1_46",
+        "sourcePage": "sipo_2.png",
+        "x": 384,
+        "y": 1728,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.9583333333333333,
+        "source": "4/tx/zi1_47",
+        "sourcePage": "sipo_2.png",
+        "x": 768,
+        "y": 1728,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 2.0,
+        "source": "4/tx/zi1_48",
+        "sourcePage": "sipo_2.png",
+        "x": 1152,
+        "y": 1728,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 2.0416666666666665,
+        "source": "4/tx/zi1_49",
+        "sourcePage": "sipo_2.png",
+        "x": 1536,
+        "y": 1728,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  },
+  {
+    "key": "kill5",
+    "asset": "EffectFrames/kill5.png",
+    "duration": 2.0833333333333335,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "5/tx/wupo_lg_00",
+        "sourcePage": "wupo_2.png",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "5/tx/wupo_lg_02",
+        "sourcePage": "wupo_2.png",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "5/tx/wupo_lg_04",
+        "sourcePage": "wupo_2.png",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "5/tx/wupo_lg_06",
+        "sourcePage": "wupo_2.png",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "5/tx/wupo_lg_08",
+        "sourcePage": "wupo_2.png",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "5/tx/wupo_lg_10",
+        "sourcePage": "wupo_2.png",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "5/tx/wupo_lg_12",
+        "sourcePage": "wupo_2.png",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "5/tx/wupo_lg_14",
+        "sourcePage": "wupo_2.png",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "5/tx/wupo_lg_16",
+        "sourcePage": "wupo_2.png",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "5/tx/wupo_lg_18",
+        "sourcePage": "wupo_2.png",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.8333333333333334,
+        "source": "5/tx/wupo_lg_20",
+        "sourcePage": "wupo_2.png",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9166666666666666,
+        "source": "5/tx/wupo_lg_22",
+        "sourcePage": "wupo_2.png",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0,
+        "source": "5/tx/wupo_lg_24",
+        "sourcePage": "wupo_2.png",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0833333333333333,
+        "source": "5/tx/wupo_lg_26",
+        "sourcePage": "wupo_2.png",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.1666666666666667,
+        "source": "5/tx/wupo_lg_28",
+        "sourcePage": "wupo_2.png",
+        "x": 1536,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.25,
+        "source": "5/tx/wupo_lg_30",
+        "sourcePage": "wupo_2.png",
+        "x": 0,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.3333333333333333,
+        "source": "5/tx/wupo_lg_32",
+        "sourcePage": "wupo_2.png",
+        "x": 384,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.4166666666666667,
+        "source": "5/tx/wupo_lg_34",
+        "sourcePage": "wupo_2.png",
+        "x": 768,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5,
+        "source": "5/tx/wupo_lg_36",
+        "sourcePage": "wupo_2.png",
+        "x": 1152,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5833333333333333,
+        "source": "5/tx/wupo_lg_38",
+        "sourcePage": "wupo_2.png",
+        "x": 1536,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.6666666666666667,
+        "source": "5/tx/wupo_lg_40",
+        "sourcePage": "wupo_2.png",
+        "x": 0,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.75,
+        "source": "5/tx/wupo_lg_42",
+        "sourcePage": "wupo_2.png",
+        "x": 384,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.8333333333333333,
+        "source": "5/tx/wupo_lg_44",
+        "sourcePage": "wupo_2.png",
+        "x": 768,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.9166666666666667,
+        "source": "5/tx/wupo_lg_46",
+        "sourcePage": "wupo_2.png",
+        "x": 1152,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 2.0,
+        "source": "5/tx/wupo_lg_48",
+        "sourcePage": "wupo_2.png",
+        "x": 1536,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  },
+  {
+    "key": "kill6",
+    "asset": "EffectFrames/kill6.png",
+    "duration": 2.0833333333333335,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "6/huoyan/liupo_lg_00",
+        "sourcePage": "liupo_2.png",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "6/huoyan/liupo_lg_02",
+        "sourcePage": "liupo_2.png",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "6/huoyan/liupo_lg_04",
+        "sourcePage": "liupo_2.png",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "6/huoyan/liupo_lg_06",
+        "sourcePage": "liupo_2.png",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "6/huoyan/liupo_lg_08",
+        "sourcePage": "liupo_2.png",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "6/huoyan/liupo_lg_10",
+        "sourcePage": "liupo_2.png",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "6/huoyan/liupo_lg_12",
+        "sourcePage": "liupo_2.png",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "6/huoyan/liupo_lg_14",
+        "sourcePage": "liupo_2.png",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "6/huoyan/liupo_lg_16",
+        "sourcePage": "liupo_2.png",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "6/huoyan/liupo_lg_18",
+        "sourcePage": "liupo_2.png",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.8333333333333334,
+        "source": "6/huoyan/liupo_lg_20",
+        "sourcePage": "liupo_2.png",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9166666666666666,
+        "source": "6/huoyan/liupo_lg_22",
+        "sourcePage": "liupo_2.png",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0,
+        "source": "6/huoyan/liupo_lg_24",
+        "sourcePage": "liupo_2.png",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0833333333333333,
+        "source": "6/huoyan/liupo_lg_26",
+        "sourcePage": "liupo_2.png",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.1666666666666667,
+        "source": "6/huoyan/liupo_lg_28",
+        "sourcePage": "liupo_2.png",
+        "x": 1536,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.25,
+        "source": "6/huoyan/liupo_lg_30",
+        "sourcePage": "liupo_2.png",
+        "x": 0,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.3333333333333333,
+        "source": "6/huoyan/liupo_lg_32",
+        "sourcePage": "liupo_2.png",
+        "x": 384,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.4166666666666667,
+        "source": "6/huoyan/liupo_lg_34",
+        "sourcePage": "liupo_2.png",
+        "x": 768,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5,
+        "source": "6/huoyan/liupo_lg_36",
+        "sourcePage": "liupo_2.png",
+        "x": 1152,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5833333333333333,
+        "source": "6/huoyan/liupo_lg_38",
+        "sourcePage": "liupo_2.png",
+        "x": 1536,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.6666666666666667,
+        "source": "6/huoyan/liupo_lg_40",
+        "sourcePage": "liupo_2.png",
+        "x": 0,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.75,
+        "source": "6/huoyan/liupo_lg_42",
+        "sourcePage": "liupo_2.png",
+        "x": 384,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.8333333333333333,
+        "source": "6/huoyan/liupo_lg_44",
+        "sourcePage": "liupo_2.png",
+        "x": 768,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.9166666666666667,
+        "source": "6/huoyan/liupo_lg_46",
+        "sourcePage": "liupo_2.png",
+        "x": 1152,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 2.0,
+        "source": "6/huoyan/liupo_lg_48",
+        "sourcePage": "liupo_2.png",
+        "x": 1536,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  },
+  {
+    "key": "kill7",
+    "asset": "EffectFrames/kill7.png",
+    "duration": 2.0833333333333335,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "7/shandian/7po_lg_00",
+        "sourcePage": "qipo_2.png",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "7/shandian/7po_lg_02",
+        "sourcePage": "qipo_2.png",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "7/shandian/7po_lg_04",
+        "sourcePage": "qipo_2.png",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "7/shandian/7po_lg_06",
+        "sourcePage": "qipo_2.png",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "7/shandian/7po_lg_08",
+        "sourcePage": "qipo_2.png",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "7/shandian/7po_lg_10",
+        "sourcePage": "qipo_2.png",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "7/shandian/7po_lg_12",
+        "sourcePage": "qipo_2.png",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "7/shandian/7po_lg_14",
+        "sourcePage": "qipo_2.png",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "7/shandian/7po_lg_16",
+        "sourcePage": "qipo_2.png",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "7/shandian/7po_lg_18",
+        "sourcePage": "qipo_4.png",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.8333333333333334,
+        "source": "7/shandian/7po_lg_20",
+        "sourcePage": "qipo_4.png",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.9166666666666666,
+        "source": "7/shandian/7po_lg_22",
+        "sourcePage": "qipo_4.png",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0,
+        "source": "7/shandian/7po_lg_24",
+        "sourcePage": "qipo_4.png",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.0833333333333333,
+        "source": "7/shandian/7po_lg_26",
+        "sourcePage": "qipo_2.png",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.1666666666666667,
+        "source": "7/shandian/7po_lg_28",
+        "sourcePage": "qipo_2.png",
+        "x": 1536,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.25,
+        "source": "7/shandian/7po_lg_30",
+        "sourcePage": "qipo_2.png",
+        "x": 0,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.3333333333333333,
+        "source": "7/shandian/7po_lg_32",
+        "sourcePage": "qipo_2.png",
+        "x": 384,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.4166666666666667,
+        "source": "7/shandian/7po_lg_34",
+        "sourcePage": "qipo_4.png",
+        "x": 768,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5,
+        "source": "7/shandian/7po_lg_36",
+        "sourcePage": "qipo_4.png",
+        "x": 1152,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.5833333333333333,
+        "source": "7/shandian/7po_lg_38",
+        "sourcePage": "qipo_4.png",
+        "x": 1536,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.6666666666666667,
+        "source": "7/shandian/7po_lg_40",
+        "sourcePage": "qipo_4.png",
+        "x": 0,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.75,
+        "source": "7/shandian/7po_lg_42",
+        "sourcePage": "qipo_2.png",
+        "x": 384,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.8333333333333333,
+        "source": "7/shandian/7po_lg_44",
+        "sourcePage": "qipo_2.png",
+        "x": 768,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 1.9166666666666667,
+        "source": "7/shandian/7po_lg_46",
+        "sourcePage": "qipo_2.png",
+        "x": 1152,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 2.0,
+        "source": "7/shandian/7po_lg_48",
+        "sourcePage": "qipo_2.png",
+        "x": 1536,
+        "y": 768,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  },
+  {
+    "key": "start",
+    "asset": "EffectFrames/start.png",
+    "duration": 2.0,
+    "frames": [
+      {
+        "time": 0.0,
+        "source": "dasima/kaizhan/kaizhan_sg_00",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.041666666666666664,
+        "source": "dasima/kaizhan/kaizhan_sg_01",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.08333333333333333,
+        "source": "dasima/kaizhan/kaizhan_sg_02",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.125,
+        "source": "dasima/kaizhan/kaizhan_sg_03",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.16666666666666666,
+        "source": "dasima/kaizhan/kaizhan_sg_04",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1536,
+        "y": 0,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.20833333333333334,
+        "source": "dasima/kaizhan/kaizhan_sg_05",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 0,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.25,
+        "source": "dasima/kaizhan/kaizhan_sg_06",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 384,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.2916666666666667,
+        "source": "dasima/kaizhan/kaizhan_sg_07",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 768,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.3333333333333333,
+        "source": "dasima/kaizhan/kaizhan_sg_08",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1152,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.375,
+        "source": "dasima/kaizhan/kaizhan_sg_09",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1536,
+        "y": 192,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4166666666666667,
+        "source": "dasima/kaizhan/kaizhan_sg_10",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.4583333333333333,
+        "source": "dasima/kaizhan/kaizhan_sg_11",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5,
+        "source": "dasima/kaizhan/kaizhan_sg_12",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5416666666666666,
+        "source": "dasima/kaizhan/kaizhan_sg_13",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.5833333333333334,
+        "source": "dasima/kaizhan/kaizhan_sg_14",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1536,
+        "y": 384,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.625,
+        "source": "dasima/kaizhan/kaizhan_sg_15",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 0,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.6666666666666666,
+        "source": "dasima/kaizhan/kaizhan_sg_16",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 384,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.7083333333333334,
+        "source": "dasima/kaizhan/kaizhan_sg_17",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 768,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.75,
+        "source": "dasima/kaizhan/kaizhan_sg_18",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1152,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      },
+      {
+        "time": 0.7916666666666666,
+        "source": "dasima/kaizhan/kaizhan_sg_19",
+        "sourceSkeleton": "GameStart/SF_kaizhan_eff_putong.sk",
+        "x": 1536,
+        "y": 576,
+        "width": 384,
+        "height": 192
+      }
+    ]
+  }
+]

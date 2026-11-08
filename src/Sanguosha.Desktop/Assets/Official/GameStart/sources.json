@@ -1,0 +1,99 @@
+{
+  "client": "三国杀十周年普通开战动画",
+  "notes": "官方PNG、Laya骨骼文件和原音；仅提取原像素，WPF动作是本项目重现，不声称完整移植官方骨骼时间轴。",
+  "files": [
+    {
+      "id": "SF_kaizhan_eff_putong.png",
+      "category": "game-start",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/gamestart/SF_kaizhan_eff_putong.png",
+      "path": "src/Sanguosha.Desktop/Assets/Official/GameStart/SF_kaizhan_eff_putong.png",
+      "bytes": 186337,
+      "sha256": "ccd67ea0539022c09febcc6c4c9f259342512ae50c8350571d8f719e4ce47da3"
+    },
+    {
+      "id": "SF_kaizhan_eff_putong.sk",
+      "category": "game-start",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/animate/battle/gamestart/SF_kaizhan_eff_putong.sk",
+      "path": "src/Sanguosha.Desktop/Assets/Official/GameStart/SF_kaizhan_eff_putong.sk",
+      "bytes": 51529,
+      "sha256": "421d8d926e8cc0e8ee2bb5849541f8e03309de3dc21a1c73469153926627712e"
+    },
+    {
+      "id": "SF_kaizhan_eff_putong.mp3",
+      "category": "game-start",
+      "page": "https://web.sanguosha.com/10/pc/index.php",
+      "url": "https://web.sanguosha.com/10/pc/res/assets/runtime/voice/officialRank/SF_kaizhan_eff_putong.mp3",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Audio/Effects/SF_kaizhan_eff_putong.mp3",
+      "bytes": 89499,
+      "sha256": "dc0be6cce6794932fbe6c8a5eaa53e8aa9234a201d4c0c3dfa64911fb3d2ea9c"
+    }
+  ],
+  "derived": [
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/GameStart/Sprites/title.png",
+      "source": "SF_kaizhan_eff_putong.png",
+      "skeleton": "SF_kaizhan_eff_putong.sk",
+      "region": "moren/kaizhan_1",
+      "bounds": [
+        1158,
+        217,
+        269,
+        270
+      ],
+      "rotation": 270,
+      "bytes": 37020,
+      "sha256": "4894900dc3cb07352f0efca7ad416ad8c95f8a56d4893290dcb0a3ef1c220db2",
+      "operation": "crop original pixels; undo packed rotation"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/GameStart/Sprites/blade-left.png",
+      "source": "SF_kaizhan_eff_putong.png",
+      "skeleton": "SF_kaizhan_eff_putong.sk",
+      "region": "moren/kaizhan_9",
+      "bounds": [
+        304,
+        158,
+        285,
+        329
+      ],
+      "rotation": 0,
+      "bytes": 29096,
+      "sha256": "a53c980e50dc5fc462100e8bebcbd4b9606335d1132d442186d8bd9c6e73ed6f",
+      "operation": "crop original pixels; undo packed rotation"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/GameStart/Sprites/blade-right.png",
+      "source": "SF_kaizhan_eff_putong.png",
+      "skeleton": "SF_kaizhan_eff_putong.sk",
+      "region": "moren/kaizhan_10",
+      "bounds": [
+        591,
+        158,
+        285,
+        329
+      ],
+      "rotation": 0,
+      "bytes": 32464,
+      "sha256": "d3a4d6e6c052c9455a6445f42acf7ec0660a20ee693c6ff73e2ee940230594c6",
+      "operation": "crop original pixels; undo packed rotation"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/GameStart/Sprites/glow.png",
+      "source": "SF_kaizhan_eff_putong.png",
+      "skeleton": "SF_kaizhan_eff_putong.sk",
+      "region": "glow_tx1",
+      "bounds": [
+        878,
+        199,
+        278,
+        288
+      ],
+      "rotation": 0,
+      "bytes": 24266,
+      "sha256": "9f5fbe3fffdbf1425f8590a51f2ec1314961814f2ac5783f3d87ee512a96bd4f",
+      "operation": "crop original pixels; undo packed rotation"
+    }
+  ]
+}

@@ -32,7 +32,13 @@ namespace Sanguosha.Core
         Crossbow,
         Blade,
         EightTrigrams,
-        Horse
+        Horse,
+        SupplyShortage,
+        IronChain,
+        Nullification,
+        FireAttack,
+        Wine,
+        Lightning
     }
 
     public enum GamePhase
@@ -42,7 +48,8 @@ namespace Sanguosha.Core
         Play,
         Response,
         Discard,
-        GameOver
+        GameOver,
+        SelectCard
     }
 
     public enum ResponseKind
@@ -50,6 +57,33 @@ namespace Sanguosha.Core
         Dodge,
         Slash,
         Peach
+    }
+
+    public enum CardZone
+    {
+        Hand,
+        Equipment,
+        Judgment
+    }
+
+    public sealed record SkillDecisionOption(string Key, string Label);
+
+    public sealed record SkillDecisionRequest(
+        string Prompt,
+        IReadOnlyList<SkillDecisionOption> Options,
+        Action<string> Continue);
+
+    // HandPosition is an opaque face-down slot, NEVER a physical hand-card id.
+    public sealed record TargetCardOption(CardZone Zone, int? CardId, string Label, int? HandPosition = null);
+
+    public sealed record TargetCardRequest(
+        int TargetSeat,
+        bool Steal,
+        IReadOnlyList<TargetCardOption> Options,
+        Action Continue)
+    {
+        // Engine-only snapshot; no hidden identities in UI options / serialized public request.
+        internal IReadOnlyList<int> HiddenHandIds { get; init; } = Array.Empty<int>();
     }
 
     public sealed record Hero(
@@ -60,9 +94,15 @@ namespace Sanguosha.Core
         string Skill,
         string Description,
         string Quote,
-        int PortraitIndex);
+        int PortraitIndex,
+        string Pack = "标准",
+        string Ruleset = "标准经典·适配牌堆",
+        string? BaseHeroId = null)
+    {
+        public bool IsFemale => (BaseHeroId ?? Id) is "huangyueying" or "zhenji" or "daqiao" or "sunshangxiang" or "diaochan" or "zhurong" or "xiaoqiao" or "caiwenji" or "ganfuren";
+    }
 
-    public static class Heroes
+    public static partial class Heroes
     {
         public static IReadOnlyList<Hero> All { get; } = new List<Hero>
         {
@@ -71,8 +111,8 @@ namespace Sanguosha.Core
                 "刘备",
                 "蜀",
                 4,
-                "仁德",
-                "出牌阶段限一次：交给其他角色一张手牌，并回复1点体力。",
+                "仁德 · 激将",
+                "出牌阶段可将手牌交给其他角色；本阶段累计交出至少两张时回复1点。主公可激将请其他蜀角色代打杀；未选手牌时点技能请求主动出杀。",
                 "惟贤惟德，能服于人。",
                 0),
 
@@ -82,7 +122,7 @@ namespace Sanguosha.Core
                 "蜀",
                 4,
                 "武圣",
-                "可将任意红色手牌当【杀】使用或打出。",
+                "可将任意红色手牌或装备当【杀】使用或打出；使用已装备牌请点技能按钮选择装备转化。",
                 "义薄云天，忠贯日月。",
                 1),
 
@@ -111,8 +151,8 @@ namespace Sanguosha.Core
                 "曹操",
                 "魏",
                 4,
-                "奸雄",
-                "受到伤害并存活后，获得造成该伤害的牌（若仍在弃牌堆）。",
+                "奸雄 · 护驾",
+                "受伤后可获得伤害牌；身份局主公可护驾请其他魏角色代打闪。",
                 "宁教我负天下人。",
                 4),
 
@@ -121,8 +161,8 @@ namespace Sanguosha.Core
                 "孙权",
                 "吴",
                 4,
-                "制衡",
-                "出牌阶段限一次：弃置一张手牌，再摸一张牌。",
+                "制衡 · 救援",
+                "阶段一次，弃置任意数量手牌或装备再摸等量牌。主公救援：其他吴角色用桃救你时多回复1点。",
                 "容我三思，再作定夺。",
                 5),
 
@@ -131,8 +171,8 @@ namespace Sanguosha.Core
                 "司马懿",
                 "魏",
                 3,
-                "反馈",
-                "每次受到伤害并存活后，获得伤害来源的一张牌（优先装备）。",
+                "反馈 · 鬼才",
+                "受伤后可获得来源一张手牌或装备；任意判定生效前可用一张手牌发动鬼才替换判定。",
                 "天命，也由我来定。",
                 6),
 
@@ -142,7 +182,7 @@ namespace Sanguosha.Core
                 "魏",
                 4,
                 "刚烈",
-                "受到伤害并存活后判定：非红桃时，来源弃两张手牌；不足则失去1点体力。",
+                "受伤后可判定，非红桃令来源选择弃两张手牌，或受到你造成的1点伤害。",
                 "鼠辈，竟敢伤我！",
                 7),
 
@@ -152,7 +192,7 @@ namespace Sanguosha.Core
                 "魏",
                 4,
                 "突袭",
-                "摸牌阶段改为从手牌最多的两名其他角色各获得一张手牌；不足两人时补摸。",
+                "摸牌阶段可放弃正常摸牌，改为从自选的至多两名其他角色各获得一张手牌；选一人不补摸。",
                 "没想到吧！",
                 8),
 
@@ -162,7 +202,7 @@ namespace Sanguosha.Core
                 "魏",
                 4,
                 "裸衣",
-                "摸牌阶段少摸一张；本回合杀与决斗造成的伤害+1。",
+                "摸牌阶段可少摸一张，若如此做，本回合杀或决斗造成的非传导伤害+1。",
                 "谁来与我大战三百回合！",
                 9),
 
@@ -171,8 +211,8 @@ namespace Sanguosha.Core
                 "郭嘉",
                 "魏",
                 3,
-                "遗计",
-                "每受到1点伤害并存活后，摸两张牌。",
+                "天妒 · 遗计",
+                "每点伤害后可摸两张，并将其中任意牌分配给其他角色；天妒可获得自己最终判定牌。",
                 "就这样罢。",
                 10),
 
@@ -182,7 +222,7 @@ namespace Sanguosha.Core
                 "魏",
                 3,
                 "洛神 · 倾国",
-                "回合开始连续判定，获得所有黑色判定牌，红色时停止；黑色手牌可当闪。",
+                "准备阶段可重复洛神判定并获得黑色判定牌，遇红停止，也可自行停止；黑色手牌可当闪。",
                 "仿佛兮若轻云之蔽月。",
                 11),
 
@@ -192,7 +232,7 @@ namespace Sanguosha.Core
                 "蜀",
                 3,
                 "观星 · 空城",
-                "回合开始自动整理牌堆顶五张，将优先牌留作摸牌；没有手牌时不能成为杀、决斗的目标。",
+                "准备阶段观看牌堆顶X张（X为存活人数至多5），任意排序置顶/底；空手不能成为杀或决斗目标。",
                 "知天易，逆天难。",
                 12),
 
@@ -251,8 +291,8 @@ namespace Sanguosha.Core
                 "周瑜",
                 "吴",
                 3,
-                "英姿",
-                "摸牌阶段额外摸一张牌。",
+                "英姿 · 反间",
+                "摸牌阶段可额外摸一；反间阶段一次，让其他角色猜花色并随机得到你一张手牌，不符受1点伤害。",
                 "谈笑间，樯橹灰飞烟灭。",
                 18),
 
@@ -261,8 +301,8 @@ namespace Sanguosha.Core
                 "大乔",
                 "吴",
                 3,
-                "国色",
-                "可勾选技能，将任意方块手牌当乐不思蜀使用。",
+                "国色 · 流离",
+                "方块手牌或装备可当乐不思蜀；成为杀目标时可弃一手牌/装备，转移给攻击范围内除来源外的其他人。",
                 "国色天香，倾国倾城。",
                 19),
 
@@ -282,7 +322,7 @@ namespace Sanguosha.Core
                 "吴",
                 3,
                 "结姻 · 枭姬",
-                "出牌阶段限一次，交给一名受伤角色一张牌，你与其各回复1点体力；失去装备时摸两张牌。",
+                "阶段一次，弃两张手牌，与你选择的受伤男性各回复1点；每失去一张装备摸两张。",
                 "姻缘天定，弓马随心。",
                 21),
 
@@ -302,7 +342,7 @@ namespace Sanguosha.Core
                 "群",
                 3,
                 "青囊 · 急救",
-                "出牌阶段限一次，弃一张手牌令任意受伤角色回复1点体力；回合外红色手牌可当桃救援。",
+                "阶段一次，弃一张手牌令一名受伤角色回复1点；回合外红色手牌或装备可当桃救援。",
                 "救人一命，胜造七级浮屠。",
                 23),
 
@@ -312,11 +352,11 @@ namespace Sanguosha.Core
                 "群",
                 3,
                 "离间 · 闭月",
-                "出牌阶段限一次，弃一张手牌，令目标与你指定的第二名角色决斗；回合结束摸一张牌。",
+                "阶段一次，弃一张手牌或装备令另外两名男性无实体牌决斗；结束阶段可摸一张。",
                 "夫君，你要替妾身做主。",
                 24)
 
-        };
+        }.Concat(CreateExpansion()).Concat(CreateRefreshed()).Concat(CreateBatchTwo()).Concat(CreateBatchThree()).Concat(CreateBatchFour()).ToArray();
 
         public static Hero Find(string id)
         {
@@ -324,7 +364,7 @@ namespace Sanguosha.Core
         }
     }
 
-    public sealed record Card(int Id, CardKind Kind, string Suit, int Rank)
+    public sealed record Card(int Id, CardKind Kind, string Suit, int Rank, DamageNature Nature = DamageNature.Normal)
     {
         public bool IsRed => Suit is "♥" or "♦";
 
@@ -339,7 +379,7 @@ namespace Sanguosha.Core
 
         public string Name => Kind switch
         {
-            CardKind.Slash => "杀",
+            CardKind.Slash => Nature == DamageNature.Fire ? "火杀" : Nature == DamageNature.Thunder ? "雷杀" : "杀",
             CardKind.Dodge => "闪",
             CardKind.Peach => "桃",
             CardKind.Duel => "决斗",
@@ -354,35 +394,50 @@ namespace Sanguosha.Core
             CardKind.Blade => "青龙偃月刀",
             CardKind.EightTrigrams => "八卦阵",
             CardKind.Horse => "的卢",
+            CardKind.SupplyShortage => "兵粮寸断",
+            CardKind.IronChain => "铁索连环",
+            CardKind.Nullification => "无懈可击",
+            CardKind.FireAttack => "火攻",
+            CardKind.Wine => "酒",
+            CardKind.Lightning => "闪电",
             _ => "未知"
         };
 
-        public bool IsEquipment => Kind >= CardKind.Crossbow;
+        public bool IsEquipment => Kind is CardKind.Crossbow or CardKind.Blade or CardKind.EightTrigrams or CardKind.Horse;
 
-        public string Category => IsEquipment ? "装备" : Kind <= CardKind.Peach ? "基本" : "锦囊";
+        public bool IsBasic => Kind is CardKind.Slash or CardKind.Dodge or CardKind.Peach or CardKind.Wine;
+        public bool IsTrick => !IsBasic && !IsEquipment;
+        public bool IsDelayed => Kind is CardKind.Indulgence or CardKind.SupplyShortage or CardKind.Lightning;
+        public string Category => IsEquipment ? "装备" : IsBasic ? "基本" : "锦囊";
 
         public string Description => Kind switch
         {
-            CardKind.Slash => "对攻击范围内一名其他角色使用，需出闪，否则受到1点伤害。每回合限一次。",
+            CardKind.Slash => Nature == DamageNature.Normal ? "对攻击范围内一名其他角色使用，需出闪，否则受到1点伤害。每回合限一次。" : $"造成{(Nature == DamageNature.Fire ? "火焰" : "雷电")}伤害；横置角色会传导伤害并重置。",
             CardKind.Dodge => "响应杀或万箭齐发，抵消一次伤害。",
             CardKind.Peach => "出牌时回复自己1点体力；濒死时可救援任意角色。",
             CardKind.Duel => "与一名其他角色交替打出杀，首先无法响应者受到1点伤害。",
             CardKind.DrawTwo => "立即摸两张牌。",
-            CardKind.Dismantle => "弃置一名其他角色的一张装备；无装备时随机弃置一张手牌。",
-            CardKind.Steal => "获得距离1以内一名其他角色的一张装备；无装备时随机获得一张手牌。",
+            CardKind.Dismantle => "选择并弃置一名其他角色手牌区、装备区或判定区的一张牌；手牌随机抽取。",
+            CardKind.Steal => "获得距离1以内其他角色手牌区、装备区或判定区的一张牌；手牌随机抽取。",
             CardKind.Barbarians => "其他所有角色依次打出一张杀，否则受到1点伤害。",
             CardKind.Arrows => "其他所有角色依次打出一张闪，否则受到1点伤害。",
             CardKind.Feast => "所有存活角色各回复1点体力。",
             CardKind.Indulgence => "延时锦囊 · 置于目标判定区。其下回合判定非红桃，跳过出牌阶段。",
             CardKind.Crossbow => "武器 · 攻击范围1。使用杀没有次数限制。",
             CardKind.Blade => "武器 · 攻击范围3。",
-            CardKind.EightTrigrams => "防具 · 需要闪时自动判定：红色视为打出一张闪。",
+            CardKind.EightTrigrams => "防具 · 需要闪时可判定：红色视为打出闪，可被鬼才改判。",
             CardKind.Horse => "坐骑 · 其他角色计算与你的距离时+1。",
+            CardKind.SupplyShortage => "判定非梅花时，跳过摸牌阶段。",
+            CardKind.IronChain => "选择至多两名角色，分别横置或重置；也可重铸摸一。",
+            CardKind.Nullification => "抵消一次锦囊效果，其他角色可继续反无懈。",
+            CardKind.FireAttack => "目标展示一张手牌；你可弃同花色手牌对其造成1点火焰伤害。",
+            CardKind.Wine => "阶段限一次，下张杀伤害+1；自己濒死时可当桃自救。",
+            CardKind.Lightning => "判定黑桃2至9：受到3点无来源雷电伤害；否则传给下一合法角色。",
             _ => ""
         };
     }
 
-    public sealed class Player
+    public sealed partial class Player
     {
         public int Seat { get; init; }
         public Hero Hero { get; init; } = Heroes.All[0];
@@ -391,13 +446,43 @@ namespace Sanguosha.Core
         public int Team { get; init; }
         public bool IsAlive { get; set; } = true;
         public int Health { get; set; }
-        public int MaxHealth { get; init; }
+        public int MaxHealth { get; set; }
         public List<Card> Hand { get; } = new();
         public List<Card> Equipment { get; } = new();
         public List<Card> Judgments { get; } = new();
         public int SlashCount { get; set; }
         public bool PlayedSlash { get; set; }
         public bool SkillUsed { get; set; }
+        public bool? DuelJudgmentRed { get; set; }
+        public int ZhaXiangCount { get; set; }
+        public bool HujiaDrawUsed { get; set; }
+        public string RuleId => SkillsDisabled ? "" : SkillIdentity switch
+        {
+            "re_guojia" => "guojia", "re_zhangliao" => "zhangliao", "re_zhugeliang" => "zhugeliang",
+            "re_huatuo" => "huatuo", "re_huangyueying" => "huangyueying", "re_liubei" => "liubei", "re_sunquan" => "sunquan", "re_zhaoyun" => "zhaoyun", "re_zhangfei" => "zhangfei", "re_ganning" => "ganning", "re_lvmeng" => "lvmeng", "re_guanyu" => "guanyu", "re_machao" => "machao", _ => SkillIdentity
+        };
+        public Dictionary<string, int> Marks { get; } = new();
+        public Dictionary<string, List<Card>> NamedZones { get; } = new();
+        public int Mark(string key) => Marks.GetValueOrDefault(key);
+        public void SetMark(string key, int value) { if (value == 0) Marks.Remove(key); else Marks[key] = value; }
+        public List<Card> Zone(string key) { if (!NamedZones.TryGetValue(key, out List<Card>? zone)) NamedZones[key] = zone = new(); return zone; }
+        public IEnumerable<Card> NamedCards => NamedZones.Values.SelectMany(cards => cards);
+        public bool TurnedOver { get; set; }
+        public bool Chained { get; set; }
+        public bool Awakened { get; set; }
+        public bool LimitedUsed { get; set; }
+        public bool SkillsDisabled { get; set; }
+        public bool LuoyiActive { get; set; }
+        public int TianyiState { get; set; }
+        public int RendeGiven { get; set; }
+        public bool InPlayPhase { get; set; }
+        public bool JijiangFailed { get; set; }
+        public List<Card> SpecialCards { get; } = new();
+        public HashSet<int> LuoshenCards { get; } = new();
+        public HashSet<int> SupplyShortages { get; } = new();
+        internal Func<int>? LordHandBonus { get; set; }
+        public int HandLimit => Math.Max(0, (HasAbility("英姿") && (SkillIdentity == "re_zhouyu" || RuleId == "sunce" && Awakened) ? MaxHealth : Health) +
+            Hand.Count(card => LuoshenCards.Contains(card.Id)) + Mark("handBonus") + Mark("qingjianBonus") + (LordHandBonus?.Invoke() ?? Mark("xueyiBonus")) - Mark("wangzunPenalty"));
         public int AttackRange => Equipment.Any(card => card.Kind == CardKind.Blade) ? 3 : 1;
         public string RoleName => Role switch
         {

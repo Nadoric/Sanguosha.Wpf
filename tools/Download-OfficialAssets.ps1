@@ -10,7 +10,7 @@ $manifestPath = Join-Path $resolvedRoot 'src/Sanguosha.Desktop/Assets/Official/s
 $manifest = Get-Content -LiteralPath $manifestPath -Raw -Encoding UTF8 | ConvertFrom-Json
 
 $entries = @($manifest.files)
-foreach ($relativeManifest in @('Audio/sources.json', 'Interface/sources.json'))
+foreach ($relativeManifest in @('Audio/sources.json', 'Interface/sources.json', 'Skins/sources.json', 'Icon/sources.json', 'KillEffects/sources.json', 'GameStart/sources.json'))
 {
     $extraManifestPath = Join-Path $resolvedRoot "src/Sanguosha.Desktop/Assets/Official/$relativeManifest"
     $extraManifest = Get-Content -LiteralPath $extraManifestPath -Raw -Encoding UTF8 | ConvertFrom-Json

@@ -18,12 +18,20 @@ namespace Sanguosha.Desktop
     public sealed class AudioCatalog
     {
         public Dictionary<string, string> Effects { get; set; } = new();
+        public Dictionary<string, string[]> CardVoices { get; set; } = new();
+        public Dictionary<string, string[]> MissingVoices { get; set; } = new();
+        public Dictionary<string, string> MissingCardVoices { get; set; } = new();
         public Dictionary<string, Dictionary<string, string[]>> Voices { get; set; } = new();
     }
 
-    public sealed class GameAudio : IDisposable
+    public sealed record EliminationPresentation(GameCue Cue, double Seconds, bool HasSound);
+
+    public sealed partial class GameAudio : IDisposable
     {
-        private sealed record VoiceClip(string File, string Key, DateTimeOffset QueuedAt, bool IsDeath);
+        private sealed record VoiceClip(string File, string Key, DateTimeOffset QueuedAt, bool IsDeath, bool IsAnnouncement = false, GameCue? Cue = null)
+        {
+            public bool Presented { get; set; }
+        }
 
         private readonly string audioRoot = Path.Combine(
             AppContext.BaseDirectory, "Assets", "Official", "Audio");
@@ -44,6 +52,15 @@ namespace Sanguosha.Desktop
         private int effectIndex;
         private bool settingsDirty;
         private bool disposed;
+        private bool killEffectsEnabled = true;
+        private string? pendingMatchEffect;
+        private MediaPlayer? startEffectPlayer;
+
+        public bool KillEffectsEnabled
+        {
+            get => killEffectsEnabled;
+            set { killEffectsEnabled = value; if (!value) { StopKillAnnouncements(); StopStartEffect(); } }
+        }
 
         public GameAudio(
             bool silent = false,
@@ -79,10 +96,11 @@ namespace Sanguosha.Desktop
         }
 
         public event Action? StatusChanged;
+        public event Action<EliminationPresentation>? EliminationReady;
         public AudioPreferences Settings { get; }
         public string LastError { get; private set; } = "";
         public string Status => LastError.Length > 0 ? LastError :
-            Settings.Muted ? "全部声音已静音" : "本地官方音频 · 25名武将技能与阵亡语音";
+            Settings.Muted ? "全部声音已静音" : $"本地卡牌报音 · {Heroes.All.Count}名武将技能与阵亡语音";
         internal int PendingVoiceCount => pending.Count;
         internal string? ActiveVoice => currentVoice?.Key;
         internal int EffectPlayCount { get; private set; }
@@ -128,15 +146,19 @@ namespace Sanguosha.Desktop
                 }
             }
 
-            if (voicePlayer != null)
+            pending.RemoveAll(clip => !CanPlayVoice(clip));
+            if (currentVoice != null && (!CanPlayVoice(currentVoice) || currentVoice.IsAnnouncement && !CanSoundAnnouncement(currentVoice)))
             {
-                voicePlayer.Volume = muteOutputForVerification ? 0 : Settings.VoicesVolume;
+                VoiceClip clip = currentVoice;
+                if (clip.IsAnnouncement && killEffectsEnabled) PublishPresentation(clip, false);
+                if (ReferenceEquals(currentVoice, clip)) StopCurrentVoice();
             }
+            if (voicePlayer != null && currentVoice != null)
+                voicePlayer.Volume = muteOutputForVerification ? 0 : VoiceVolume(currentVoice);
+            PlayNextVoice();
+            PlayDeferredMatchEffect();
 
-            if (Settings.Muted || !Settings.VoicesEnabled || Settings.VoicesVolume == 0)
-            {
-                StopVoices();
-            }
+            ApplyCardAudioSettings();
 
             settingsDirty = true;
             saveTimer.Stop();
@@ -181,11 +203,12 @@ namespace Sanguosha.Desktop
                     StopAll();
                     eliminated.Clear();
                     cooldowns.Clear();
-                    PlayEffect("start");
+                    if (killEffectsEnabled) PlayEffect("start");
                     break;
                 case GameCueKind.CardPlayed:
                 case GameCueKind.CardResponded:
                     PlayEffect(EffectFor(cue.Card));
+                    if (currentVoice?.IsDeath != true && !pending.Any(clip => clip.IsDeath)) AnnounceCard(cue);
                     break;
                 case GameCueKind.SkillActivated:
                     if (cue.HeroId != null && cue.Skill != null && !eliminated.Contains(cue.HeroId))
@@ -204,22 +227,19 @@ namespace Sanguosha.Desktop
                     PlayEffect("dying");
                     break;
                 case GameCueKind.Eliminated:
+                    if (cue.HeroId != null && !eliminated.Add(cue.HeroId)) break;
+                    StopCardVoices();
+                    StopStartEffect();
                     PlayEffect("death");
-                    if (cue.HeroId != null)
-                    {
-                        eliminated.Add(cue.HeroId);
-                        Speak(cue.HeroId, "death", true);
-                    }
-
+                    if (cue.HeroId != null) Speak(cue.HeroId, "death", true);
+                    QueueEliminationPresentation(cue);
                     break;
                 case GameCueKind.MatchEnded:
                     pending.RemoveAll(clip => !clip.IsDeath);
-                    if (currentVoice != null && !currentVoice.IsDeath)
-                    {
-                        FinishVoice();
-                    }
-
-                    PlayEffect(cue.HumanWon ? "win" : "lose");
+                    if (currentVoice != null && !currentVoice.IsDeath) StopCurrentVoice();
+                    pendingMatchEffect = cue.HumanWon ? "win" : "lose";
+                    PlayNextVoice();
+                    PlayDeferredMatchEffect();
                     break;
                 case GameCueKind.ArmorJudgment:
                     PlayEffect("bagua");
@@ -276,6 +296,8 @@ namespace Sanguosha.Desktop
             }
 
             MediaPlayer player = effectPlayers[effectIndex++ % effectPlayers.Count];
+            if (ReferenceEquals(player, startEffectPlayer)) startEffectPlayer = null;
+            if (key == "start") startEffectPlayer = player;
             try
             {
                 player.Close();
@@ -324,9 +346,10 @@ namespace Sanguosha.Desktop
             VoiceClip clip = new(files[Random.Shared.Next(files.Length)], key, now, death);
             if (death)
             {
-                pending.Clear();
-                StopCurrentVoice();
+                QueuePriority(clip);
+                return;
             }
+            if (currentVoice?.IsDeath == true || pending.Any(item => item.IsDeath)) return;
 
             // 单一语音声道最多保留两个新近请求，防止快速AI回合堆积过期台词。
             pending.RemoveAll(item => item.Key == key || now - item.QueuedAt > TimeSpan.FromSeconds(4));
@@ -339,6 +362,58 @@ namespace Sanguosha.Desktop
             PlayNextVoice();
         }
 
+        private bool CanPlayVoice(VoiceClip clip) => clip.IsAnnouncement ? killEffectsEnabled :
+            !Settings.Muted && Settings.VoicesEnabled && Settings.VoicesVolume > 0;
+        private bool CanSoundAnnouncement(VoiceClip clip) => clip.File.Length > 0 && !Settings.Muted &&
+            Settings.EffectsEnabled && Settings.EffectsVolume > 0;
+
+        private void PublishPresentation(VoiceClip clip, bool sound, double? seconds = null)
+        {
+            if (clip.Cue == null || clip.Presented || disposed) return;
+            clip.Presented = true;
+            double[] durations = { 2.45, 2.832, 2.712, 2.880, 3.504, 3.384, 4.416, 4.320 };
+            int tier = clip.Cue.Elimination?.Tier ?? 0;
+            EliminationReady?.Invoke(new(clip.Cue, Math.Clamp(seconds ?? durations[Math.Clamp(tier, 0, 7)], 1.5, 6), sound));
+        }
+
+        private double VoiceVolume(VoiceClip clip) => clip.IsAnnouncement ? Settings.EffectsVolume : Settings.VoicesVolume;
+
+        private void QueuePriority(VoiceClip clip)
+        {
+            // Seven victims => at most fourteen death/announcement clips in an eight-seat game.
+            // Reserve these FIFO entries: later deaths must not interrupt earlier victims.
+            pending.RemoveAll(item => !item.IsDeath);
+            if (currentVoice != null && !currentVoice.IsDeath) StopCurrentVoice();
+            if (pending.Count < 16) pending.Add(clip);
+            PlayNextVoice();
+        }
+
+        private void QueueEliminationPresentation(GameCue cue)
+        {
+            if (!killEffectsEnabled || cue.Seat == null || cue.Elimination == null) return;
+            int tier = cue.Elimination.Tier;
+            string key = $"kill:{tier}";
+            string file = tier > 0 && catalog.Effects.TryGetValue(key, out string? found) ? found : "";
+            // A silent marker still releases the matching visual after its victim's death voice.
+            QueuePriority(new VoiceClip(file, key, DateTimeOffset.UtcNow, true, true, cue));
+        }
+
+        public void StopKillAnnouncements()
+        {
+            pending.RemoveAll(clip => clip.IsAnnouncement);
+            if (currentVoice?.IsAnnouncement == true) StopCurrentVoice();
+            PlayNextVoice();
+            PlayDeferredMatchEffect();
+        }
+
+        private void PlayDeferredMatchEffect()
+        {
+            if (pendingMatchEffect == null || currentVoice?.IsDeath == true || pending.Any(clip => clip.IsDeath)) return;
+            string effect = pendingMatchEffect;
+            pendingMatchEffect = null;
+            PlayEffect(effect);
+        }
+
         private void PlayNextVoice()
         {
             if (currentVoice != null || pending.Count == 0 || disposed)
@@ -348,8 +423,15 @@ namespace Sanguosha.Desktop
 
             VoiceClip clip = pending[0];
             pending.RemoveAt(0);
-            if (DateTimeOffset.UtcNow - clip.QueuedAt > TimeSpan.FromSeconds(4))
+            if (!CanPlayVoice(clip) || !clip.IsDeath && DateTimeOffset.UtcNow - clip.QueuedAt > TimeSpan.FromSeconds(4))
             {
+                PlayNextVoice();
+                return;
+            }
+
+            if (clip.IsAnnouncement && !CanSoundAnnouncement(clip))
+            {
+                PublishPresentation(clip, false);
                 PlayNextVoice();
                 return;
             }
@@ -357,6 +439,7 @@ namespace Sanguosha.Desktop
             string path = Path.Combine(audioRoot, clip.File);
             if (!File.Exists(path))
             {
+                if (clip.IsAnnouncement) PublishPresentation(clip, false);
                 ReportFailure("部分武将语音文件缺失，可从完整压缩包恢复。");
                 PlayNextVoice();
                 return;
@@ -366,11 +449,18 @@ namespace Sanguosha.Desktop
             VoicePlayCount++;
             if (silent)
             {
+                if (clip.IsAnnouncement) PublishPresentation(clip, true);
                 return;
             }
 
             MediaPlayer player = new();
             voicePlayer = player;
+            player.MediaOpened += (_, _) =>
+            {
+                if (!ReferenceEquals(player, voicePlayer)) return;
+                if (clip.IsAnnouncement) PublishPresentation(clip, true, player.NaturalDuration.HasTimeSpan ? player.NaturalDuration.TimeSpan.TotalSeconds : null);
+                if (ReferenceEquals(player, voicePlayer)) player.Play();
+            };
             player.MediaEnded += (_, _) =>
             {
                 if (ReferenceEquals(player, voicePlayer))
@@ -390,9 +480,8 @@ namespace Sanguosha.Desktop
             voiceWatchdog.Start();
             try
             {
-                player.Volume = muteOutputForVerification ? 0 : Settings.VoicesVolume;
+                player.Volume = muteOutputForVerification ? 0 : VoiceVolume(clip);
                 player.Open(new Uri(path));
-                player.Play();
             }
             catch (Exception exception) when (exception is InvalidOperationException or IOException or NotSupportedException)
             {
@@ -418,8 +507,10 @@ namespace Sanguosha.Desktop
 
         private void FinishVoice()
         {
+            if (currentVoice?.IsAnnouncement == true) PublishPresentation(currentVoice, false);
             StopCurrentVoice();
             PlayNextVoice();
+            PlayDeferredMatchEffect();
         }
 
         internal void FinishVoiceForVerification()
@@ -438,9 +529,18 @@ namespace Sanguosha.Desktop
             StopCurrentVoice();
         }
 
+        public void StopStartEffect()
+        {
+            startEffectPlayer?.Close();
+            startEffectPlayer = null;
+        }
+
         public void StopAll()
         {
+            startEffectPlayer = null;
+            pendingMatchEffect = null;
             StopVoices();
+            StopCardVoices();
             foreach (MediaPlayer player in effectPlayers)
             {
                 player.Close();

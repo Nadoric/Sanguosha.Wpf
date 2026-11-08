@@ -18,23 +18,14 @@ namespace Sanguosha.Desktop
 
     public static class Art
     {
-        private static readonly Dictionary<string, ImageBrush> Portraits = new();
-
-        public static ImageBrush Portrait(Hero hero)
+        public static ImageBrush Portrait(Hero hero, bool grayscale = false)
         {
-            if (Portraits.TryGetValue(hero.Id, out ImageBrush? existing))
-            {
-                return existing;
-            }
+            return PortraitCache.Get(SkinLibrary.Shared.Current(hero.Id), grayscale);
+        }
 
-            ImageBrush brush = new(OfficialAssets.LoadBitmap($"Portraits/{hero.Id}.png"))
-            {
-                Stretch = Stretch.UniformToFill,
-                AlignmentY = AlignmentY.Top
-            };
-            brush.Freeze();
-            Portraits.Add(hero.Id, brush);
-            return brush;
+        public static ImageBrush SkinPortrait(HeroSkin skin)
+        {
+            return PortraitCache.Get(skin);
         }
 
         public static Brush Color(string hex)
@@ -43,7 +34,7 @@ namespace Sanguosha.Desktop
         }
     }
 
-    public sealed class HeroView
+    public sealed class HeroView : Observable
     {
         public HeroView(Hero hero)
         {
@@ -56,6 +47,11 @@ namespace Sanguosha.Desktop
         public string Skill => Hero.Skill;
         public string Description => Hero.Description;
         public ImageBrush Portrait => Art.Portrait(Hero);
+
+        public void RefreshPortrait()
+        {
+            Raise(nameof(Portrait));
+        }
     }
 
     public sealed class CardView : Observable
@@ -76,7 +72,7 @@ namespace Sanguosha.Desktop
         public string Category => Card.Category;
         public string Hint => $"{Card.Suit}{Card.RankText} · {Card.Name}\n{Card.Description}";
         public bool Available { get; }
-        public BitmapSource Face => OfficialAssets.CardFace(Card.Kind);
+        public BitmapSource Face => OfficialAssets.CardFace(Card);
         public BitmapSource RankImage => OfficialAssets.Rank(Card);
         public BitmapSource SuitImage => OfficialAssets.Suit(Card);
 
@@ -97,9 +93,9 @@ namespace Sanguosha.Desktop
         {
             Player = player;
             Name = player.Hero.Name;
-            Portrait = Art.Portrait(player.Hero);
-            Kingdom = player.Hero.Kingdom;
-            Health = $"{Math.Max(0, player.Health)} / {player.MaxHealth}";
+            Portrait = Art.Portrait(player.Hero, !player.IsAlive);
+            Kingdom = player.Kingdom;
+            Health = $"{player.Health} / {player.MaxHealth}";
             Hearts = string.Concat(Enumerable.Repeat("● ", Math.Max(0, player.Health))) +
                 string.Concat(Enumerable.Repeat("○ ", Math.Max(0, player.MaxHealth - Math.Max(0, player.Health))));
             Identity = game.Mode == GameMode.Team2V2
@@ -111,18 +107,20 @@ namespace Sanguosha.Desktop
                 player == game.Current ? "◈ 当前回合" : $"{player.Seat + 1}号位 · 等待";
             Hand = $"手牌  {player.Hand.Count:D2}";
             Distance = player.IsAlive && game.Human.IsAlive ? $"距离 {game.Distance(game.Human, player)}" : "距离 —";
-            Skill = player.Hero.Skill;
-            SkillDescription = player.Hero.Description;
+            Skill = player.EffectiveSkillText + (player.Awakened ? " · 已觉醒" : "") + (player.LimitedUsed ? " · 限定技已用" : "") + (player.TurnedOver ? " · 背面" : "") + (player.Chained ? " · 连环" : "") + (player.SpecialCards.Count > 0 ? " · 不屈 " + string.Join("/", player.SpecialCards.Select(card => card.RankText)) : "");
+            SkillDescription = player.Hero.Description + (player.NamedCards.Any() ? "\n" + string.Join("；", player.NamedZones.Select(pair => pair.Key + "：" + (pair.Key == "谦逊" && !player.IsHuman ? pair.Value.Count + "张暗置牌" : string.Join("、", pair.Value.Select(card => card.Suit + card.RankText))))) : "");
+            if (player.Incarnations.Count > 0) SkillDescription += "\n化身池：" + (player.IsHuman ? string.Join("、", player.Incarnations.Select(id => Heroes.Find(id).Name)) : player.Incarnations.Count + "张（仅本人可见）");
             Equipment = player.Equipment.Count + player.Judgments.Count == 0
                 ? "无装备"
-                : string.Join(" · ", player.Equipment.Concat(player.Judgments).Select(card => card.Name));
+                : string.Join(" · ", player.Equipment.Select(card => card.Name).Concat(player.Judgments.Select(card => player.SupplyShortages.Contains(card.Id) || card.Kind == CardKind.SupplyShortage ? "兵粮寸断" : card.Kind == CardKind.Lightning ? "闪电" : "乐不思蜀")));
             Border = Art.Color(target == player.Seat ? "#FFE3A0" :
                 player == game.Current ? "#D0AA55" : "#715A3D");
-            Opacity = player.IsAlive ? 1 : 0.42;
+            Opacity = player.IsAlive ? 1 : 0.8;
             IsSelected = target == player.Seat;
             IdentityImage = OfficialInterface.Identity(player, game);
+            DeathStamp = OfficialInterface.DeathStamp(player, game.Mode);
             HealthPips = OfficialInterface.Health(player);
-            Faction = OfficialInterface.Faction(player.Hero.Kingdom);
+            Faction = OfficialInterface.Faction(player.Kingdom);
             SetPosition(game.Players.Count);
         }
 
@@ -142,6 +140,8 @@ namespace Sanguosha.Desktop
         public string Equipment { get; }
         public Brush Border { get; }
         public double Opacity { get; }
+        public System.Windows.Visibility DeathVisibility => Player.IsAlive ? System.Windows.Visibility.Collapsed : System.Windows.Visibility.Visible;
+        public BitmapSource DeathStamp { get; }
         public bool IsSelected { get; }
         public string VerticalName => string.Join("\n", Name.ToCharArray());
         public string HandCount => Player.Hand.Count.ToString();
@@ -161,18 +161,8 @@ namespace Sanguosha.Desktop
                 return;
             }
 
-            // 座次自玩家左侧顺时针围桌排列；阵亡后不重新排列视觉座位。
-            (double X, double Y)[] positions = playerCount switch
-            {
-                8 => new[]
-                {
-                    (22.0, 337.0), (22.0, 76.0), (270.0, 13.0), (500.0, 13.0),
-                    (730.0, 13.0), (970.0, 76.0), (970.0, 337.0)
-                },
-                5 => new[] { (36.0, 220.0), (305.0, 16.0), (665.0, 16.0), (965.0, 220.0) },
-                _ => new[] { (65.0, 205.0), (500.0, 16.0), (945.0, 205.0) }
-            };
-            (X, Y) = positions[Seat - 1];
+            SceneSeat bounds = BattleSceneLayout.Opponent(playerCount, Seat);
+            X = bounds.X; Y = bounds.Y;
         }
     }
 }

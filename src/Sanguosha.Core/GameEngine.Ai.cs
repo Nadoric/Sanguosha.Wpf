@@ -14,6 +14,7 @@ namespace Sanguosha.Core
                 return first.Team == second.Team;
             }
 
+            if (first.Role == Role.Rebel && second.Role == Role.Rebel) return true;
             return first.Role is Role.Lord or Role.Loyalist &&
                 second.Role is Role.Lord or Role.Loyalist;
         }
@@ -63,10 +64,12 @@ namespace Sanguosha.Core
                 return;
             }
 
-            Card? healing = actor.Hand.FirstOrDefault(card => card.Kind == CardKind.Peach);
+            if (TryCoreCompletionAi(actor)) return;
+            if (TryBatchThreeAi(actor)) return;
+            Card? healing = actor.Hand.FirstOrDefault(card => card.Kind == CardKind.Peach || ((actor.SkillIdentity == "re_zhaoyun" && actor.HasAbility("龙胆"))) && !actor.SkillsDisabled && card.Kind == CardKind.Wine);
             if (healing != null && actor.Health < actor.MaxHealth)
             {
-                ResolveCard(actor, healing, null, false);
+                ResolveCard(actor, healing, null, healing.Kind == CardKind.Wine);
                 return;
             }
 
@@ -85,22 +88,22 @@ namespace Sanguosha.Core
                 return;
             }
 
-            if (actor.Hero.Id == "huanggai" && actor.Health >= 3)
+            if (((actor.RuleId == "huanggai" && actor.HasAbility("苦肉"))) && actor.Health >= 3)
             {
                 ExecuteActiveSkill(actor, null, null, null);
                 return;
             }
 
-            if (!actor.SkillUsed && actor.Hero.Id is "liubei" or "sunshangxiang" or "huatuo")
+            if ((((actor.RuleId == "liubei" && actor.HasAbility("仁德"))) ? actor.RendeGiven < 2 : !actor.SkillUsed) && ((actor.RuleId == "liubei" && actor.HasAbility("仁德")) || (actor.RuleId == "sunshangxiang" && actor.HasAbility("结姻")) || (actor.RuleId == "huatuo" && actor.HasAbility("青囊"))))
             {
                 Player? friend = Players.FirstOrDefault(player => player.IsAlive && Allied(actor, player) &&
-                    (actor.Hero.Id == "huatuo" || player != actor) &&
-                    (actor.Hero.Id == "liubei" || player.Health < player.MaxHealth));
+                    (((actor.RuleId == "huatuo" && actor.HasAbility("青囊"))) || player != actor) &&
+                    (((actor.RuleId == "liubei" && actor.HasAbility("仁德"))) || player.Health < player.MaxHealth) &&
+                    (!((actor.RuleId == "sunshangxiang" && actor.HasAbility("结姻"))) || !player.IsFemale && actor.Hand.Count >= 2));
                 Card? gift = actor.Hand.OrderBy(KeepValue).FirstOrDefault();
                 if (friend != null && gift != null && (actor.Health < actor.MaxHealth || actor.Hand.Count > 3))
                 {
-                    ExecuteActiveSkill(actor, gift, friend, null);
-                    return;
+                    if (ExecuteActiveSkill(actor, gift, friend, null)) return;
                 }
             }
 
@@ -109,12 +112,46 @@ namespace Sanguosha.Core
                 .OrderByDescending(player => Hostility(actor, player) + (5 - player.Health) * 8)
                 .ToList();
 
-            if (actor.Hero.Id == "diaochan" && !actor.SkillUsed && actor.Hand.Count > 0 && enemies.Count >= 2)
+            if (((actor.RuleId == "dianwei" && actor.HasAbility("强袭"))) && !actor.SkillUsed)
             {
-                ExecuteActiveSkill(actor, actor.Hand.OrderBy(KeepValue).First(), enemies[0], enemies[1]);
+                Player? target = enemies.FirstOrDefault(player => Distance(actor, player) <= actor.AttackRange);
+                bool canPay = actor.Health >= 2 || actor.Hand.Any(card => card.Kind is CardKind.Blade or CardKind.Crossbow) ||
+                    (target != null && Distance(actor, target) <= 1 && actor.Equipment.Any(card => card.Kind is CardKind.Blade or CardKind.Crossbow));
+                if (target != null && canPay)
+                {
+                    ExecuteActiveSkill(actor, null, target, null);
+                    return;
+                }
+            }
+
+            if (!actor.SkillUsed && ((actor.RuleId == "re_huanggai" && actor.HasAbility("苦肉"))) && actor.Health >= 2 && actor.Hand.Count + actor.Equipment.Count > 0)
+            {
+                ExecuteRefreshedSkill(actor, null, null, null);
+                return;
+            }
+            if (!actor.SkillUsed && ((actor.RuleId == "re_zhouyu" && actor.HasAbility("反间"))) && enemies.Count > 0 && actor.Hand.Count > 0)
+            {
+                ExecuteRefreshedSkill(actor, actor.Hand.OrderBy(KeepValue).First(), enemies[0], null);
+                return;
+            }
+            if (!actor.SkillUsed && ((actor.RuleId == "re_diaochan" && actor.HasAbility("离间"))) && actor.Hand.Count + actor.Equipment.Count > 0)
+            {
+                List<Player> males = enemies.Where(player => !player.IsFemale).Take(2).ToList();
+                if (males.Count == 2)
+                {
+                    ExecuteRefreshedSkill(actor, null, males[0], males[1]);
+                    return;
+                }
+            }
+
+            if (((actor.RuleId == "diaochan" && actor.HasAbility("离间"))) && !actor.SkillUsed && He(actor).Any() && enemies.Count(player => !player.IsFemale) >= 2)
+            {
+                List<Player> males = enemies.Where(player => !player.IsFemale).Take(2).ToList();
+                ExecuteActiveSkill(actor, null, males[0], males[1]);
                 return;
             }
 
+            if (TryBatchAiSkill(actor)) return;
             List<(Card Card, bool Transform)> plans = actor.Hand
                 .SelectMany(card => CanUseConversion(actor, card)
                     ? new[] { (card, false), (card, true) }
@@ -126,7 +163,10 @@ namespace Sanguosha.Core
                 CardKind kind = EffectiveKind(actor, card, transform);
                 if (NeedsTarget(kind))
                 {
-                    Player? target = enemies.FirstOrDefault(player => ValidatePlay(actor, card, player, transform) == null);
+                    Player? target = enemies.Where(player => ValidatePlay(actor, card, player, transform) == null)
+                        .Where(player => kind != CardKind.Slash || transform || card.Nature == DamageNature.Normal || !player.Chained ||
+                            Players.Where(linked => linked.IsAlive && linked.Chained).Sum(linked => Hostility(actor, linked)) > 0)
+                        .FirstOrDefault();
                     if (target != null)
                     {
                         ResolveCard(actor, card, target, transform);
@@ -150,7 +190,7 @@ namespace Sanguosha.Core
                 }
             }
 
-            if (!actor.SkillUsed && actor.Hero.Id == "sunquan" && actor.Hand.Count > 0)
+            if (!actor.SkillsDisabled && !actor.SkillUsed && ((actor.SkillIdentity == "sunquan" && actor.HasAbility("制衡"))) && actor.Hand.Count > 0)
             {
                 Card unwanted = actor.Hand.OrderBy(KeepValue).First();
                 if (KeepValue(unwanted) < 5)
@@ -173,6 +213,8 @@ namespace Sanguosha.Core
             return card.Kind switch
             {
                 CardKind.Peach => 10,
+                CardKind.Nullification => 8,
+                CardKind.Wine => 6,
                 CardKind.Dodge => 8,
                 CardKind.DrawTwo => 9,
                 CardKind.Slash => 5,

@@ -4,153 +4,114 @@ namespace Sanguosha.Core
     {
         public bool CanUseConversion(Player player, Card card)
         {
-            return player.Hero.Id switch
+            return player.RuleId switch
             {
-                "guanyu" => card.IsRed,
-                "zhaoyun" => card.Kind == CardKind.Dodge,
-                "ganning" => !card.IsRed,
-                "daqiao" => card.Suit == "♦",
+                "guanyu" => player.HasAbility("武圣") && card.IsRed,
+                "zhaoyun" => player.HasAbility("龙胆") && (card.Kind == CardKind.Dodge || player.SkillIdentity == "re_zhaoyun" && card.Kind is CardKind.Peach or CardKind.Wine),
+                "ganning" => player.HasAbility("奇袭") && !card.IsRed,
+                "daqiao" => player.HasAbility("国色") && card.Suit == "♦",
+                "xuhuang" => player.HasAbility("断粮") && !RedFor(player, card) && (card.IsBasic || card.IsEquipment),
+                "yanliangwenchou" => player.HasAbility("双雄") && player == Current && player.DuelJudgmentRed.HasValue &&
+                    card.IsRed != player.DuelJudgmentRed.Value,
                 _ => false
             };
         }
 
-        private void OnHandLost(Player player)
+        private void OnHandLost(Player player, int count = 1)
         {
-            if (player.IsAlive && player.Hero.Id == "luxun" && player.Hand.Count == 0)
+            if (count <= 0) return;
+            if (player.IsAlive && player.SkillIdentity == "re_luxun" && player.HasAbility("连营") && player.Hand.Count == 0) RefreshedLianying(player, count);
+            QueueTuntian(player);
+            player.LuoshenCards.IntersectWith(player.Hand.Select(card => card.Id));
+            if (player.IsAlive && ((player.RuleId == "luxun" && player.HasAbility("连营"))) && player.Hand.Count == 0)
             {
-                Draw(player, 1);
-                AddLog("陆逊发动连营，摸一张牌。");
-                EmitSkill(player, "连营");
+                QueueLianying(player);
             }
         }
 
         private void OnEquipmentLost(Player player)
         {
-            if (player.IsAlive && player.Hero.Id == "sunshangxiang")
+            QueueTuntian(player);
+            if (player.IsAlive && ((player.RuleId == "sunshangxiang" && player.HasAbility("枭姬")) || (player.RuleId == "re_sunshangxiang" && player.HasAbility("枭姬"))))
             {
-                Draw(player, 2);
-                AddLog("孙尚香发动枭姬，摸两张牌。");
-                EmitSkill(player, "枭姬");
+                QueueXiaoji(player);
             }
         }
 
         private void ResolveTurnStart(Player actor)
         {
             AddLog($"第{Round}轮 · {actor.Hero.Name}的回合。");
-            if (actor.Hero.Id == "zhugeliang" && deck.Count > 1)
+            BatchThreePreparation(actor, () => Preparation(actor, () =>
             {
-                int count = Math.Min(5, deck.Count);
-                List<Card> stars = deck.TakeLast(count).OrderBy(KeepValue).ToList();
-                deck.RemoveRange(deck.Count - count, count);
-                deck.AddRange(stars);
-                AddLog("诸葛亮发动观星，整理牌堆顶，将优先保留的牌置于顶端。");
-                EmitSkill(actor, "观星");
+                if (((actor.RuleId == "zhanghe" && actor.HasAbility("巧变")))) ResolveQiaobianStart(actor);
+                else if (((actor.RuleId == "xiahouyuan" && actor.HasAbility("神速")))) TryShensu(actor, true, () => ResolveJudgments(actor));
+                else ResolveJudgments(actor);
+            }));
+        }
+
+        private void ResolveDrawPhase(Player actor, bool skipPlay)
+        {
+            normalDrawSeat = actor.Seat;
+            if (BatchThreeDraw(actor, () => FinishDrawPhase(actor, skipPlay))) return;
+            if (BatchDraw(actor, () => FinishDrawPhase(actor, skipPlay))) return;
+            if (TryExpansionDraw(actor, () => FinishDrawPhase(actor, skipPlay)))
+            {
+                return;
             }
 
-            if (actor.Hero.Id == "zhenji")
-            {
-                EmitSkill(actor, "洛神");
-                // 上限为完整牌堆大小，防止极端存档在全黑牌堆中无限循环。
-                for (int index = 0; index < 108; index++)
-                {
-                    Card? judgment = TakeTop();
-                    if (judgment == null)
-                    {
-                        break;
-                    }
+            Draw(actor, 2);
+            AddLog($"{actor.Hero.Name}摸2张牌。");
 
-                    ShowCard(judgment);
-                    if (judgment.IsRed)
-                    {
-                        DiscardPile.Add(judgment);
-                        AddLog($"甄姬洛神判定{judgment.Suit}{judgment.RankText}，停止判定。");
-                        break;
-                    }
+            FinishDrawPhase(actor, skipPlay);
+        }
 
-                    actor.Hand.Add(judgment);
-                    AddLog($"甄姬洛神获得黑色牌【{judgment.Name}】。");
-                }
-            }
-
-            bool skipPlay = false;
-            foreach (Card delayed in actor.Judgments.ToList())
-            {
-                actor.Judgments.Remove(delayed);
-                DiscardPile.Add(delayed);
-                Card? judgment = TakeTop();
-                if (judgment != null)
-                {
-                    DiscardPile.Add(judgment);
-                    ShowCard(judgment);
-                    bool skipped = judgment.Suit != "♥";
-                    skipPlay |= skipped;
-                    AddLog($"{actor.Hero.Name}乐不思蜀判定{judgment.Suit}{judgment.RankText}，" +
-                        (skipped ? "本回合跳过出牌阶段。" : "判定通过。"));
-                }
-            }
-
-            if (actor.Hero.Id == "zhangliao")
-            {
-                EmitSkill(actor, "突袭");
-                List<Player> targets = Players.Where(player => player != actor && player.IsAlive &&
-                        player.Hand.Count > 0 && (Mode != GameMode.Team2V2 || player.Team != actor.Team))
-                    .OrderByDescending(player => player.Hand.Count).Take(2).ToList();
-                foreach (Player target in targets)
-                {
-                    Card card = target.Hand[random.Next(target.Hand.Count)];
-                    target.Hand.Remove(card);
-                    actor.Hand.Add(card);
-                    OnHandLost(target);
-                    AddLog($"张辽发动突袭，从{target.Hero.Name}处获得一张手牌。");
-                }
-
-                Draw(actor, 2 - targets.Count);
-            }
-            else
-            {
-                int count = actor.Hero.Id == "zhouyu" ? 3 : actor.Hero.Id == "xuchu" ? 1 : 2;
-                if (actor.Hero.Id is "zhouyu" or "xuchu")
-                {
-                    EmitSkill(actor, actor.Hero.Id == "zhouyu" ? "英姿" : "裸衣");
-                }
-
-                Draw(actor, count);
-                AddLog($"{actor.Hero.Name}摸{count}张牌。" +
-                    (actor.Hero.Id == "zhouyu" ? "（英姿）" : actor.Hero.Id == "xuchu" ? "（裸衣）" : ""));
-            }
-
-            if (skipPlay)
-            {
-                BeginDiscard(actor);
-            }
-            else
-            {
-                CompleteAction(actor);
-            }
+        private void FinishDrawPhase(Player actor, bool skipPlay)
+        {
+            normalDrawSeat = null;
+            if (skipPlay) BeginDiscard(actor);
+            else if (((actor.RuleId == "xiahouyuan" && actor.HasAbility("神速")))) TryShensu(actor, false, () => CompleteAction(actor));
+            else BeforePlayBatchThree(actor, () => CompleteAction(actor));
         }
 
         private void BeginDiscard(Player actor)
         {
-            if (actor.Hero.Id == "lvmeng" && !actor.PlayedSlash)
+            if (Phase == GamePhase.GameOver) return;
+            if (DrainReactions(() => BeginDiscard(actor))) return;
+            if (((actor.RuleId == "zhanghe" && actor.HasAbility("巧变"))) && actor.Hand.Count > 0)
             {
-                AddLog("吕蒙发动克己，跳过弃牌阶段。");
-                EmitSkill(actor, "克己");
-                EndActorTurn(actor);
+                QiaobianCost(actor, "弃牌", actor.Hand.Count > actor.HandLimit + 1, skip =>
+                {
+                    if (skip) EndActorTurn(actor); else BeginDiscardCore(actor);
+                });
                 return;
             }
+            BeginDiscardCore(actor);
+        }
 
-            int excess = actor.Hand.Count - Math.Max(0, actor.Health);
+        private void BeginDiscardCore(Player actor)
+        {
+            actor.SetMark("xueyiBonus", ((actor.RuleId == "yuanshao" && actor.HasAbility("血裔"))) && Lord(actor) ? 2 * Players.Count(player => player.IsAlive && player != actor && player.Kingdom == "群") : 0);
+            discardingActor = actor; phaseDiscards.Clear();
+            if (((actor.RuleId == "lvmeng" && actor.HasAbility("克己"))) && !actor.PlayedSlash)
+            {
+                OptionalSkill(actor, "克己：本回合未使用或打出杀，是否跳过弃牌阶段？", true, use =>
+                { if (use) { EmitSkill(actor, "克己"); EndActorTurn(actor); } else ResolveNormalDiscard(actor); });
+                return;
+            }
+            ResolveNormalDiscard(actor);
+        }
+
+        private void ResolveNormalDiscard(Player actor)
+        {
+            int excess = actor.Hand.Count - actor.HandLimit;
             if (excess > 0 && actor.IsHuman)
             {
                 Phase = GamePhase.Discard;
-                Status = $"弃牌阶段 · 请选择并弃置 {excess} 张牌（手牌上限等于体力）。";
+                Status = $"弃牌阶段 · 请选择并弃置 {excess} 张牌（手牌上限{actor.HandLimit}）。";
                 return;
             }
 
-            foreach (Card card in actor.Hand.OrderBy(KeepValue).Take(Math.Max(0, excess)).ToList())
-            {
-                DiscardFromHand(actor, card);
-            }
+            PayCards(actor, actor.Hand.OrderBy(KeepValue).Take(Math.Max(0, excess)).ToList());
 
             if (excess > 0)
             {
@@ -162,11 +123,35 @@ namespace Sanguosha.Core
 
         private void EndActorTurn(Player actor)
         {
-            if (actor.IsAlive && actor.Hero.Id == "diaochan")
+            if (Phase == GamePhase.GameOver) return;
+            if (DrainReactions(() => EndActorTurn(actor))) return;
+            actor.InPlayPhase = false;
+            actor.SetMark("xueyiBonus", ((actor.RuleId == "yuanshao" && actor.HasAbility("血裔"))) && actor.Role == Role.Lord && Mode != GameMode.Team2V2 ? 2 * Players.Count(player => player.IsAlive && player != actor && player.Kingdom == "群") : 0);
+            FinishGuzheng(actor, () => BatchEnd(actor, () => BatchThreeEnd(actor, () => EndActorTurnCore(actor))));
+        }
+
+        private void EndActorTurnCore(Player actor)
+        {
+            actor.DuelJudgmentRed = null;
+            actor.ZhaXiangCount = 0;
+            if (actor.IsAlive && ((actor.RuleId == "re_diaochan" && actor.HasAbility("闭月"))))
             {
-                Draw(actor, 1);
-                AddLog("貂蝉发动闭月，摸一张牌。");
-                EmitSkill(actor, "闭月");
+                OptionalSkill(actor, "界闭月：是否在结束阶段摸牌？（空手摸两张，否则一张）", true, use =>
+                {
+                    if (use)
+                    {
+                        EmitSkill(actor, "闭月");
+                        Draw(actor, actor.Hand.Count == 0 ? 2 : 1);
+                    }
+                    NextTurn();
+                });
+                return;
+            }
+            if (actor.IsAlive && ((actor.RuleId == "diaochan" && actor.HasAbility("闭月"))))
+            {
+                OptionalSkill(actor, "闭月：结束阶段是否摸一张牌？", true, use =>
+                { if (use) { Draw(actor, 1); EmitSkill(actor, "闭月"); } NextTurn(); });
+                return;
             }
 
             NextTurn();
@@ -174,23 +159,30 @@ namespace Sanguosha.Core
 
         private void LoseHealth(Player actor, int amount, Action done)
         {
+            bool ownPlay = actor == Current && actor.InPlayPhase && Phase is GamePhase.Play or GamePhase.Resolving;
+            Action afterLoss = () =>
+            {
+                if (actor.IsAlive && ((actor.RuleId == "re_huanggai" && actor.HasAbility("诈降"))))
+                {
+                    Draw(actor, amount * 3);
+                    if (ownPlay) actor.ZhaXiangCount += amount;
+                    EmitSkill(actor, "诈降");
+                }
+                done();
+            };
             actor.Health -= amount;
             EmitCue(GameCueKind.Damaged, actor);
             AddLog($"{actor.Hero.Name}失去{amount}点体力。");
             if (actor.Health > 0)
             {
-                done();
+                afterLoss();
                 return;
             }
 
-            List<Player> rescuers = Enumerable.Range(0, Players.Count)
-                .Select(offset => Players[(actor.Seat + offset) % Players.Count])
-                .Where(player => player.IsAlive).ToList();
-            EmitCue(GameCueKind.NearDeath, actor);
-            Rescue(actor, actor, rescuers, 0, done);
+            if (!TrySurvival(null, actor, afterLoss)) StartRescue(null, actor, afterLoss);
         }
 
-        private void AfterDamage(Player source, Player victim, Card card, int amount, Action done)
+        private void AfterVictimDamage(Player? source, Player victim, Card? card, int amount, Action done)
         {
             if (!victim.IsAlive || Phase == GamePhase.GameOver)
             {
@@ -198,62 +190,29 @@ namespace Sanguosha.Core
                 return;
             }
 
-            switch (victim.Hero.Id)
+            if (victim.HasAbility("新生")) Xinsheng(victim, amount, () => AfterVictimDamageSkills(source, victim, card, amount, done));
+            else AfterVictimDamageSkills(source, victim, card, amount, done);
+        }
+
+        private void AfterVictimDamageSkills(Player? source, Player victim, Card? card, int amount, Action done)
+        {
+            if (victim.SkillIdentity == "re_xiahoudun" && victim.HasAbility("刚烈")) { RefreshedGanglie(source, victim, amount, done); return; }
+            if (((victim.RuleId == "re_caocao" && victim.HasAbility("奸雄"))))
             {
-                case "caocao":
-                    if (DiscardPile.Remove(card))
+                OptionalSkill(victim, "界奸雄：是否获得伤害牌（若仍可获得）并摸一张牌？", true, use =>
+                {
+                    if (use)
                     {
-                        victim.Hand.Add(card);
-                        AddLog($"曹操发动奸雄，获得【{card.Name}】。");
+                        ObtainDamageCards(victim, card);
+                        Draw(victim, 1);
                         EmitSkill(victim, "奸雄");
                     }
-
-                    break;
-                case "guojia":
-                    Draw(victim, amount * 2);
-                    AddLog($"郭嘉发动遗计，摸{amount * 2}张牌。");
-                    EmitSkill(victim, "遗计");
-                    break;
-                case "simayi":
-                    if (source.IsAlive && source != victim && source.Hand.Count + source.Equipment.Count > 0)
-                    {
-                        RemoveTargetCard(victim, source, true, includeJudgment: false);
-                        AddLog("司马懿发动反馈。");
-                        EmitSkill(victim, "反馈");
-                    }
-
-                    break;
-                case "xiahoudun":
-                    EmitSkill(victim, "刚烈");
-                    Card? judgment = TakeTop();
-                    if (judgment != null)
-                    {
-                        DiscardPile.Add(judgment);
-                        ShowCard(judgment);
-                        AddLog($"夏侯惇刚烈判定：{judgment.Suit}{judgment.RankText}。");
-                        if (judgment.Suit != "♥" && source.IsAlive && source != victim)
-                        {
-                            if (source.Hand.Count >= 2)
-                            {
-                                foreach (Card penalty in source.Hand.OrderBy(KeepValue).Take(2).ToList())
-                                {
-                                    DiscardFromHand(source, penalty);
-                                }
-
-                                AddLog($"{source.Hero.Name}因刚烈弃置两张手牌。");
-                            }
-                            else
-                            {
-                                LoseHealth(source, 1, done);
-                                return;
-                            }
-                        }
-                    }
-
-                    break;
+                    done();
+                });
+                return;
             }
 
-            done();
+            BatchThreeVictimDamage(source, victim, card, amount, () => StandardVictimDamage(source, victim, card, amount, done));
         }
 
         private void RequestRepeated(Player player, ResponseKind kind, string prompt, int count, Action<bool> done)
@@ -273,7 +232,57 @@ namespace Sanguosha.Core
 
         private bool ExecuteActiveSkill(Player actor, Card? card, Player? target, Player? secondTarget)
         {
-            if (actor.Hero.Id == "huanggai")
+            if (GlobalSkillMenu(actor, card, target, secondTarget)) return true;
+            if (!actor.HasActiveAbility) return false;
+            if (actor.HasAbility("激将") && !actor.HasAbility("仁德") && card == null) return UseJijiang(actor, target);
+            if (actor.HasAbility("义绝") && actor.Mark("yijueUsed") == 0 && actor.Mark("routingWusheng") == 0)
+            {
+                if (actor.HasAbility("武圣") && actor.Equipment.Any(item => item.IsRed))
+                {
+                    Phase = GamePhase.Resolving;
+                    Decide(actor, "界关羽：选择主动技能", new[] { new SkillDecisionOption("yijue", "义绝：弃牌、令对手亮牌"), new SkillDecisionOption("equip", "武圣：使用已装备的红色牌") }, "yijue", key =>
+                    {
+                        if (key == "yijue") { if (!ExecuteYijue(actor)) CompleteAction(actor); }
+                        else { actor.SetMark("routingWusheng", 1); bool used = ExecuteActiveSkill(actor, card, target, secondTarget); actor.SetMark("routingWusheng", 0); if (!used) CompleteAction(actor); }
+                    }); return true;
+                }
+                if (ExecuteYijue(actor)) return true;
+            }
+            if (actor.HasAbility("蛊惑") && BeginGuhuoPlay(actor, card, target)) return true;
+            if (IsBatchThreeActive(actor)) return ExecuteBatchThreeSkill(actor, card, target, secondTarget);
+            if (actor.RuleId is "guanyu" or "ganning" or "daqiao" or "xuhuang")
+            {
+                List<Card> choices = actor.Equipment.Where(item => CanUseConversion(actor, item)).ToList().Where(item =>
+                {
+                    actor.Equipment.Remove(item); actor.Hand.Add(item);
+                    bool legal = ValidatePlay(actor, item, target, true) == null;
+                    actor.Hand.Remove(item); actor.Equipment.Add(item); return legal;
+                }).ToList();
+                if (choices.Count == 0) return false;
+                Phase = GamePhase.Resolving;
+                Decide(actor, "装备转化：选择已装备且可合法转化使用的牌", choices.Select(item => new SkillDecisionOption(item.Id.ToString(), CardLabel(item))).ToList(), choices.MinBy(KeepValue)!.Id.ToString(), key =>
+                {
+                    Card selected = choices.First(item => item.Id.ToString() == key);
+                    actor.Equipment.Remove(selected); actor.Hand.Add(selected); OnEquipmentLost(actor);
+                    ResolveCard(actor, selected, target, true);
+                }); return true;
+            }
+
+            if (actor.RuleId is "liubei" or "sunquan" or "sunshangxiang" or "zhouyu")
+                return ExecuteStandardSkill(actor, card, target, secondTarget);
+            if (actor.RuleId == "diaochan") return ExecuteRefreshedSkill(actor, card, target, secondTarget);
+            if (actor.RuleId is "pangtong" or "taishici" or "jiangwei" or "lusu" or "zhangzhaozhanghong" or "re_sunshangxiang")
+                return ExecuteBatchSkill(actor, card, target, secondTarget);
+            if (actor.RuleId is "re_huanggai" or "re_diaochan" or "re_zhouyu")
+            {
+                return ExecuteRefreshedSkill(actor, card, target, secondTarget);
+            }
+            if (actor.RuleId == "dianwei")
+            {
+                return ExecuteQiangxi(actor, target);
+            }
+
+            if (actor.RuleId == "huanggai")
             {
                 Phase = GamePhase.Resolving;
                 AddLog("黄盖发动苦肉。");
@@ -290,80 +299,15 @@ namespace Sanguosha.Core
                 return true;
             }
 
-            if (actor.SkillUsed || card == null)
-            {
-                Status = actor.SkillUsed ? "本回合已使用此技能。" : "请先选择一张手牌。";
-                return false;
-            }
-
-            if (actor.Hero.Id is "liubei" or "sunshangxiang")
-            {
-                if (target == null || target == actor || !target.IsAlive ||
-                    (actor.Hero.Id == "sunshangxiang" && target.Health == target.MaxHealth))
-                {
-                    Status = actor.Hero.Id == "liubei" ? "仁德：请选择一名其他角色。" : "结姻：请选择一名受伤的其他角色。";
-                    return false;
-                }
-
-                actor.Hand.Remove(card);
-                target.Hand.Add(card);
-                OnHandLost(actor);
-                Heal(actor);
-                if (actor.Hero.Id == "sunshangxiang")
-                {
-                    Heal(target);
-                }
-
-                AddLog($"{actor.Hero.Name}发动{actor.Hero.Skill}，交给{target.Hero.Name}一张手牌。");
-                EmitSkill(actor, actor.Hero.Id == "liubei" ? "仁德" : "结姻");
-            }
-            else if (actor.Hero.Id == "sunquan")
-            {
-                DiscardFromHand(actor, card);
-                Draw(actor, 1);
-                AddLog("孙权发动制衡，弃一张牌并摸一张牌。");
-                EmitSkill(actor, "制衡");
-            }
-            else if (actor.Hero.Id == "huatuo")
+            if (actor.RuleId == "huatuo" && !actor.SkillUsed && card != null)
             {
                 target ??= actor;
-                if (!target.IsAlive || target.Health >= target.MaxHealth)
-                {
-                    Status = "青囊：请选择一名受伤角色，也可不选目标治疗自己。";
-                    return false;
-                }
-
-                DiscardFromHand(actor, card);
-                Heal(target);
-                AddLog($"华佗发动青囊，治疗{target.Hero.Name}。");
-                EmitSkill(actor, "青囊");
+                if (!target.IsAlive || target.Health >= target.MaxHealth) { Status = "青囊：请选择受伤角色。"; return false; }
+                actor.SkillUsed = true; Phase = GamePhase.Resolving; DiscardFromHand(actor, card);
+                EmitSkill(actor, "青囊"); HealWithChoices(target, () => CompleteAction(actor)); return true;
             }
-            else if (actor.Hero.Id == "diaochan")
-            {
-                if (target == null || secondTarget == null || target == secondTarget ||
-                    target == actor || secondTarget == actor || !target.IsAlive || !secondTarget.IsAlive)
-                {
-                    Status = "离间：依次选择两名不同的其他角色（首版不限制性别）。";
-                    return false;
-                }
-
-                DiscardFromHand(actor, card);
-                actor.SkillUsed = true;
-                Phase = GamePhase.Resolving;
-                AddLog($"貂蝉发动离间，令{target.Hero.Name}与{secondTarget.Hero.Name}决斗。");
-                EmitSkill(actor, "离间");
-                Duel(target, secondTarget, card, secondTarget, target, () => CompleteAction(actor));
-                return true;
-            }
-            else
-            {
-                Status = actor.Hero.Description;
-                return false;
-            }
-
-            actor.SkillUsed = true;
-            CompleteAction(actor);
-            return true;
+            Status = actor.SkillsDisabled ? "断肠：武将技能已失去。" : actor.Hero.Description;
+            return false;
         }
     }
 }

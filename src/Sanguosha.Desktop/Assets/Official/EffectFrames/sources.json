@@ -1,0 +1,53 @@
+{
+  "notes": "Original atlas/SK fragments; 24fps reconstructed sampling, not a full skeletal runtime.",
+  "derived": [
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/kill1.png",
+      "bytes": 599474,
+      "sha256": "1e99669cd665e135647f82783e96ab151034d19a94dbd854c0b3d436a2086846",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/kill2.png",
+      "bytes": 301979,
+      "sha256": "c41f2c42c78429cc8f5a843a3e3ce217c0021a22af18ad61704ab8996fcfa40a",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/kill3.png",
+      "bytes": 696360,
+      "sha256": "a931f8ad7a0a96ae3d617a648839c236d379bc6d52c159f25265d6578d844375",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/kill4.png",
+      "bytes": 1074324,
+      "sha256": "73204c5ffa4fd4f04d1a533bd848c7946ba8ac945c8dc0149fbc2fd039567588",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/kill5.png",
+      "bytes": 552557,
+      "sha256": "0b448d0e34c86f8e50d491aa00c768cb64d2dced1f357947f1df93590a19f69e",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/kill6.png",
+      "bytes": 391894,
+      "sha256": "9a8d3406181d28ec579a0d20a30116415b2aa0f93a476c96cd6cbdeba997de8a",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/kill7.png",
+      "bytes": 435704,
+      "sha256": "d808523f4238acf23f9c15d700621f42b8baff3f85376c9f04d4c3e2bc520fc2",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    },
+    {
+      "path": "src/Sanguosha.Desktop/Assets/Official/EffectFrames/start.png",
+      "bytes": 167040,
+      "sha256": "7b303111c58f6dcfd44bae7c3d44c6a23cf7a15f08b4a4900b167c59ff75df2f",
+      "operation": "original pixels; undo atlas rotation and trim; fit 384x192; pack sheet"
+    }
+  ]
+}

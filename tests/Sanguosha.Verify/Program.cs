@@ -3,12 +3,16 @@ using Sanguosha.Core;
 
 namespace Sanguosha.Verify
 {
-    internal static class Program
+    internal static partial class Program
     {
         private static int assertions;
 
         private static void Main()
         {
+            VerifyPortraitResources();
+            VerifyHeroGalleryLayout();
+            VerifyKillEffects();
+            VerifyPatch11Effects();
             VerifyInitialState();
             VerifyRosterAndModes();
             VerifyAttackAndDodge();
@@ -18,8 +22,16 @@ namespace Sanguosha.Verify
             VerifySkillsAndPersistence();
             VerifySkillInteractions();
             VerifyCueEvents();
+            VerifyTargetCardEffects();
+            VerifyPatch8Choices();
+            VerifyCardEffects();
+            VerifyExpansion();
+            VerifyRefreshedAndMountain();
+            VerifyBatchTwo();
+            VerifyBatchThree();
+            VerifyCoreCompletion();
             SimulateMatches();
-            Console.WriteLine($"PASS · {assertions:N0} assertions; 400 complete seeded matches across 25 heroes / 4 modes.");
+            Console.WriteLine($"PASS · {assertions:N0} assertions; 400 complete seeded matches across {Heroes.All.Count} heroes / 4 modes.");
         }
 
         private static GameEngine Fresh(string hero = "liubei")
@@ -27,6 +39,17 @@ namespace Sanguosha.Verify
             GameEngine game = new(42);
             game.Start(hero);
             game.Advance();
+            for (int step = 0; game.Phase != GamePhase.Play && game.Phase != GamePhase.GameOver && step < 10000; step++)
+            {
+                if (game.PendingDecision is SkillDecisionRequest decision) game.ChooseSkillDecision(decision.Options[0].Key);
+                else if (game.PendingCardChoice is TargetCardRequest request)
+                {
+                    TargetCardOption option = request.Options[0];
+                    game.ChooseTargetCard(option.Zone, option.CardId, option.HandPosition);
+                }
+                else if (game.Pending != null) game.Respond(null);
+                else game.Advance();
+            }
             return game;
         }
 
@@ -43,7 +66,7 @@ namespace Sanguosha.Verify
         private static Card Move(SavedGame snapshot, CardKind kind, int seat)
         {
             List<List<Card>> zones = new() { snapshot.Deck, snapshot.Discard };
-            zones.AddRange(snapshot.Players.SelectMany(player => new[] { player.Hand, player.Equipment, player.Judgments }));
+            zones.AddRange(snapshot.Players.SelectMany(player => new[] { player.Hand, player.Equipment, player.Judgments, player.SpecialCards ?? new() }.Concat(player.NamedZones?.Values ?? Enumerable.Empty<List<Card>>())));
             foreach (List<Card> zone in zones)
             {
                 Card? card = zone.FirstOrDefault(item => item.Kind == kind);
@@ -87,11 +110,11 @@ namespace Sanguosha.Verify
 
         private static void VerifyRosterAndModes()
         {
-            Check(Heroes.All.Count == 25, "Exactly 25 heroes");
-            Check(Heroes.All.Count(hero => hero.Kingdom == "魏") == 7, "Wei roster 7");
-            Check(Heroes.All.Count(hero => hero.Kingdom == "蜀") == 7, "Shu roster 7");
-            Check(Heroes.All.Count(hero => hero.Kingdom == "吴") == 8, "Wu roster 8");
-            Check(Heroes.All.Count(hero => hero.Kingdom == "群") == 3, "Qun roster 3");
+            Check(Heroes.All.Count == 90, "Exactly 90 implemented heroes");
+            Check(Heroes.All.Count(hero => hero.Kingdom == "魏") == 24, "Wei roster 24");
+            Check(Heroes.All.Count(hero => hero.Kingdom == "蜀") == 24, "Shu roster 24");
+            Check(Heroes.All.Count(hero => hero.Kingdom == "吴") == 23, "Wu roster 23");
+            Check(Heroes.All.Count(hero => hero.Kingdom == "群") == 19, "Qun roster 19");
             foreach (GameMode mode in Enum.GetValues<GameMode>())
             {
                 GameEngine game = new(15);
@@ -209,12 +232,13 @@ namespace Sanguosha.Verify
             GameEngine game = Restore(snapshot);
             int hand = game.Human.Hand.Count;
             Check(game.UseSkill(game.Human.Hand[0].Id, 1), "Rende gives card");
-            Check(game.Human.Health == 4 && game.Human.Hand.Count == hand - 1, "Rende heals and transfers");
-            Check(!game.UseSkill(game.Human.Hand[0].Id, 1), "Active skill once per turn");
+            Check(game.Human.Health == 3 && game.Human.Hand.Count == hand - 1, "First Rende gift transfers without healing");
+            Check(game.UseSkill(game.Human.Hand[0].Id, 1) && game.Human.Health == 4, "Second Rende gift heals once");
+            Check(game.UseSkill(game.Human.Hand[0].Id, 1) && game.Human.Health == 4, "Further Rende gifts allowed without repeated healing");
             string saved = game.Save();
             GameEngine loaded = GameEngine.Load(saved);
             Check(loaded.Human.Hand.SequenceEqual(game.Human.Hand), "Save preserves hand order");
-            Check(loaded.Human.SkillUsed && loaded.Human.Health == 4, "Save preserves skill and health");
+            Check(loaded.Human.RendeGiven == 3 && loaded.Human.Health == 4, "Save preserves skill and health");
             Check(loaded.DeckCount == game.DeckCount, "Save preserves deck");
             bool rejected = false;
             try
@@ -263,6 +287,12 @@ namespace Sanguosha.Verify
                 "Conversion uses effective card sound rather than physical dodge sound");
             Check(cues.Any(cue => cue.Kind == GameCueKind.Damaged && cue.HeroId == "liubei"),
                 "Damage cue belongs to damage victim");
+            GameCue played = cues.Single(cue => cue.Kind == GameCueKind.CardPlayed);
+            Check(played.Seat == 0 && played.TargetSeat == 1 && played.PhysicalCard == redDodge,
+                "Visual cue carries source, target and actual physical card for converted attacks");
+            GameCue damaged = cues.Single(cue => cue.Kind == GameCueKind.Damaged);
+            Check(damaged.Seat == 1 && damaged.SourceSeat == 0 && damaged.Amount == 1,
+                "Damage effect uses the actual victim and damage amount");
 
             GameEngine loaded = GameEngine.Load(game.Save(), 42);
             List<GameCue> restored = new();
@@ -346,7 +376,8 @@ namespace Sanguosha.Verify
             slash = Move(snapshot, CardKind.Slash, 0);
             game = Restore(snapshot);
             game.Play(slash.Id, 1);
-            Check(game.Human.Hand.Count == 1, "Lianying replenishes last used hand card");
+            Decision(game, "yes");
+            Check(game.Human.Hand.Count == 1, "Lianying replenishes last used hand card when accepted");
 
             snapshot = Rig("zhangfei", "zhugeliang");
             slash = Move(snapshot, CardKind.Slash, 0);
@@ -410,6 +441,27 @@ namespace Sanguosha.Verify
                 return game.UseSkill(null, null);
             }
 
+            if (human.Hero.Id == "dianwei" && !human.SkillUsed && human.Health > 1)
+            {
+                Player? enemy = game.Players.FirstOrDefault(player => player.IsAlive && player != human &&
+                    (game.Mode == GameMode.Team2V2 ? human.Team != player.Team : !SameSide(human, player)) &&
+                    game.Distance(human, player) <= human.AttackRange);
+                if (enemy != null) return game.UseSkill(null, enemy.Seat);
+            }
+
+            if (!human.SkillUsed && human.Hero.Id == "re_huanggai" && human.Health >= 2 && human.Hand.Count + human.Equipment.Count > 0)
+                return game.UseSkill(null, null);
+            if (!human.SkillUsed && human.Hero.Id is "re_diaochan" or "re_zhouyu")
+            {
+                List<Player> enemies = game.Players.Where(player => player.IsAlive && player != human &&
+                    (game.Mode == GameMode.Team2V2 ? human.Team != player.Team : !SameSide(human, player))).ToList();
+                if (human.Hero.Id == "re_zhouyu" && human.Hand.Count > 0 && enemies.Count > 0)
+                    return game.UseSkill(human.Hand.First().Id, enemies[0].Seat);
+                List<Player> males = enemies.Where(player => !player.Hero.IsFemale).Take(2).ToList();
+                if (human.Hero.Id == "re_diaochan" && males.Count == 2 && human.Hand.Count + human.Equipment.Count > 0)
+                    return game.UseSkill(null, males[0].Seat, males[1].Seat);
+            }
+
             if (human.SkillUsed || human.Hand.Count == 0)
             {
                 return false;
@@ -448,18 +500,49 @@ namespace Sanguosha.Verify
         private static void SimulateMatches()
         {
             int longest = 0;
+            HashSet<(string Hero, GameMode Mode)> coverage = new();
             for (int seed = 0; seed < 400; seed++)
             {
                 GameEngine game = new(seed);
-                game.Start(Heroes.All[seed % 25].Id, (Role)(seed / 100), (GameMode)(seed / 25 % 4));
+                HashSet<int> eliminatedSeats = new();
+                Dictionary<int, int> observedKills = new();
+                void ObserveDeath(GameCue cue)
+                {
+                    if (cue.Kind != GameCueKind.Eliminated) return;
+                    Check(cue.Seat.HasValue && eliminatedSeats.Add(cue.Seat.Value) && !game.Players[cue.Seat.Value].IsAlive,
+                        "Every real simulated death produces one post-elimination cue");
+                    int? killer = cue.SourceSeat == cue.Seat ? null : cue.SourceSeat;
+                    Check(cue.Elimination?.KillerSeat == killer, "Simulated attribution excludes self deaths");
+                    if (killer is int seat)
+                    {
+                        observedKills[seat] = observedKills.GetValueOrDefault(seat) + 1;
+                        Check(cue.Elimination!.MatchKills == observedKills[seat] && game.MatchKills(seat) == observedKills[seat] &&
+                            cue.Elimination.TurnKills >= 1 && cue.Elimination.TurnKills <= cue.Elimination.MatchKills,
+                            "Simulated cumulative kill event remains consistent across turns and save/load");
+                    }
+                }
+                game.CueRaised += ObserveDeath;
+                game.Start(Heroes.All[seed % Heroes.All.Count].Id, (Role)(seed / 100), (GameMode)(seed / Heroes.All.Count % 4));
+                coverage.Add((game.Human.Hero.Id, game.Mode));
+                Check(game.Players.Select(player => player.Hero.BaseHeroId ?? player.Hero.Id).Distinct().Count() == game.Players.Count,
+                    "A match cannot include standard and refreshed versions of the same historical general");
                 int steps = 0;
                 bool restored = false;
                 while (game.Phase != GamePhase.GameOver && steps++ < 20000)
                 {
-                    Check(game.DeckCount + game.DiscardPile.Count +
-                        game.Players.Sum(player => player.Hand.Count + player.Equipment.Count + player.Judgments.Count) == 108,
+                    Check(game.DeckCount + game.DiscardPile.Count + game.OrderingCards.Count +
+                        game.Players.Sum(player => player.Hand.Count + player.Equipment.Count + player.Judgments.Count + player.SpecialCards.Count + player.NamedCards.Count()) == game.PhysicalCardCount,
                         $"Card conservation seed {seed}, step {steps}");
-                    if (game.Pending != null)
+                    if (game.PendingDecision is SkillDecisionRequest decision)
+                    {
+                        Check(game.ChooseSkillDecision(decision.Options[0].Key), "Resolve explicit skill decision");
+                    }
+                    else if (game.PendingCardChoice is TargetCardRequest choice)
+                    {
+                        TargetCardOption option = choice.Options[0];
+                        Check(game.ChooseTargetCard(option.Zone, option.CardId, option.HandPosition), "Resolve target card choice");
+                    }
+                    else if (game.Pending != null)
                     {
                         ResponseRequest request = game.Pending;
                         bool rescueFriend = request.Kind != ResponseKind.Peach ||
@@ -475,6 +558,7 @@ namespace Sanguosha.Verify
                         if (!restored)
                         {
                             game = GameEngine.Load(game.Save(), seed);
+                            game.CueRaised += ObserveDeath;
                             restored = true;
                         }
 
@@ -514,7 +598,7 @@ namespace Sanguosha.Verify
                     }
                     else if (game.Phase == GamePhase.Discard)
                     {
-                        int count = game.Human.Hand.Count - game.Human.Health;
+                        int count = game.Human.Hand.Count - game.Human.HandLimit;
                         Check(game.Discard(game.Human.Hand.Take(count).Select(card => card.Id).ToList()), "Discard accepted");
                     }
                     else
@@ -525,10 +609,14 @@ namespace Sanguosha.Verify
 
                 Check(game.Phase == GamePhase.GameOver, $"Simulation {seed} terminated within limit");
                 Check(game.Pending == null, "No pending prompt after game over");
+                Check(eliminatedSeats.Count == game.Players.Count(player => !player.IsAlive) &&
+                    game.Players.All(player => game.MatchKills(player.Seat) == observedKills.GetValueOrDefault(player.Seat)),
+                    "Final simulated kill totals and unique deaths are complete");
                 longest = Math.Max(longest, steps);
             }
 
-            Console.WriteLine($"Simulation: all 400 matches completed; longest {longest} actions.");
+            Check(coverage.Count == Heroes.All.Count * 4, "Every registered general simulated in all four modes");
+            Console.WriteLine($"Simulation: all 400 matches completed; longest {longest} actions; {coverage.Count} hero/mode combinations.");
         }
     }
 }

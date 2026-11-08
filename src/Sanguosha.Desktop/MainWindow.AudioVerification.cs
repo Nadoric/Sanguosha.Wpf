@@ -20,7 +20,8 @@ namespace Sanguosha.Desktop
             foreach (Hero hero in Heroes.All)
             {
                 if (!test.Catalog.Voices.TryGetValue(hero.Id, out Dictionary<string, string[]>? skills) ||
-                    !skills.ContainsKey("death") || skills.Count < 2)
+                    !skills.ContainsKey("death") ||
+                    (skills.Count < 2 && !test.Catalog.MissingVoices.ContainsKey(hero.Id)))
                 {
                     throw new InvalidOperationException($"Missing skill/death voice: {hero.Name}");
                 }
@@ -68,6 +69,64 @@ namespace Sanguosha.Desktop
             {
                 throw new InvalidOperationException("Unmute replayed stale audio.");
             }
+
+            foreach (CardKind kind in Enum.GetValues<CardKind>())
+            {
+                test.StopAll();
+                if (test.Catalog.MissingCardVoices.ContainsKey(kind.ToString())) continue;
+                if (!test.Catalog.CardVoices.TryGetValue(kind.ToString(), out string[]? clips) ||
+                    clips.Length != 2)
+                {
+                    throw new InvalidOperationException($"Missing male/female card announcements: {kind}");
+                }
+
+                test.Handle(new GameCue(GameCueKind.CardPlayed, "liubei", kind));
+                if (test.ActiveCardVoice != clips[0])
+                {
+                    throw new InvalidOperationException($"Wrong card announcement: {kind}");
+                }
+
+                test.Handle(new GameCue(GameCueKind.CardResponded, "zhenji", kind));
+                test.FinishCardVoice();
+                if (test.ActiveCardVoice != clips[1])
+                {
+                    throw new InvalidOperationException($"Response/female announcement failed: {kind}");
+                }
+            }
+
+            test.StopAll();
+            for (int index = 0; index < 8; index++)
+            {
+                test.Handle(new GameCue(GameCueKind.CardPlayed, "liubei", CardKind.Slash));
+            }
+
+            if (test.PendingCardVoiceCount != 4)
+            {
+                throw new InvalidOperationException("Card announcement queue exceeded its limit.");
+            }
+
+            test.Settings.Muted = true;
+            test.ApplySettings();
+            if (test.ActiveCardVoice != null || test.PendingCardVoiceCount != 0)
+            {
+                throw new InvalidOperationException("Mute did not stop card announcements.");
+            }
+
+            test.Settings.Muted = false;
+            test.Settings.VoicesEnabled = false;
+            test.ApplySettings();
+            test.Handle(new GameCue(GameCueKind.CardPlayed, "guanyu", CardKind.Slash));
+            if (test.ActiveCardVoice == null)
+            {
+                throw new InvalidOperationException("Disabling hero voices also disabled card announcements.");
+            }
+
+            test.Settings.EffectsEnabled = false;
+            test.ApplySettings();
+            if (test.ActiveCardVoice != null || test.PendingCardVoiceCount != 0)
+            {
+                throw new InvalidOperationException("Disabling effects did not stop card announcements.");
+            }
         }
 
         internal void RunAudioVerification(string directory)
@@ -75,6 +134,7 @@ namespace Sanguosha.Desktop
             Directory.CreateDirectory(directory);
             timer.Stop();
             VerifyAudioControls();
+            VerifyKillAudioControls();
             string preferencesPath = Path.Combine(directory, "preferences.json");
             using (GameAudio preferences = new(settingsPath: preferencesPath))
             {
@@ -96,6 +156,7 @@ namespace Sanguosha.Desktop
             VerifyNativeVoicePlayback(directory);
 
             List<string> files = audio.Catalog.Effects.Values
+                .Concat(audio.Catalog.CardVoices.Values.SelectMany(items => items))
                 .Concat(audio.Catalog.Voices.Values.SelectMany(skills => skills.Values.SelectMany(items => items)))
                 .Distinct().Order().ToList();
             List<object> decoded = new();
@@ -161,8 +222,10 @@ namespace Sanguosha.Desktop
                 JsonSerializer.Serialize(decoded, new JsonSerializerOptions { WriteIndented = true }));
             File.WriteAllText(Path.Combine(directory, "result.txt"),
                 $"PASS: {files.Count} local MP3 files opened with audio tracks and positive durations; " +
-                "25 hero skill/death mappings; bounded queue, deduplication, death priority, mute and preference reload verified. " +
-                "Native MediaPlayer voice playback/MediaEnded sequencing and immediate mute also passed with output volume zero. " +
+                $"15 male/female card announcements and {Heroes.All.Count} hero skill/death mappings; bounded queues, " +
+                "deduplication, death priority, mute and preference reload verified. " +
+                "Native MediaPlayer hero and slash/dodge MediaEnded sequencing and immediate mute " +
+                "also passed with output volume zero. " +
                 "Verification was silent, not a listening test.");
         }
 
@@ -205,10 +268,46 @@ namespace Sanguosha.Desktop
                 throw new InvalidOperationException($"Native voice sequencing failed: {playback.LastError}");
             }
 
+            playback.Settings.EffectsEnabled = true;
+            playback.Settings.EffectsVolume = 0.5;
+            playback.ApplySettings();
+            playback.Handle(new GameCue(GameCueKind.CardPlayed, "liubei", CardKind.Slash));
+            playback.Handle(new GameCue(GameCueKind.CardResponded, "zhenji", CardKind.Dodge));
+            frame = new DispatcherFrame();
+            deadline = DateTimeOffset.UtcNow.AddSeconds(5);
+            completed = false;
+            poll = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(25) };
+            poll.Tick += (_, _) =>
+            {
+                completed = playback.CardVoicePlayCount == 2 && playback.ActiveCardVoice == null &&
+                    playback.PendingCardVoiceCount == 0;
+                if (completed || playback.LastError.Length > 0 || DateTimeOffset.UtcNow > deadline)
+                {
+                    frame.Continue = false;
+                }
+            };
+            try
+            {
+                poll.Start();
+                Dispatcher.PushFrame(frame);
+            }
+            finally
+            {
+                poll.Stop();
+            }
+
+            if (!completed || playback.LastError.Length > 0)
+            {
+                throw new InvalidOperationException($"Native slash/dodge sequencing failed: {playback.LastError}");
+            }
+
+            playback.Handle(new GameCue(GameCueKind.CardPlayed, "liubei", CardKind.Steal));
+
             playback.PreviewVoice("zhangfei");
             playback.Settings.Muted = true;
             playback.ApplySettings();
-            if (playback.ActiveVoice != null || playback.PendingVoiceCount != 0)
+            if (playback.ActiveVoice != null || playback.PendingVoiceCount != 0 ||
+                playback.ActiveCardVoice != null || playback.PendingCardVoiceCount != 0)
             {
                 throw new InvalidOperationException("Native voice was not cancelled immediately by mute.");
             }

@@ -1,0 +1,15 @@
+{
+  "source": "Sanguosha official website icon",
+  "retrievedOn": "2026-11-07",
+  "files": [
+    {
+      "id": "app-icon",
+      "category": "icon",
+      "page": "https://web.sanguosha.com/",
+      "url": "https://web.sanguosha.com/img/favicon.ico",
+      "path": "src/Sanguosha.Desktop/Assets/Official/Icon/official-original.ico",
+      "bytes": 894,
+      "sha256": "14d2bf4000bddbcedf7579720efae284b806d8dd94ad228149a7b8c21ac5d1f4"
+    }
+  ]
+}

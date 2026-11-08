@@ -4,83 +4,27 @@
         xmlns:local="clr-namespace:Sanguosha.Desktop"
         xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
         Title="山河弈 · 三国策略卡牌" Width="1460" Height="940" MinWidth="1080" MinHeight="700"
-        WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#0D1816"
+        Icon="Assets/Official/Icon/app.ico"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{StaticResource SceneInk}"
+        UseLayoutRounding="True" SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType"
         PreviewKeyDown="Window_KeyDown" Closing="Window_Closing">
     <shell:WindowChrome.WindowChrome>
         <shell:WindowChrome CaptionHeight="0" ResizeBorderThickness="6" CornerRadius="0" />
     </shell:WindowChrome.WindowChrome>
     <Window.Resources>
-        <Style x:Key="Choice" TargetType="RadioButton">
-            <Setter Property="Foreground" Value="#AEBBAF" />
-            <Setter Property="Margin" Value="0,0,8,0" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="RadioButton">
-                        <Border x:Name="ChoiceBorder" BorderBrush="#6A573C" BorderThickness="1"
-                                CornerRadius="4" Padding="16,9" Background="#2B241B">
-                            <ContentPresenter />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="ChoiceBorder" Property="BorderBrush" Value="#C8AD76" />
-                                <Setter TargetName="ChoiceBorder" Property="Background" Value="#66502E" />
-                                <Setter Property="Foreground" Value="#F0D7A0" />
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ChoiceBorder" Property="BorderBrush" Value="#C8AD76" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="OfficialAction" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="Foreground" Value="#3D2517" />
-            <Setter Property="FontFamily" Value="KaiTi, Microsoft YaHei UI" />
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="Padding" Value="12,5" />
-            <Setter Property="Background">
-                <Setter.Value><ImageBrush ImageSource="{x:Static local:OfficialInterface.Confirm}" /></Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="OfficialButtonBody" Background="{TemplateBinding Background}"
-                                Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background">
-                                    <Setter.Value><ImageBrush ImageSource="{x:Static local:OfficialInterface.ConfirmHover}" /></Setter.Value>
-                                </Setter>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="OfficialButtonBody" Property="Opacity" Value="0.38" />
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="OfficialButtonBody" Property="Opacity" Value="0.75" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="OfficialCancel" TargetType="Button" BasedOn="{StaticResource OfficialAction}">
-            <Setter Property="Background">
-                <Setter.Value><ImageBrush ImageSource="{x:Static local:OfficialInterface.Cancel}" /></Setter.Value>
-            </Setter>
-        </Style>
         <DataTemplate x:Key="CardTemplate">
             <Button Click="HandCard_Click" Tag="{Binding}" Padding="0" BorderThickness="0"
-                    Background="Transparent" Margin="4,10,4,4" ToolTip="{Binding Hint}">
+                    Background="Transparent" Margin="4,16,4,2" ToolTip="{Binding Hint}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="CardBody" Width="120" Height="170" CornerRadius="5"
-                                BorderBrush="#9D967C" BorderThickness="1" Background="#E7DEC3"
+                        <Border x:Name="CardBody" Width="120" Height="170" CornerRadius="7"
+                                BorderBrush="#C4AD82" BorderThickness="1" Background="#E7DEC3"
                                 RenderTransformOrigin="0.5,1">
-                            <Border.RenderTransform><TranslateTransform Y="0" /></Border.RenderTransform>
+                            <Border.RenderTransform><TranslateTransform x:Name="CardLift" Y="0" /></Border.RenderTransform>
+                            <Border.Effect>
+                                <DropShadowEffect Color="#050711" BlurRadius="16" ShadowDepth="5" Opacity="0.65" />
+                            </Border.Effect>
                             <Viewbox Stretch="Uniform">
                                 <Grid Width="135" Height="190">
                                     <Image Source="{Binding Face}" Stretch="Fill" />
@@ -95,10 +39,40 @@
                             <DataTrigger Binding="{Binding IsSelected}" Value="True">
                                 <Setter TargetName="CardBody" Property="BorderBrush" Value="#FFE2A0" />
                                 <Setter TargetName="CardBody" Property="BorderThickness" Value="3" />
-                                <Setter TargetName="CardBody" Property="RenderTransform">
-                                    <Setter.Value><TranslateTransform Y="-10" /></Setter.Value>
+                                <Setter TargetName="CardBody" Property="Effect">
+                                    <Setter.Value><DropShadowEffect Color="#E4B85B" BlurRadius="18" ShadowDepth="0" Opacity="0.65" /></Setter.Value>
                                 </Setter>
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard><Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="CardLift" Storyboard.TargetProperty="Y"
+                                                         To="-14" Duration="0:0:0.16" />
+                                    </Storyboard></BeginStoryboard>
+                                </DataTrigger.EnterActions>
                             </DataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsSelected}" Value="False" />
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.EnterActions>
+                                    <BeginStoryboard><Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="CardLift" Storyboard.TargetProperty="Y"
+                                                         To="-6" Duration="0:0:0.14" />
+                                    </Storyboard></BeginStoryboard>
+                                </MultiDataTrigger.EnterActions>
+                            </MultiDataTrigger>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsSelected}" Value="False" />
+                                    <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource TemplatedParent}}" Value="False" />
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.EnterActions>
+                                    <BeginStoryboard><Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="CardLift" Storyboard.TargetProperty="Y"
+                                                         To="0" Duration="0:0:0.14" />
+                                    </Storyboard></BeginStoryboard>
+                                </MultiDataTrigger.EnterActions>
+                            </MultiDataTrigger>
                             <DataTrigger Binding="{Binding Available}" Value="False">
                                 <Setter TargetName="CardBody" Property="Opacity" Value="0.45" />
                             </DataTrigger>
@@ -115,10 +89,21 @@
                     Background="Transparent" ToolTip="{Binding Detail}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Width="172" Height="232" BorderBrush="{Binding Border}" BorderThickness="2"
-                                Background="#BC1E1812" CornerRadius="3" Opacity="{Binding Opacity}">
+                        <Border x:Name="SeatFrame" Width="172" Height="232" BorderBrush="{Binding Border}" BorderThickness="2"
+                                Background="#F0191D28" CornerRadius="8" Opacity="{Binding Opacity}">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#020A0D" BlurRadius="20" ShadowDepth="5" Opacity="0.75" />
+                            </Border.Effect>
                             <Grid>
                                 <Border Background="{Binding Portrait}" Margin="25,3,20,42" />
+                                <Border Margin="25,3,20,42" IsHitTestVisible="False">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="#000B1819" Offset="0.55" />
+                                            <GradientStop Color="#BC0B1819" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
                                 <Image Source="{Binding Faction}" Width="25" Height="185" Stretch="Fill"
                                        HorizontalAlignment="Left" VerticalAlignment="Top" />
                                 <TextBlock Text="{Binding VerticalName}" FontFamily="KaiTi, SimSun" FontSize="21"
@@ -138,8 +123,8 @@
                                     <TextBlock Text="{Binding HandCount}" Foreground="#FFF2CC" FontSize="17"
                                                FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Grid>
-                                <Border VerticalAlignment="Bottom" Margin="3,0,3,21" Background="#C0201912" Padding="3,2">
-                                    <TextBlock Text="{Binding Equipment}" Foreground="#D6C39A" FontSize="9"
+                                <Border VerticalAlignment="Bottom" Margin="3,0,3,21" Background="#DE171922" Padding="4,2">
+                                    <TextBlock Text="{Binding Equipment}" Foreground="#D6C39A" FontSize="10"
                                                TextTrimming="CharacterEllipsis" ToolTip="{Binding Equipment}" />
                                 </Border>
                                 <Grid VerticalAlignment="Bottom" Height="23">
@@ -148,11 +133,19 @@
                                     <TextBlock Text="{Binding Skill}" Foreground="#F0D88F" FontSize="10"
                                                HorizontalAlignment="Right" Margin="0,4,5,0" />
                                 </Grid>
-                                <Border BorderBrush="#FFD579" BorderThickness="2" CornerRadius="2"
+                                <Image Source="{Binding DeathStamp}" Visibility="{Binding DeathVisibility}"
+                                       Width="130" Height="113" Margin="0,0,0,12" Stretch="Uniform"
+                                       IsHitTestVisible="False" />
+                                <Border BorderBrush="#F5D99B" BorderThickness="1" CornerRadius="6"
                                         Visibility="Collapsed" x:Name="HoverFrame" IsHitTestVisible="False" />
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                <Setter TargetName="SeatFrame" Property="Effect">
+                                    <Setter.Value><DropShadowEffect Color="#EBC572" BlurRadius="23" ShadowDepth="0" Opacity="0.75" /></Setter.Value>
+                                </Setter>
+                            </DataTrigger>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="HoverFrame" Property="Visibility" Value="Visible" />
                             </Trigger>
@@ -162,24 +155,38 @@
             </Button>
         </DataTemplate>
     </Window.Resources>
-    <Viewbox Stretch="Uniform">
-        <Border Width="1440" Height="900" BorderBrush="#806B48" BorderThickness="1">
-            <Grid>
+    <!-- Fill the client area: Uniform letterboxed the fixed-size scene above/below
+         (or at the sides) when the window aspect ratio differed from 1440:900.
+         Fill keeps the whole scene visible, including the title and bottom strips,
+         without cropping or adding a permanent normal/maximized-window inset. -->
+    <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border Width="1440" Height="900" BorderBrush="{StaticResource BronzeEdge}" BorderThickness="1">
+            <Grid x:Name="SceneRoot" ClipToBounds="True">
                 <Grid.Background>
                     <ImageBrush ImageSource="{Binding BattleBackground}" Stretch="UniformToFill" />
                 </Grid.Background>
-                <Rectangle Fill="#3B111419" IsHitTestVisible="False" />
+                <Rectangle IsHitTestVisible="False">
+                    <Rectangle.Fill>
+                        <RadialGradientBrush Center="0.43,0.42" GradientOrigin="0.43,0.42" RadiusX="0.74" RadiusY="0.8">
+                            <GradientStop Color="#8A161C29" Offset="0" />
+                            <GradientStop Color="#920F1828" Offset="0.6" />
+                            <GradientStop Color="#F00A0F19" Offset="1" />
+                        </RadialGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="44" />
                         <RowDefinition Height="600" />
                         <RowDefinition Height="256" />
                     </Grid.RowDefinitions>
-                    <Border Background="#EE231C15" BorderBrush="#9C8050" BorderThickness="0,0,0,1"
+                    <Border Background="#FA141923" BorderBrush="{StaticResource BronzeEdge}" BorderThickness="0,0,0,1"
                             MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
                         <Grid Margin="16,0,8,0">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="三国杀" FontFamily="KaiTi, SimSun" FontSize="27" Foreground="#F0CB7F" />
+                                <Image Source="Assets/Branding/shanheyi-mark.png" Width="29" Height="29"
+                                       Margin="0,0,10,0" RenderOptions.BitmapScalingMode="HighQuality" />
+                                <TextBlock Text="山 河 弈" FontFamily="KaiTi, SimSun" FontSize="25" Foreground="#F0D299" />
                                 <TextBlock Text="{Binding ModeLabel}" Foreground="#D5C6AA" Margin="20,0,0,0" VerticalAlignment="Center" />
                                 <TextBlock Text="本地人机" Foreground="#998A70" FontSize="10" Margin="16,0,0,0" VerticalAlignment="Center" />
                             </StackPanel>
@@ -187,7 +194,10 @@
                                 <Button Content="保存" Click="Save_Click" IsEnabled="{Binding CanSave}" Style="{StaticResource GhostButton}" Padding="12,6" />
                                 <Button Content="读取" Click="Load_Click" Style="{StaticResource GhostButton}" Padding="12,6" />
                                 <Button Content="选将" Click="NewGame_Click" Style="{StaticResource GhostButton}" Padding="12,6" />
+                                <Button Content="皮肤" Click="Skins_Click" Style="{StaticResource GhostButton}" Padding="12,6" />
                                 <Button Content="{Binding AudioHeaderLabel}" Click="Audio_Click" Style="{StaticResource GhostButton}" Padding="12,6" />
+                                <Button Content="{Binding VisualEffectsLabel}" Click="VisualEffects_Click"
+                                        ToolTip="开启或关闭出牌、技能、伤害与击杀动画/击杀报音；阵亡语音独立遵循声音设置" Style="{StaticResource GhostButton}" Padding="12,6" />
                                 <Button Content="规则" Click="Rules_Click" Style="{StaticResource GhostButton}" Padding="12,6" />
                                 <Button Content="─" Click="Minimize_Click" Style="{StaticResource GhostButton}" Padding="12,6" Margin="18,0,0,0" />
                                 <Button Content="□" Click="Maximize_Click" Style="{StaticResource GhostButton}" Padding="12,6" />
@@ -200,10 +210,13 @@
                             <ColumnDefinition Width="1176" /><ColumnDefinition Width="264" />
                         </Grid.ColumnDefinitions>
                         <Canvas Width="1176" Height="600" ClipToBounds="True">
-                            <TextBlock Text="{Binding RoundLabel}" Canvas.Left="20" Canvas.Top="12"
-                                       Foreground="#F2E2BE" FontSize="11" />
-                            <TextBlock Text="{Binding DeckLabel}" Canvas.Left="18" Canvas.Top="31"
-                                       Foreground="#C5CECC" FontSize="10" />
+                            <Border Canvas.Left="16" Canvas.Top="10" Padding="12,8" Width="214"
+                                    Style="{StaticResource InsetSurface}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding RoundLabel}" Foreground="#E7D3AA" FontSize="11" />
+                                    <TextBlock Text="{Binding DeckLabel}" Foreground="#9EADA8" FontSize="10" Margin="0,5,0,0" />
+                                </StackPanel>
+                            </Border>
                             <ItemsControl ItemsSource="{Binding Opponents}" ItemTemplate="{StaticResource SeatTemplate}"
                                           Width="1176" Height="600">
                                 <ItemsControl.ItemsPanel><ItemsPanelTemplate><Canvas /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
@@ -213,16 +226,20 @@
                                 </Style></ItemsControl.ItemContainerStyle>
                             </ItemsControl>
                             <Grid Canvas.Left="260" Canvas.Top="282" Width="660" Height="200" IsHitTestVisible="False">
-                                <TextBlock Text="出 牌 区" Foreground="#75D9D5C4" FontSize="19" FontFamily="KaiTi, SimSun"
-                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Border Width="500" Height="150" CornerRadius="18" BorderBrush="#456F614B"
+                                        BorderThickness="1" Background="#24111824" HorizontalAlignment="Center" />
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.26">
+                                    <TextBlock Text="山 河 弈" Foreground="#E6D2A5" FontSize="32" FontFamily="KaiTi, SimSun" HorizontalAlignment="Center" />
+                                    <TextBlock Text="运 筹 帷 幄  ·  一 决 天 下" Foreground="#B4C4B9" FontSize="10" Margin="0,8,0,0" />
+                                </StackPanel>
                                 <ItemsControl ItemsSource="{Binding TableCards}" ItemTemplate="{StaticResource CardTemplate}"
                                               HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <ItemsControl.ItemsPanel><ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
                                     <ItemsControl.LayoutTransform><ScaleTransform ScaleX="0.88" ScaleY="0.88" /></ItemsControl.LayoutTransform>
                                 </ItemsControl>
                             </Grid>
-                            <Border Canvas.Left="238" Canvas.Top="490" Width="700" Height="51" Background="#C01A1713"
-                                    BorderBrush="#776443" BorderThickness="1" CornerRadius="3" Padding="12,5">
+                            <Border Canvas.Left="238" Canvas.Top="490" Width="700" Height="51" Background="#ED1C202D"
+                                    BorderBrush="{StaticResource BronzeEdge}" BorderThickness="3,1,1,1" CornerRadius="8" Padding="14,7">
                                 <StackPanel>
                                     <TextBlock Text="{Binding StatusLabel}" Foreground="#F1DCAD" FontSize="12"
                                                TextTrimming="CharacterEllipsis" />
@@ -238,17 +255,17 @@
                                         Style="{StaticResource OfficialCancel}" Width="158" Height="42" />
                             </StackPanel>
                         </Canvas>
-                        <Border Grid.Column="1" Background="#D6231D17" BorderBrush="#7B6543" BorderThickness="1,0,0,0">
+                        <Border Grid.Column="1" Background="{StaticResource JadePanel}" BorderBrush="#807A694C" BorderThickness="1,0,0,0">
                             <Grid Margin="13,12,13,10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="32" /><RowDefinition Height="47" />
                                     <RowDefinition Height="*" /><RowDefinition Height="44" />
                                 </Grid.RowDefinitions>
                                 <DockPanel>
-                                    <TextBlock Text="对局信息" Foreground="#DEC392" FontFamily="KaiTi, SimSun" FontSize="18" />
-                                    <TextBlock Text="战报" Foreground="#91836B" FontSize="11" HorizontalAlignment="Right" />
+                                    <TextBlock Text="对 局 战 报" Style="{StaticResource SectionLabel}" />
+                                    <TextBlock Text="实 录" Foreground="#91836B" FontSize="11" HorizontalAlignment="Right" />
                                 </DockPanel>
-                                <Border Grid.Row="1" Background="#6B4A3826" BorderBrush="#6E5738" BorderThickness="1" Padding="9,5">
+                                <Border Grid.Row="1" Style="{StaticResource InsetSurface}" Padding="9,5">
                                     <StackPanel>
                                         <TextBlock Text="{Binding TurnLabel}" Foreground="#E4D0A5" FontSize="12" />
                                         <TextBlock Text="{Binding PhaseLabel}" Foreground="#B9A37F" FontSize="10" Margin="0,4,0,0" />
@@ -257,8 +274,8 @@
                                 <ScrollViewer Grid.Row="2" x:Name="LogScroll" VerticalScrollBarVisibility="Auto"
                                               HorizontalScrollBarVisibility="Disabled" Margin="0,10,0,0">
                                     <ItemsControl ItemsSource="{Binding Logs}"><ItemsControl.ItemTemplate><DataTemplate>
-                                        <Border BorderBrush="#364F422E" BorderThickness="0,0,0,1" Padding="0,7">
-                                            <TextBlock Text="{Binding Text}" FontSize="11" Foreground="#C0B79F" TextWrapping="Wrap" LineHeight="19" />
+                                        <Border BorderBrush="#355E574D" BorderThickness="0,0,0,1" Padding="7,9" Background="#19101520" CornerRadius="5" Margin="0,0,0,3">
+                                            <TextBlock Text="{Binding Text}" FontSize="11" Foreground="#C9C4B9" TextWrapping="Wrap" LineHeight="20" />
                                         </Border>
                                     </DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
                                 </ScrollViewer>
@@ -272,7 +289,7 @@
                             </Grid>
                         </Border>
                     </Grid>
-                    <Border Grid.Row="2" BorderBrush="#B29058" BorderThickness="0,2,0,0" Background="#F0201810">
+                    <Border Grid.Row="2" BorderBrush="{StaticResource BronzeEdge}" BorderThickness="0,2,0,0" Background="{StaticResource JadePanel}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="172" /><ColumnDefinition Width="*" /><ColumnDefinition Width="194" />
@@ -280,16 +297,24 @@
                             <Grid Grid.Column="0" Margin="10,8,10,6">
                                 <Grid.RowDefinitions><RowDefinition Height="22" /><RowDefinition Height="158" /><RowDefinition Height="*" /></Grid.RowDefinitions>
                                 <TextBlock Text="装备区" Foreground="#BFA778" FontSize="11" Margin="3,0,0,0" />
-                                <Grid Grid.Row="1">
-                                    <Image Source="{x:Static local:OfficialInterface.OwnEquipment}" Stretch="Fill" />
-                                    <StackPanel Margin="23,1,3,0">
-                                        <TextBlock Text="宝物栏" Height="32" FontSize="11" Foreground="#756348" Padding="0,7,0,0" />
-                                        <TextBlock Text="{Binding WeaponLabel}" Height="32" FontSize="11" Foreground="#D5BF94" Padding="0,7,0,0" />
-                                        <TextBlock Text="{Binding ArmorLabel}" Height="32" FontSize="11" Foreground="#D5BF94" Padding="0,7,0,0" />
-                                        <TextBlock Text="进攻坐骑" Height="32" FontSize="11" Foreground="#756348" Padding="0,7,0,0" />
-                                        <TextBlock Text="{Binding HorseLabel}" Height="32" FontSize="11" Foreground="#D5BF94" Padding="0,7,0,0" />
-                                    </StackPanel>
-                                </Grid>
+                                <ItemsControl x:Name="EquipmentItems" Grid.Row="1" ItemsSource="{Binding EquipmentSlots}">
+                                    <ItemsControl.ItemTemplate><DataTemplate>
+                                        <Border Height="29" Margin="0,0,0,2" Background="#A0141923"
+                                                BorderBrush="#665E5242" BorderThickness="1" CornerRadius="3"
+                                                ToolTip="{Binding Label}">
+                                            <Grid Margin="3,0,7,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30" /><ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image x:Name="SlotIcon" Source="{Binding Icon}" Width="23" Height="27"
+                                                       HorizontalAlignment="Left" Stretch="Uniform" />
+                                                <TextBlock x:Name="SlotLabel" Grid.Column="1" Text="{Binding Label}"
+                                                           Foreground="{Binding Color}" FontSize="11"
+                                                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate></ItemsControl.ItemTemplate>
+                                </ItemsControl>
                                 <Button Grid.Row="2" Content="{Binding SkillLabel}" Click="Skill_Click" IsEnabled="{Binding CanSkill}"
                                         Style="{StaticResource OfficialAction}" ToolTip="{Binding SkillDescription}"
                                         VerticalAlignment="Center" Height="42" FontSize="16" />
@@ -302,7 +327,7 @@
                                                TextTrimming="CharacterEllipsis" Margin="25,0,0,0" />
                                 </DockPanel>
                                 <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-                                    <ItemsControl ItemsSource="{Binding HandCards}" ItemTemplate="{StaticResource CardTemplate}">
+                                    <ItemsControl x:Name="HandItems" ItemsSource="{Binding HandCards}" ItemTemplate="{StaticResource CardTemplate}">
                                         <ItemsControl.ItemsPanel><ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
                                     </ItemsControl>
                                 </ScrollViewer>
@@ -315,7 +340,7 @@
                                                 FontSize="10" Padding="10,3" Margin="12,0,0,0" />
                                     </StackPanel>
                                     <TextBlock Text="Enter 确认  ·  Space 结束/放弃  ·  F1 规则" FontSize="9"
-                                               Foreground="#82745E" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                               Foreground="#AAA18F" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                 </DockPanel>
                             </Grid>
                             <Grid Grid.Column="2" Margin="0,2,1,1">
@@ -331,7 +356,9 @@
                                         <Image Source="{Binding}" Width="18" Height="20" Margin="0,1" />
                                     </DataTemplate></ItemsControl.ItemTemplate>
                                 </ItemsControl>
-                                <Border VerticalAlignment="Bottom" Background="#D4231910" Height="26" BorderBrush="#7E5B32" BorderThickness="1">
+                                <Image Source="{Binding HumanDeathStamp}" Visibility="{Binding HumanDeathVisibility}"
+                                       Width="130" Height="113" Margin="0,0,0,12" Stretch="Uniform" IsHitTestVisible="False" />
+                                <Border VerticalAlignment="Bottom" Background="#EF241D24" Height="26" BorderBrush="#7E5B32" BorderThickness="1">
                                     <TextBlock Text="{Binding HumanIdentity}" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                Foreground="#F1D095" FontSize="12" />
                                 </Border>
@@ -339,74 +366,108 @@
                         </Grid>
                     </Border>
                 </Grid>
-                <!-- 选将大厅：完整的25将按阵营筛选，不依赖网络。 -->
-                <Border x:Name="Lobby" Grid.ColumnSpan="2" Background="#F2191510" Visibility="Visible">
-                    <Border Margin="58,42" Background="#282017" BorderBrush="#6E6A49" BorderThickness="1" CornerRadius="8" Padding="30,24">
+                <!-- 临时动画层使用官方牌面与WPF光效，位于弹窗下方，不接管鼠标或规则推进。 -->
+                <Canvas x:Name="EffectsCanvas" Width="1440" Height="900" IsHitTestVisible="False"
+                        ClipToBounds="True" />
+                <!-- 选将大厅：按当前武将库动态统计阵营，不依赖网络。 -->
+                <Border x:Name="Lobby" Grid.ColumnSpan="2" Background="#ED0B101C" Visibility="Visible">
+                    <Border Margin="58,42" Style="{StaticResource PanelSurface}" Padding="30,24">
+                        <Border.Effect><DropShadowEffect Color="#020B10" BlurRadius="36" ShadowDepth="10" Opacity="0.75" /></Border.Effect>
                         <Grid>
-                            <Grid.RowDefinitions><RowDefinition Height="83" /><RowDefinition Height="49" /><RowDefinition Height="43" /><RowDefinition Height="*" /><RowDefinition Height="100" /><RowDefinition Height="47" /></Grid.RowDefinitions>
-                            <StackPanel>
-                                <TextBlock Text="山 河 弈" FontFamily="KaiTi, SimSun" FontSize="38" Foreground="#DEC792" />
-                                <TextBlock Text="群雄逐鹿，落子山河。选择你的武将，开启一场智谋之争。" Foreground="#96AA8C" FontSize="12" Margin="2,9,0,0" />
+                            <Grid.RowDefinitions><RowDefinition Height="83" /><RowDefinition Height="49" /><RowDefinition Height="43" /><RowDefinition Height="*" /><RowDefinition Height="Auto" /><RowDefinition Height="47" /></Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Assets/Branding/shanheyi-mark.png" Width="64" Height="64"
+                                       VerticalAlignment="Top" Margin="0,0,18,0" RenderOptions.BitmapScalingMode="HighQuality" />
+                                <StackPanel>
+                                    <TextBlock Text="山 河 弈" FontFamily="KaiTi, STKaiti, SimSun" FontSize="38" Foreground="#F0D7A5" />
+                                    <TextBlock Text="群雄逐鹿 · 落子山河    /    选择武将，执手入局" Foreground="#B7AE9A" FontSize="12" Margin="2,8,0,0" />
+                                </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                <Button Content="更换皮肤" Style="{StaticResource GhostButton}" Click="Skins_Click" />
                                 <Button Content="{Binding AudioHeaderLabel}" Style="{StaticResource GhostButton}" Click="Audio_Click" />
+                                <Button x:Name="LobbyExitButton" Content="退出游戏" Style="{StaticResource GhostButton}"
+                                        Foreground="#F0B9A7" BorderBrush="#99624E" BorderThickness="1"
+                                        ToolTip="退出程序；未结束的对局会先询问确认" Click="Close_Click" />
                                 <Button Content="返回对局  ×" Style="{StaticResource GhostButton}" Click="BackToGame_Click" />
                             </StackPanel>
                             <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
-                                <TextBlock Text="对战模式" Foreground="#879B80" VerticalAlignment="Center" Margin="0,0,18,0" />
+                                <TextBlock Text="对战模式" Foreground="#B7AB95" VerticalAlignment="Center" Margin="0,0,18,0" />
                                 <RadioButton Content="四人身份" Tag="Identity4" GroupName="Mode" IsChecked="True" Style="{StaticResource Choice}" Checked="Mode_Changed" />
                                 <RadioButton Content="五人身份" Tag="Identity5" GroupName="Mode" Style="{StaticResource Choice}" Checked="Mode_Changed" />
                                 <RadioButton Content="八人身份" Tag="Identity8" GroupName="Mode" Style="{StaticResource Choice}" Checked="Mode_Changed" />
                                 <RadioButton Content="2V2 对战" Tag="Team2V2" GroupName="Mode" Style="{StaticResource Choice}" Checked="Mode_Changed" />
-                                <TextBlock Text="{Binding LobbyModeDescription}" Foreground="#93A585" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="11" />
+                                <TextBlock Text="{Binding LobbyModeDescription}" Foreground="#B9B2A1" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="11" />
                             </StackPanel>
                             <StackPanel Grid.Row="2" Orientation="Horizontal">
-                                <TextBlock Text="阵营筛选" Foreground="#879B80" VerticalAlignment="Center" Margin="0,0,18,0" />
-                                <RadioButton Content="全部 25" Tag="全部" IsChecked="True" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
-                                <RadioButton x:Name="WeiFilter" Content="魏  7" Tag="魏" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
-                                <RadioButton Content="蜀  7" Tag="蜀" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
-                                <RadioButton Content="吴  8" Tag="吴" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
-                                <RadioButton Content="群  3" Tag="群" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
+                                <TextBlock Text="阵营筛选" Foreground="#B7AB95" VerticalAlignment="Center" Margin="0,0,18,0" />
+                                <RadioButton Content="{Binding AllRosterLabel}" Tag="全部" IsChecked="True" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
+                                <RadioButton x:Name="WeiFilter" Content="{Binding WeiRosterLabel}" Tag="魏" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
+                                <RadioButton Content="{Binding ShuRosterLabel}" Tag="蜀" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
+                                <RadioButton Content="{Binding WuRosterLabel}" Tag="吴" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
+                                <RadioButton Content="{Binding QunRosterLabel}" Tag="群" GroupName="Kingdom" Style="{StaticResource Choice}" Checked="Kingdom_Changed" />
                             </StackPanel>
                             <ListBox Grid.Row="3" x:Name="HeroList" ItemsSource="{Binding HeroChoices}" SelectionChanged="Hero_Changed"
+                                     PreviewKeyDown="HeroList_PreviewKeyDown" SelectionMode="Single"
+                                     VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"
+                                     VirtualizingPanel.ScrollUnit="Pixel" Padding="0"
+                                     ScrollViewer.CanContentScroll="True" KeyboardNavigation.TabNavigation="Once"
                                      Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="-5,10,-10,6"
-                                     ScrollViewer.VerticalScrollBarVisibility="Auto">
-                                <ListBox.ItemsPanel><ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate></ListBox.ItemsPanel>
+                                     ScrollViewer.VerticalScrollBarVisibility="Visible" MinHeight="204" ClipToBounds="True">
+                                <ListBox.ItemsPanel><ItemsPanelTemplate><local:VirtualizingHeroPanel /></ItemsPanelTemplate></ListBox.ItemsPanel>
                                 <ListBox.ItemContainerStyle><Style TargetType="ListBoxItem">
                                     <Setter Property="Padding" Value="0" /><Setter Property="Margin" Value="5" />
                                     <Setter Property="Cursor" Value="Hand" />
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    <Setter Property="VerticalContentAlignment" Value="Stretch" />
                                     <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem">
-                                        <Border x:Name="HeroBorder" BorderBrush="#7A6544" BorderThickness="1" CornerRadius="4"><ContentPresenter /></Border>
+                                        <Border x:Name="HeroBorder" Background="#141C29" BorderBrush="#796549" BorderThickness="1" CornerRadius="8">
+                                            <ContentPresenter />
+                                        </Border>
                                         <ControlTemplate.Triggers><Trigger Property="IsSelected" Value="True">
                                             <Setter TargetName="HeroBorder" Property="BorderBrush" Value="#F0D293" />
                                             <Setter TargetName="HeroBorder" Property="BorderThickness" Value="2" />
-                                        </Trigger></ControlTemplate.Triggers>
+                                            <Setter TargetName="HeroBorder" Property="Effect">
+                                                <Setter.Value><DropShadowEffect Color="#C6A462" BlurRadius="14" ShadowDepth="0" Opacity="0.6" /></Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="HeroBorder" Property="BorderBrush" Value="#F3D59C" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                            <Setter TargetName="HeroBorder" Property="BorderBrush" Value="#FFF0BE" />
+                                        </Trigger>
+                                        </ControlTemplate.Triggers>
                                     </ControlTemplate></Setter.Value></Setter>
                                 </Style></ListBox.ItemContainerStyle>
                                 <ListBox.ItemTemplate><DataTemplate>
                                     <Grid Width="162" Height="190">
+                                        <TextBlock Text="立绘加载中 / 暂不可用" FontSize="10" Foreground="#827B6F"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False" />
                                         <Border Background="{Binding Portrait}" CornerRadius="3" />
-                                        <Border VerticalAlignment="Bottom" Background="#E0201912" Padding="8,7">
+                                        <Border VerticalAlignment="Bottom" Background="#ED181D29" Padding="10,8">
                                             <StackPanel>
                                                 <DockPanel><TextBlock Text="{Binding Name}" FontFamily="KaiTi, SimSun" FontSize="23" />
                                                     <TextBlock Text="{Binding Kingdom}" Foreground="#D2BB83" FontSize="11" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                                 </DockPanel>
-                                                <TextBlock Text="{Binding Skill}" Foreground="#AFAE83" FontSize="11" Margin="0,3,0,0" />
+                                                <TextBlock Text="{Binding Skill}" Foreground="#C3B495" FontSize="11" Margin="0,3,0,0" />
                                             </StackPanel>
                                         </Border>
                                     </Grid>
                                 </DataTemplate></ListBox.ItemTemplate>
                             </ListBox>
-                            <Border Grid.Row="4" Background="#3B3022" CornerRadius="4" BorderBrush="#7D6542" BorderThickness="1" Padding="16,12" Margin="0,4,0,12">
+                            <Border Grid.Row="4" Style="{StaticResource InsetSurface}" Padding="16,12" Margin="0,4,0,12">
+                                <ScrollViewer Height="136" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                                 <StackPanel>
                                     <TextBlock Text="{Binding SelectedHeroTitle}" Foreground="#D8C48E" FontSize="15" />
-                                    <TextBlock Text="{Binding SelectedHeroDescription}" Foreground="#ADBB9D" FontSize="12" TextWrapping="Wrap" Margin="0,8,0,0" />
-                                    <TextBlock Text="{Binding SelectedHeroQuote}" Foreground="#798D73" FontSize="10" Margin="0,7,0,0" />
+                                    <TextBlock Text="{Binding SelectedHeroDescription}" Foreground="#C7C1B3" FontSize="12" TextWrapping="Wrap" Margin="0,8,0,0" />
+                                    <TextBlock Text="{Binding SelectedHeroQuote}" Foreground="#A49B8D" FontSize="10" Margin="0,7,0,0" />
                                 </StackPanel>
+                                </ScrollViewer>
                             </Border>
                             <Grid Grid.Row="5">
                                 <StackPanel x:Name="RoleChoices" Orientation="Horizontal">
-                                    <TextBlock Text="你的身份" Foreground="#879B80" VerticalAlignment="Center" Margin="0,0,18,0" />
+                                    <TextBlock Text="你的身份" Foreground="#B7AB95" VerticalAlignment="Center" Margin="0,0,18,0" />
                                     <RadioButton Content="主公" Tag="Lord" IsChecked="True" GroupName="Role" Style="{StaticResource Choice}" Checked="Role_Changed" />
                                     <RadioButton Content="忠臣" Tag="Loyalist" GroupName="Role" Style="{StaticResource Choice}" Checked="Role_Changed" />
                                     <RadioButton Content="反贼" Tag="Rebel" GroupName="Role" Style="{StaticResource Choice}" Checked="Role_Changed" />
@@ -421,10 +482,10 @@
                     </Border>
                 </Border>
                 <Border x:Name="ResultOverlay" Grid.ColumnSpan="2" Background="#DA12110F" Visibility="Collapsed">
-                    <Border Width="630" MaxHeight="770" Background="#30261C" BorderBrush="#A58C58" BorderThickness="1" CornerRadius="6" Padding="34" VerticalAlignment="Center">
+                    <Border Width="630" MaxHeight="770" Background="{StaticResource JadePanel}" BorderBrush="{StaticResource BronzeEdge}" BorderThickness="1" CornerRadius="12" Padding="34" VerticalAlignment="Center">
                         <StackPanel>
                             <TextBlock Text="{Binding ResultTitle}" FontFamily="KaiTi, SimSun" FontSize="46" Foreground="#DCC38B" HorizontalAlignment="Center" />
-                            <TextBlock Text="{Binding ResultLabel}" FontSize="15" Foreground="#A7B69A" HorizontalAlignment="Center" Margin="0,14,0,24" />
+                            <TextBlock Text="{Binding ResultLabel}" FontSize="15" Foreground="#C7C0B0" HorizontalAlignment="Center" Margin="0,14,0,24" />
                             <ItemsControl ItemsSource="{Binding ResultPlayers}"><ItemsControl.ItemTemplate><DataTemplate>
                                 <DockPanel Margin="0,7"><TextBlock Text="{Binding Name}" Width="130" />
                                     <TextBlock Text="{Binding Identity}" Foreground="#CAB684" Width="160" />
@@ -438,21 +499,27 @@
                         </StackPanel>
                     </Border>
                 </Border>
-                <Border x:Name="RulesOverlay" Grid.ColumnSpan="2" Background="#E810100D" Visibility="Collapsed">
-                    <Border Width="860" Height="740" Background="#2B2219" BorderBrush="#88794E" BorderThickness="1" CornerRadius="6" Padding="30">
+                <!-- Death banners remain above the result sheet so the final kill is not erased.
+                     Both canvases are input-transparent; only this small skip button is interactive. -->
+                <Canvas x:Name="KillEffectsCanvas" Width="1440" Height="900" IsHitTestVisible="False" ClipToBounds="True" />
+                <Button x:Name="KillSkipButton" Content="跳过击杀特效 · Esc" Visibility="Collapsed"
+                        HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,52,18,0"
+                        Style="{StaticResource GhostButton}" Click="SkipKillEffects_Click" Padding="12,7" />
+                <Border x:Name="RulesOverlay" Grid.ColumnSpan="2" Background="#E90B0F19" Visibility="Collapsed">
+                    <Border Width="860" Height="740" Background="{StaticResource JadePanel}" BorderBrush="{StaticResource BronzeEdge}" BorderThickness="1" CornerRadius="12" Padding="30">
                         <Grid>
                             <Grid.RowDefinitions><RowDefinition Height="52" /><RowDefinition Height="*" /><RowDefinition Height="50" /></Grid.RowDefinitions>
                             <TextBlock Text="行军手札 · 玩法说明" FontFamily="KaiTi, SimSun" FontSize="27" Foreground="#D4BF8A" />
                             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                                <TextBlock x:Name="RulesText" TextWrapping="Wrap" Foreground="#AFBEA2" FontSize="13" LineHeight="26" Padding="0,0,16,0" />
+                                <TextBlock x:Name="RulesText" TextWrapping="Wrap" Foreground="#C6BFAF" FontSize="13" LineHeight="26" Padding="0,0,16,0" />
                             </ScrollViewer>
                             <Button Grid.Row="2" Content="我已知晓" Style="{StaticResource GoldButton}" Click="CloseRules_Click" HorizontalAlignment="Right" Width="125" Margin="0,10,0,0" />
                         </Grid>
                     </Border>
                 </Border>
-                <Border x:Name="AudioOverlay" Grid.ColumnSpan="2" Background="#E810100D" Visibility="Collapsed">
-                    <Border Width="640" Background="#2B2219" BorderBrush="#88794E" BorderThickness="1"
-                            CornerRadius="6" Padding="32" VerticalAlignment="Center">
+                <Border x:Name="AudioOverlay" Grid.ColumnSpan="2" Background="#E90B0F19" Visibility="Collapsed">
+                    <Border Width="640" Background="{StaticResource JadePanel}" BorderBrush="{StaticResource BronzeEdge}" BorderThickness="1"
+                            CornerRadius="12" Padding="32" VerticalAlignment="Center">
                         <StackPanel>
                             <TextBlock Text="金戈声起 · 声音设置" FontFamily="KaiTi, SimSun" FontSize="28"
                                        Foreground="#D4BF8A" Margin="0,0,0,23" />
@@ -463,8 +530,8 @@
                                     <ColumnDefinition Width="145" /><ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="65" />
                                 </Grid.ColumnDefinitions>
-                                <CheckBox Content="对局音效" IsChecked="{Binding EffectsEnabled}"
-                                          Foreground="#B5C1A7" VerticalAlignment="Center" />
+                                <CheckBox Content="音效与卡牌报音" IsChecked="{Binding EffectsEnabled}"
+                                          Foreground="#CDC4B2" VerticalAlignment="Center" />
                                 <Slider Grid.Column="1" Minimum="0" Maximum="1" SmallChange="0.05"
                                         Value="{Binding EffectsVolume, UpdateSourceTrigger=PropertyChanged}"
                                         VerticalAlignment="Center" />
@@ -477,7 +544,7 @@
                                     <ColumnDefinition Width="65" />
                                 </Grid.ColumnDefinitions>
                                 <CheckBox Content="武将语音" IsChecked="{Binding VoicesEnabled}"
-                                          Foreground="#B5C1A7" VerticalAlignment="Center" />
+                                          Foreground="#CDC4B2" VerticalAlignment="Center" />
                                 <Slider Grid.Column="1" Minimum="0" Maximum="1" SmallChange="0.05"
                                         Value="{Binding VoicesVolume, UpdateSourceTrigger=PropertyChanged}"
                                         VerticalAlignment="Center" />
@@ -494,6 +561,115 @@
                             <Button Content="返回对局" Style="{StaticResource GoldButton}" Click="CloseAudio_Click"
                                     Width="140" HorizontalAlignment="Right" />
                         </StackPanel>
+                    </Border>
+                </Border>
+                <Border x:Name="CardChoiceOverlay" Grid.ColumnSpan="2" Background="#E90B0F19"
+                        KeyboardNavigation.TabNavigation="Cycle" KeyboardNavigation.DirectionalNavigation="Contained"
+                        Visibility="Collapsed">
+                    <Border Width="780" Background="{StaticResource JadePanel}" BorderBrush="{StaticResource BronzeEdge}"
+                            BorderThickness="1" CornerRadius="12" Padding="30" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock x:Name="CardChoiceTitle" FontSize="23" Foreground="#D4BF8A"
+                                       TextWrapping="Wrap" Margin="0,0,0,18" />
+                            <TextBlock x:Name="CardChoiceHelp" Text="选择一张牌完成结算；手牌背面按位置选取，装备与判定牌明置。"
+                                       TextWrapping="Wrap" Foreground="#C6BFAF" Margin="0,0,0,12" />
+                            <ScrollViewer MaxHeight="470" VerticalScrollBarVisibility="Auto">
+                                <StackPanel x:Name="CardChoiceButtons" />
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+                </Border>
+                <Border x:Name="SkinsOverlay" Background="#ED0B0F19" Visibility="Collapsed">
+                    <Border Width="1080" Height="660" Background="{StaticResource JadePanel}"
+                            BorderBrush="{StaticResource BronzeEdge}" BorderThickness="1"
+                            CornerRadius="8" Padding="28">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" /><RowDefinition Height="*" />
+                                <RowDefinition Height="75" />
+                            </Grid.RowDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{Binding SkinTitle}" FontFamily="KaiTi, SimSun"
+                                           FontSize="29" Foreground="#EED6A0" />
+                                <TextBlock Text="{Binding SkinRosterLabel}"
+                                           Foreground="#9FAF9F" FontSize="11" Margin="2,6,0,0" />
+                            </StackPanel>
+                            <Button Content="关闭  ×" Click="CloseSkins_Click" Style="{StaticResource GhostButton}"
+                                    HorizontalAlignment="Right" VerticalAlignment="Top" />
+                            <Grid Grid.Row="1" Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="175" /><ColumnDefinition Width="22" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ListBox x:Name="SkinHeroList" ItemsSource="{Binding SkinHeroes}"
+                                         SelectionChanged="SkinHero_Changed" Background="#B0111721"
+                                         BorderBrush="#536C7057" BorderThickness="1"
+                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                    <ListBox.ItemContainerStyle><Style TargetType="ListBoxItem">
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                        <Setter Property="Padding" Value="10,8" />
+                                        <Setter Property="Foreground" Value="#C9D1C3" />
+                                        <Setter Property="Cursor" Value="Hand" />
+                                        <Style.Triggers><Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="#6C655238" />
+                                            <Setter Property="Foreground" Value="#FFE3A4" />
+                                        </Trigger></Style.Triggers>
+                                    </Style></ListBox.ItemContainerStyle>
+                                    <ListBox.ItemTemplate><DataTemplate>
+                                        <DockPanel>
+                                            <TextBlock Text="{Binding Kingdom}" FontSize="10" Foreground="#BFA878"
+                                                       Width="25" VerticalAlignment="Center" />
+                                            <TextBlock Text="{Binding Name}" FontSize="14" />
+                                        </DockPanel>
+                                    </DataTemplate></ListBox.ItemTemplate>
+                                </ListBox>
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Text="{Binding SkinCurrentLabel}" Foreground="#CDBB94"
+                                               FontSize="12" Margin="4,6,0,18" />
+                                    <ListBox x:Name="SkinChoicesList" ItemsSource="{Binding SkinChoices}"
+                                             SelectionChanged="SkinChoice_Changed" Background="Transparent"
+                                             BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                        <ListBox.ItemsPanel><ItemsPanelTemplate><WrapPanel /></ItemsPanelTemplate></ListBox.ItemsPanel>
+                                        <ListBox.ItemContainerStyle><Style TargetType="ListBoxItem">
+                                            <Setter Property="Margin" Value="4,0,10,10" />
+                                            <Setter Property="Padding" Value="0" />
+                                            <Setter Property="Cursor" Value="Hand" />
+                                            <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ListBoxItem">
+                                                <Border x:Name="SkinFrame" BorderBrush="#657760"
+                                                        BorderThickness="2" CornerRadius="5">
+                                                    <ContentPresenter />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsSelected" Value="True">
+                                                        <Setter TargetName="SkinFrame" Property="BorderBrush" Value="#F1D38F" />
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="SkinFrame" Property="BorderBrush" Value="#D2B87F" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate></Setter.Value></Setter>
+                                        </Style></ListBox.ItemContainerStyle>
+                                        <ListBox.ItemTemplate><DataTemplate>
+                                            <Grid Width="236" Height="352">
+                                                <Border Background="{Binding Portrait}" />
+                                                <Border Background="#F2181D29" VerticalAlignment="Bottom" Padding="12,13">
+                                                    <TextBlock Text="{Binding Name}" FontFamily="KaiTi, SimSun"
+                                                               FontSize="20" Foreground="#ECD6A4" TextAlignment="Center" />
+                                                </Border>
+                                            </Grid>
+                                        </DataTemplate></ListBox.ItemTemplate>
+                                    </ListBox>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="2" Margin="0,16,0,0">
+                                <TextBlock Text="{Binding SkinStatus}" Foreground="#ABBDAB" FontSize="12"
+                                           TextWrapping="Wrap" VerticalAlignment="Center" Width="755"
+                                           HorizontalAlignment="Left" />
+                                <Button Content="应用皮肤" Click="ApplySkin_Click" IsEnabled="{Binding CanApplySkin}"
+                                        Width="170" Height="42" HorizontalAlignment="Right"
+                                        Style="{StaticResource GoldButton}" />
+                            </Grid>
+                        </Grid>
                     </Border>
                 </Border>
             </Grid>

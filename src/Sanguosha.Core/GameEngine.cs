@@ -10,11 +10,12 @@ namespace Sanguosha.Core
         public GameEngine(int? seed = null)
         {
             random = seed.HasValue ? new Random(seed.Value) : new Random();
+            DiscardPile = new ObservedDiscardPile(card => { if (Phase != GamePhase.NotStarted && card.Suit is "♠" or "♥" or "♣" or "♦") discardedSuits.Add(card.Suit); });
         }
 
         public event Action? Changed;
         public List<Player> Players { get; } = new();
-        public List<Card> DiscardPile { get; } = new();
+        public ObservedDiscardPile DiscardPile { get; }
         public List<Card> TableCards { get; } = new();
         public List<GameLog> Logs { get; } = new();
         public Player Human => Players.First(player => player.IsHuman);
@@ -32,13 +33,18 @@ namespace Sanguosha.Core
         public int DeckCount => deck.Count;
         public GamePhase Phase { get; private set; }
         public ResponseRequest? Pending { get; private set; }
+        public TargetCardRequest? PendingCardChoice { get; private set; }
+        public SkillDecisionRequest? PendingDecision { get; private set; }
         public string Result { get; private set; } = "";
         public string Status { get; private set; } = "选择武将，开启山河之弈。";
         public bool HumanWon { get; private set; }
-        public bool CanSave => Phase == GamePhase.Play && Current.IsHuman && Pending == null;
+        public bool CanSave => cardUses.Count == 0 && reservedUseMaterials.Count == 0 && judgmentMaterials.Count == 0 && !resolvingReaction && reactions.Count == 0 && OrderingCards.Count == 0 && Phase == GamePhase.Play && Current.IsHuman && Pending == null && PendingDecision == null && PendingCardChoice == null;
 
         public void Start(string heroId, Role humanRole = Role.Lord, GameMode mode = GameMode.Identity4)
         {
+            normalDrawSeat = null; finishingGlobalTurn = false; skippedIncarnationTurn = false; HandEvents.Clear(); handLossBatches.Clear();
+            Phase = GamePhase.NotStarted; cardUses.Clear(); reservedUseMaterials.Clear(); judgmentMaterials.Clear(); CardEvents.Clear(); extraTurns.Clear(); extraTurnOrigin = null; useNumber = 0; dyingPlayers.Clear(); pendingTuntian.Clear(); discardedSuits.Clear();
+            matchKills.Clear(); turnKills.Clear();
             Players.Clear();
             deck.Clear();
             DiscardPile.Clear();
@@ -46,6 +52,9 @@ namespace Sanguosha.Core
             Logs.Clear();
             work.Clear();
             Pending = null;
+            PendingCardChoice = null;
+            PendingDecision = null;
+            discardingActor = null; phaseDiscards.Clear(); usedSlashNatures.Clear(); aiRecasted.Clear(); reactions.Clear(); OrderingCards.Clear(); equipmentLossCounts.Clear(); resolvingReaction = false;
             Result = "";
             HumanWon = false;
             Round = 0;
@@ -65,7 +74,12 @@ namespace Sanguosha.Core
                 Shuffle(roles);
                 roles.Insert(0, humanRole);
             }
-            List<Hero> opponents = Heroes.All.Where(hero => hero.Id != heroId).ToList();
+            Hero selected = Heroes.Find(heroId);
+            string selectedIdentity = selected.BaseHeroId ?? selected.Id;
+            // A historical general and its refreshed variant are mutually exclusive in a match.
+            List<Hero> opponents = Heroes.All.Where(hero => (hero.BaseHeroId ?? hero.Id) != selectedIdentity)
+                .GroupBy(hero => hero.BaseHeroId ?? hero.Id)
+                .Select(group => group.ElementAt(random.Next(group.Count()))).ToList();
             Shuffle(opponents);
 
             for (int seat = 0; seat < roles.Count; seat++)
@@ -85,6 +99,7 @@ namespace Sanguosha.Core
                 });
             }
 
+            ConfigureDynamicHandLimits();
             BuildDeck();
             foreach (Player player in Players)
             {
@@ -97,13 +112,14 @@ namespace Sanguosha.Core
                 ? "2V2对战开始。你与三号位组成青龙队，一、三号位对抗二、四号位；消灭对方全队获胜。"
                 : $"{ModeName}局开始。你的身份是{Human.RoleName}，主公为{Current.Hero.Name}。其余身份在阵亡时公开。");
             EmitCue(GameCueKind.MatchStarted);
-            work.Enqueue(BeginTurn);
+            work.Enqueue(() => InitializeIncarnations(0, BeginTurn));
             Notify();
         }
 
         public void Advance()
         {
-            if (Phase is GamePhase.GameOver or GamePhase.NotStarted || Pending != null)
+            if (Phase is GamePhase.GameOver or GamePhase.NotStarted ||
+                Pending != null || PendingCardChoice != null || PendingDecision != null)
             {
                 return;
             }
@@ -117,20 +133,31 @@ namespace Sanguosha.Core
 
         private void BeginTurn()
         {
-            if (Round == 0 || CurrentSeat == Players.First(player => player.IsAlive).Seat)
+            turnKills.Clear(); // Every real/extra/skipped turn starts a new counting window.
+            if (Round == 0 || !extraTurnOrigin.HasValue && CurrentSeat == Players.First(player => player.IsAlive).Seat)
             {
                 Round++;
             }
 
+            discardedSuits.Clear();
+            ResetBatchThreeTurn(Current);
+            Current.LuoyiActive = false;
+            if (Current.TurnedOver) { skippedIncarnationTurn = true; TurnOver(Current); NextTurn(); return; }
+            aiRecasted.Remove(Current.Seat);
+            Current.JijiangFailed = false; Current.LuoshenCards.Clear(); Current.RendeGiven = 0; Current.TianyiState = 0; Current.InPlayPhase = false;
             Current.SlashCount = 0;
             Current.PlayedSlash = false;
             Current.SkillUsed = false;
+            Current.DuelJudgmentRed = null;
+            Current.ZhaXiangCount = 0;
+            foreach (Player player in Players) player.HujiaDrawUsed = false;
             EmitCue(GameCueKind.TurnStarted, Current);
-            ResolveTurnStart(Current);
+            ChooseIncarnation(Current, true, () => ResolveTurnStart(Current));
         }
 
         private void CompleteAction(Player actor)
         {
+            if (DrainReactions(() => CompleteAction(actor))) return;
             if (Phase == GamePhase.GameOver)
             {
                 return;
@@ -142,6 +169,7 @@ namespace Sanguosha.Core
                 return;
             }
 
+            actor.InPlayPhase = true;
             if (actor.IsHuman)
             {
                 Phase = GamePhase.Play;
@@ -175,7 +203,7 @@ namespace Sanguosha.Core
                 return false;
             }
 
-            int excess = Current.Hand.Count - Math.Max(0, Current.Health);
+            int excess = Current.Hand.Count - Current.HandLimit;
             List<int> ids = cardIds.Distinct().ToList();
             if (ids.Count != excess || ids.Any(id => Current.Hand.All(card => card.Id != id)))
             {
@@ -184,10 +212,7 @@ namespace Sanguosha.Core
                 return false;
             }
 
-            foreach (int id in ids)
-            {
-                DiscardFromHand(Current, Current.Hand.First(card => card.Id == id));
-            }
+            PayCards(Current, ids.Select(id => Current.Hand.First(card => card.Id == id)).ToList());
 
             AddLog($"{Current.Hero.Name}弃置{ids.Count}张牌。");
             EndActorTurn(Current);
@@ -197,16 +222,22 @@ namespace Sanguosha.Core
 
         private void NextTurn()
         {
+            if (DrainReactions(NextTurn)) return;
             if (Phase == GamePhase.GameOver)
             {
                 return;
             }
 
-            do
-            {
-                CurrentSeat = (CurrentSeat + 1) % Players.Count;
-            }
-            while (!Current.IsAlive);
+            FinishGlobalTurn(NextTurnCore);
+        }
+
+        private void NextTurnCore()
+        {
+            if (Phase == GamePhase.GameOver) return;
+            if (extraTurnOrigin.HasValue) { CurrentSeat = extraTurnOrigin.Value; extraTurnOrigin = null; }
+            while (extraTurns.Count > 0 && !Players[extraTurns.Peek()].IsAlive) extraTurns.Dequeue();
+            if (extraTurns.Count > 0) { extraTurnOrigin = CurrentSeat; CurrentSeat = extraTurns.Dequeue(); }
+            else { do { CurrentSeat = (CurrentSeat + 1) % Players.Count; } while (!Current.IsAlive); }
 
             Phase = GamePhase.Resolving;
             Status = $"轮到{Current.Hero.Name}。";
@@ -215,7 +246,7 @@ namespace Sanguosha.Core
 
         private void BuildDeck()
         {
-            // 精简牌堆共108张：独立构建，不读取参考项目的脚本或资源。
+            // Retain IDs 1–108 for old saves; append 11 explicit-suit expansion cards. Custom distribution, not a full official deck.
             (CardKind Kind, int Count)[] distribution =
             {
                 (CardKind.Slash, 30),
@@ -241,11 +272,18 @@ namespace Sanguosha.Core
             {
                 for (int index = 0; index < count; index++)
                 {
-                    deck.Add(new Card(id, kind, suits[(id - 1) % 4], (id - 1) % 13 + 1));
+                    deck.Add(new Card(id, kind, suits[(id - 1) % 4], (id - 1) % 13 + 1,
+                        kind == CardKind.Slash && id is >= 22 and <= 29 ? (id % 2 == 0 ? DamageNature.Fire : DamageNature.Thunder) : DamageNature.Normal));
                     id++;
                 }
             }
 
+            foreach (var item in new[] {
+                (CardKind.Nullification, "♠", 11), (CardKind.Nullification, "♣", 12), (CardKind.Nullification, "♠", 13), (CardKind.Nullification, "♣", 13),
+                (CardKind.Wine, "♠", 3), (CardKind.Wine, "♣", 9), (CardKind.FireAttack, "♥", 2), (CardKind.FireAttack, "♦", 12),
+                (CardKind.IronChain, "♠", 11), (CardKind.SupplyShortage, "♣", 4), (CardKind.Lightning, "♠", 1) })
+            { deck.Add(new Card(id++, item.Item1, item.Item2, item.Item3)); }
+            PhysicalCardCount = deck.Count;
             Shuffle(deck);
         }
 
@@ -253,8 +291,9 @@ namespace Sanguosha.Core
         {
             if (deck.Count == 0 && DiscardPile.Count > 0)
             {
-                deck.AddRange(DiscardPile);
-                DiscardPile.Clear();
+                List<Card> recyclable = DiscardPile.Where(card => !InFlight(card)).ToList();
+                deck.AddRange(recyclable);
+                foreach (Card recycled in recyclable) DiscardPile.Remove(recycled);
                 Shuffle(deck);
                 AddLog("牌堆耗尽，洗混弃牌堆后继续。");
             }
@@ -271,25 +310,31 @@ namespace Sanguosha.Core
 
         private void Draw(Player player, int count)
         {
+            List<Card> cards = new();
             for (int index = 0; index < count; index++)
             {
                 Card? card = TakeTop();
                 if (card != null)
                 {
-                    player.Hand.Add(card);
+                    cards.Add(card);
                 }
             }
+            Gain(player, cards);
         }
 
         private void DiscardFromHand(Player player, Card card)
         {
-            player.Hand.Remove(card);
+            if (!player.Hand.Remove(card)) return;
+            PublishHand(player, false, new[] { card });
+            if (handLossBatches.TryGetValue(player.Seat, out var lost)) lost.Add(card.Id);
             DiscardPile.Add(card);
-            OnHandLost(player);
+            if (player == discardingActor) phaseDiscards.Add(card);
+            if (!handLossBatches.ContainsKey(player.Seat)) OnHandLost(player);
         }
 
         private void ShowCard(Card card)
         {
+            if (card.Id <= 0) return;
             TableCards.RemoveAll(item => item.Id == card.Id);
             TableCards.Add(card);
             if (TableCards.Count > 5)

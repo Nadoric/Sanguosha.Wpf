@@ -59,6 +59,9 @@ namespace Sanguosha.Desktop
             return sprite;
         }
 
+        public static BitmapSource CardFace(Card card) => card.Kind == CardKind.Slash && card.Nature != DamageNature.Normal
+            ? Sprite(card.Nature == DamageNature.Fire ? "HuoSha_png.png" : "LeiSha_png.png") : CardFace(card.Kind);
+
         public static BitmapSource CardFace(CardKind kind)
         {
             string name = kind switch
@@ -78,6 +81,12 @@ namespace Sanguosha.Desktop
                 CardKind.Blade => "QingLongYanYueDao",
                 CardKind.EightTrigrams => "BaGuaZhen",
                 CardKind.Horse => "DiLu",
+                CardKind.SupplyShortage => "BingLiangCunDuan",
+                CardKind.IronChain => "TieSuoLianHuan",
+                CardKind.Nullification => "WuXieKeJi",
+                CardKind.FireAttack => "HuoGong",
+                CardKind.Wine => "Jiu",
+                CardKind.Lightning => "ShanDian",
                 _ => throw new ArgumentOutOfRangeException(nameof(kind))
             };
             return Sprite($"{name}_png.png");

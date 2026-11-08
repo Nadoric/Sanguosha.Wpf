@@ -16,10 +16,12 @@ namespace Sanguosha.Desktop
     {
         private readonly DispatcherTimer timer;
         private readonly GameAudio audio = new(
-            Environment.GetCommandLineArgs().Any(argument => argument is "--verify-ui" or "--verify-audio"));
+            Environment.GetCommandLineArgs().Any(argument =>
+                argument is "--verify-ui" or "--verify-audio" or "--verify-effects" or "--verify-skins"));
         private readonly List<int> targets = new();
         private GameEngine game = new();
         private Hero selectedHero = Heroes.All[0];
+        private readonly Dictionary<string, HeroView> heroViews = Heroes.All.ToDictionary(hero => hero.Id, hero => new HeroView(hero));
         private GameMode selectedMode;
         private Role selectedRole;
         private bool paused;
@@ -39,14 +41,17 @@ namespace Sanguosha.Desktop
             timer.Tick += (_, _) =>
             {
                 if (!paused && Lobby.Visibility != Visibility.Visible &&
-                    RulesOverlay.Visibility != Visibility.Visible && AudioOverlay.Visibility != Visibility.Visible)
+                    RulesOverlay.Visibility != Visibility.Visible && AudioOverlay.Visibility != Visibility.Visible &&
+                    SkinsOverlay.Visibility != Visibility.Visible)
                 {
                     game.Advance();
                 }
             };
             BindGame(game);
+            OfficialFrameLibrary.Warm("start"); OfficialFrameLibrary.Warm("kill1");
             audio.StatusChanged += RaiseAll;
             SetHeroFilter("全部");
+            InitializeSkinSelector();
             RulesText.Text = BuildRules();
             initialized = true;
             timer.Start();
@@ -54,7 +59,7 @@ namespace Sanguosha.Desktop
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
-        public ObservableCollection<HeroView> HeroChoices { get; } = new();
+        public ObservableCollection<HeroView> HeroChoices { get; private set; } = new();
         public ObservableCollection<PlayerView> Opponents { get; } = new();
         public ObservableCollection<PlayerView> ResultPlayers { get; } = new();
         public ObservableCollection<CardView> HandCards { get; } = new();
@@ -74,6 +79,7 @@ namespace Sanguosha.Desktop
             GamePhase.Play => "出牌阶段",
             GamePhase.Discard => "弃牌阶段",
             GamePhase.Response => "等待你的响应",
+            GamePhase.SelectCard => "选择目标区域的牌",
             GamePhase.GameOver => "对局结束",
             GamePhase.Resolving => "正在结算",
             _ => "选择武将后开始"
@@ -86,7 +92,10 @@ namespace Sanguosha.Desktop
         public string TargetLabel => targets.Count > 0
             ? $"已选目标：{string.Join(" → ", targets.Select(seat => game.Players[seat].Hero.Name))}   ·   再次点击取消"
             : HasGame && !game.Human.IsAlive ? "你已阵亡，继续观看剩余角色对战。" : "点击武将选择目标 · 鼠标停留在卡牌或技能上查看说明";
-        public ImageBrush HumanPortrait => Art.Portrait(HasGame ? game.Human.Hero : selectedHero);
+        public Visibility HumanDeathVisibility => HasGame && !game.Human.IsAlive ? Visibility.Visible : Visibility.Collapsed;
+        public System.Windows.Media.Imaging.BitmapSource HumanDeathStamp => HasGame
+            ? OfficialInterface.DeathStamp(game.Human, game.Mode) : OfficialInterface.Get("seat", "Seat_Dead_0.png");
+        public ImageBrush HumanPortrait => Art.Portrait(HasGame ? game.Human.Hero : selectedHero, HasGame && !game.Human.IsAlive);
         public string HumanName => HasGame ? game.Human.Hero.Name : selectedHero.Name;
         public string HumanIdentity => !HasGame ? "你" : game.Mode == GameMode.Team2V2 ? "青龙队 · 你" : $"{game.Human.RoleName} · 你";
         public string HumanHearts => HasGame
@@ -95,14 +104,18 @@ namespace Sanguosha.Desktop
         public string HumanEquipment => HasGame
             ? $"范围 {game.Human.AttackRange} · " + (game.Human.Equipment.Count == 0 ? "暂无装备" :
                 string.Join(" · ", game.Human.Equipment.Select(card => card.Name))) +
-                (game.Human.Judgments.Count > 0 ? "\n判定区：乐不思蜀" : "")
+                (game.Human.Judgments.Count > 0 ? "\n判定区：" + string.Join("、", game.Human.Judgments.Select(card => game.Human.SupplyShortages.Contains(card.Id) || card.Kind == CardKind.SupplyShortage ? "兵粮寸断" : card.Kind == CardKind.Lightning ? "闪电" : "乐不思蜀")) : "") +
+                (game.Human.TurnedOver ? "\n背面朝上" : "") + (game.Human.Chained ? " · 铁索连环" : "") +
+                (game.Human.NamedCards.Any() ? "\n" + string.Join("；", game.Human.NamedZones.Where(pair => pair.Value.Count > 0).Select(pair => pair.Key + "：" + string.Join("、", pair.Value.Select(card => card.Suit + card.RankText)))) : "") +
+                (game.Human.SpecialCards.Count > 0 ? "\n不屈牌：" + string.Join("、", game.Human.SpecialCards.Select(card => card.RankText)) : "") +
+                (game.Human.SkillsDisabled ? "\n断肠：武将技能已失去" : "")
             : "";
-        public string HandLabel => HasGame ? $"你的手牌  {game.Human.Hand.Count:D2}" : "你的手牌";
+        public string HandLabel => HasGame ? $"你的手牌  {game.Human.Hand.Count:D2}  /  上限 {game.Human.HandLimit}" : "你的手牌";
         public string StatusLabel => localStatus ?? game.Status;
-        public string SkillLabel => HasGame ? game.Human.Hero.Skill : selectedHero.Skill;
-        public string SkillDescription => HasGame ? game.Human.Hero.Description : selectedHero.Description;
-        public bool CanSkill => IsPlay && (game.Human.Hero.Id == "huanggai" || !game.Human.SkillUsed);
-        public Visibility ConversionVisibility => HasGame && game.Human.Hero.Id is "guanyu" or "zhaoyun" or "ganning" or "daqiao"
+        public string SkillLabel => HasGame ? game.Human.EffectiveSkillText : selectedHero.Skill;
+        public string SkillDescription => HasGame ? game.Human.Hero.Description + (game.Human.IncarnationHeroId != null ? "\n当前化身仅获得〔" + game.Human.IncarnationSkill + "〕：" + Heroes.Find(game.Human.IncarnationHeroId).Description : "") + (game.Human.Incarnations.Count > 0 ? "\n你的化身：" + string.Join("、", game.Human.Incarnations.Select(id => Heroes.Find(id).Name)) : "") : selectedHero.Description;
+        public bool CanSkill => IsPlay && game.CanActivateSkill(game.Human);
+        public Visibility ConversionVisibility => HasGame && game.Human.RuleId is "guanyu" or "zhaoyun" or "ganning" or "daqiao" or "yanliangwenchou" or "xuhuang"
             ? Visibility.Visible
             : Visibility.Collapsed;
         public string PrimaryLabel => game.Phase switch
@@ -116,8 +129,14 @@ namespace Sanguosha.Desktop
         public bool CanSecondary => IsPlay || game.Pending != null;
         public string ResultTitle => game.HumanWon ? "旗 开 得 胜" : "来 日 方 长";
         public string ResultLabel => $"{game.Result}  ·  共 {game.Round} 轮";
-        public string SelectedHeroTitle => $"{selectedHero.Kingdom} · {selectedHero.Name}    /    {selectedHero.Skill}    /    体力 {selectedHero.Health}";
-        public string SelectedHeroDescription => selectedHero.Description;
+        public string AllRosterLabel => $"全部 {Heroes.All.Count}";
+        public string WeiRosterLabel => $"魏  {Heroes.All.Count(hero => hero.Kingdom == "魏")}";
+        public string ShuRosterLabel => $"蜀  {Heroes.All.Count(hero => hero.Kingdom == "蜀")}";
+        public string WuRosterLabel => $"吴  {Heroes.All.Count(hero => hero.Kingdom == "吴")}";
+        public string QunRosterLabel => $"群  {Heroes.All.Count(hero => hero.Kingdom == "群")}";
+        public string SkinRosterLabel => $"官网立绘 · {Heroes.All.Count}名武将 · {SkinLibrary.Shared.All.Count}个外观选项 · 同名版本复用官网素材";
+        public string SelectedHeroTitle => $"{selectedHero.Pack} · {selectedHero.Kingdom} · {selectedHero.Name}    /    {selectedHero.Skill}    /    体力 {selectedHero.Health}";
+        public string SelectedHeroDescription => $"版本：{selectedHero.Ruleset}\n{selectedHero.Description}";
         public string SelectedHeroQuote => $"“{selectedHero.Quote}”";
         public string LobbyModeDescription => selectedMode switch
         {
@@ -135,6 +154,7 @@ namespace Sanguosha.Desktop
         private void Refresh()
         {
             localStatus = null;
+            RefreshCardChoice();
             HashSet<int> selected = HandCards.Where(card => card.IsSelected).Select(card => card.Id).ToHashSet();
             HandCards.Clear();
             foreach (Card card in game.Human.Hand)
@@ -217,7 +237,7 @@ namespace Sanguosha.Desktop
             }
             else
             {
-                int limit = game.Human.Hero.Id == "diaochan" ? 2 : 1;
+                int limit = game.Human.Hero.Id is "diaochan" or "re_diaochan" or "lusu" ? 2 : 1;
                 if (targets.Count >= limit)
                 {
                     targets.Clear();
@@ -316,13 +336,11 @@ namespace Sanguosha.Desktop
 
         private void SetHeroFilter(string kingdom)
         {
-            HeroChoices.Clear();
-            foreach (Hero hero in Heroes.All.Where(hero => kingdom == "全部" || hero.Kingdom == kingdom))
-            {
-                HeroChoices.Add(new HeroView(hero));
-            }
-
-            HeroList.SelectedItem = HeroChoices.FirstOrDefault(choice => choice.Hero == selectedHero) ?? HeroChoices[0];
+            // One collection replacement, not 90 collection/layout notifications; reuse view models.
+            HeroChoices = new ObservableCollection<HeroView>(HeroGalleryLayout.Filter(kingdom).Select(hero => heroViews[hero.Id]));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HeroChoices)));
+            HeroList.SelectedItem = HeroChoices.FirstOrDefault(choice => choice.Hero == selectedHero) ?? HeroChoices.FirstOrDefault();
+            if (HeroList.SelectedItem != null) HeroList.ScrollIntoView(HeroList.SelectedItem);
         }
 
         private void Kingdom_Changed(object sender, RoutedEventArgs e)
@@ -335,11 +353,62 @@ namespace Sanguosha.Desktop
 
         private void Hero_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (HeroList.SelectedItem is HeroView choice)
+            if (e.OriginalSource == HeroList && HeroList.SelectedItem is HeroView choice && selectedHero != choice.Hero)
             {
                 selectedHero = choice.Hero;
-                RaiseAll();
+                // A gallery click must not refresh every board, skin and card binding.
+                foreach (string name in new[] { nameof(SelectedHeroTitle), nameof(SelectedHeroDescription),
+                    nameof(SelectedHeroQuote), nameof(HumanPortrait), nameof(HumanDeathVisibility), nameof(HumanDeathStamp), nameof(HumanName), nameof(HumanVerticalName),
+                    nameof(HumanFaction), nameof(PreviewHeroLabel), nameof(SkillLabel), nameof(SkillDescription) })
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
             }
+        }
+
+        private void HeroList_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.Modifiers != ModifierKeys.None) return;
+            if (e.Key == Key.Enter && HeroList.SelectedItem is HeroView)
+            {
+                Start_Click(this, new RoutedEventArgs());
+                e.Handled = true;
+            }
+            else if (NavigateHeroGallery(e.Key)) e.Handled = true;
+        }
+
+        private bool NavigateHeroGallery(Key key)
+        {
+            if (HeroChoices.Count == 0) return false;
+            VirtualizingHeroPanel? panel = FindGalleryPanel(HeroList);
+            int columns = panel?.Columns ?? 1;
+            int current = Math.Max(0, HeroList.SelectedIndex);
+            int next = key switch
+            {
+                Key.Left => current - 1, Key.Right => current + 1,
+                Key.Up => current - columns, Key.Down => current + columns,
+                Key.Home => 0, Key.End => HeroChoices.Count - 1,
+                Key.PageUp => current - columns * (panel?.VisibleRows ?? 1),
+                Key.PageDown => current + columns * (panel?.VisibleRows ?? 1),
+                _ => -1
+            };
+            if (key is not (Key.Left or Key.Right or Key.Up or Key.Down or Key.Home or Key.End or Key.PageUp or Key.PageDown)) return false;
+            HeroList.SelectedIndex = Math.Clamp(next, 0, HeroChoices.Count - 1);
+            HeroList.ScrollIntoView(HeroList.SelectedItem);
+            Dispatcher.BeginInvoke(DispatcherPriority.Input, new Action(() =>
+            {
+                (HeroList.ItemContainerGenerator.ContainerFromItem(HeroList.SelectedItem) as ListBoxItem)?.Focus();
+            }));
+            return true;
+        }
+
+        private static VirtualizingHeroPanel? FindGalleryPanel(DependencyObject root)
+        {
+            if (root is VirtualizingHeroPanel panel) return panel;
+            for (int index = 0; index < VisualTreeHelper.GetChildrenCount(root); index++)
+            {
+                VirtualizingHeroPanel? child = FindGalleryPanel(VisualTreeHelper.GetChild(root, index));
+                if (child != null) return child;
+            }
+            return null;
         }
 
         private void Mode_Changed(object sender, RoutedEventArgs e)
@@ -380,6 +449,7 @@ namespace Sanguosha.Desktop
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
             audio.StopAll();
+            ClearBattleEffects();
             // 大厅只暂停当前对局；用户点击“入局”时才会替换。
             Lobby.Visibility = Visibility.Visible;
             ResultOverlay.Visibility = Visibility.Collapsed;
@@ -396,6 +466,7 @@ namespace Sanguosha.Desktop
         private void Rules_Click(object sender, RoutedEventArgs e)
         {
             audio.StopAll();
+            ClearBattleEffects();
             RulesOverlay.Visibility = Visibility.Visible;
         }
 
@@ -496,6 +567,7 @@ namespace Sanguosha.Desktop
             if (paused)
             {
                 audio.StopAll();
+                ClearBattleEffects();
             }
             PauseButton.Content = paused ? "继续" : "暂停";
             RaiseAll();
@@ -535,9 +607,46 @@ namespace Sanguosha.Desktop
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+            if (SkinsOverlay.Visibility == Visibility.Visible)
+            {
+                if (e.Key == Key.Escape)
+                {
+                    CloseSkins_Click(this, new RoutedEventArgs());
+                    e.Handled = true;
+                }
+
+                return;
+            }
+
+            // Let focused choice buttons receive native Enter/Space. Mandatory choices cannot
+            // be silently cancelled / auto-resolved by the global gameplay shortcuts.
+            if (CardChoiceOverlay.Visibility == Visibility.Visible)
+            {
+                if (e.Key != Key.F11)
+                {
+                    if (e.Key is Key.Escape or Key.F1 || e.IsRepeat && e.Key is Key.Enter or Key.Space)
+                        e.Handled = true;
+                    return;
+                }
+            }
+
+            // This window handles PreviewKeyDown (tunneling), before the ListBox.
+            // Route gallery keys here first, otherwise the global Enter guard eats lobby confirmation.
+            if (Lobby.Visibility == Visibility.Visible && HeroList.IsKeyboardFocusWithin &&
+                RulesOverlay.Visibility != Visibility.Visible && AudioOverlay.Visibility != Visibility.Visible)
+            {
+                HeroList_PreviewKeyDown(HeroList, e);
+                if (e.Handled) return;
+            }
+
+            if ((Lobby.Visibility == Visibility.Visible || RulesOverlay.Visibility == Visibility.Visible ||
+                AudioOverlay.Visibility == Visibility.Visible) && e.Key is Key.Enter or Key.Space)
+                return; // Buttons/radio buttons in overlays own their activation keys.
+
             if (e.Key == Key.F1)
             {
                 audio.StopAll();
+                ClearBattleEffects();
                 RulesOverlay.Visibility = RulesOverlay.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             }
             else if (e.Key == Key.F11)
@@ -554,10 +663,11 @@ namespace Sanguosha.Desktop
             }
             else if (e.Key == Key.Escape)
             {
-                AudioOverlay.Visibility = Visibility.Collapsed;
-                audio.StopAll();
-                RulesOverlay.Visibility = Visibility.Collapsed;
-                ClearSelection();
+                if (AudioOverlay.Visibility == Visibility.Visible) CloseAudio_Click(this, new RoutedEventArgs());
+                else if (RulesOverlay.Visibility == Visibility.Visible) CloseRules_Click(this, new RoutedEventArgs());
+                else if (Lobby.Visibility == Visibility.Visible) BackToGame_Click(this, new RoutedEventArgs());
+                else if (HasKillEffects || HasStartEffects) SkipKillEffects_Click(this, new RoutedEventArgs());
+                else ClearSelection();
             }
             else if (Lobby.Visibility != Visibility.Visible && RulesOverlay.Visibility != Visibility.Visible &&
                 AudioOverlay.Visibility != Visibility.Visible &&
@@ -582,7 +692,19 @@ namespace Sanguosha.Desktop
 
         private void Window_Closing(object? sender, CancelEventArgs e)
         {
-            timer.Stop();
+            bool wasRunning = timer.IsEnabled;
+            timer.Stop(); // A modal confirmation pumps the dispatcher: do not advance AI behind it.
+            bool verification = Environment.GetCommandLineArgs().Any(argument =>
+                argument is "--verify-ui" or "--verify-audio" or "--verify-effects" or "--verify-skins");
+            if (HasGame && game.Phase != GamePhase.GameOver && !verification &&
+                MessageBox.Show(this, "当前对局尚未结束，退出将丢失上次保存后的进度。\n确定退出游戏吗？\n如需存档，请先取消，在自己的出牌阶段保存。",
+                    "退出山河弈", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No) != MessageBoxResult.Yes)
+            {
+                e.Cancel = true;
+                if (wasRunning) timer.Start();
+                return;
+            }
+            ClearBattleEffects();
             audio.Dispose();
         }
 
@@ -598,12 +720,12 @@ namespace Sanguosha.Desktop
                 "所有角色初始四张牌。回合依次执行开始技能、延时锦囊判定、摸牌、出牌、弃牌、结束技能。通常每回合摸两张牌，保留手牌上限等于体力。\n" +
                 "点击手牌，点击上方目标武将，再点“使用卡牌”。桃与装备无需目标。弃牌阶段可多选，需恰好弃至上限。响应时选择一张合法牌或放弃；响应牌可自动通过龙胆、武圣、倾国、急救转换。\n\n" +
                 "【卡牌与距离】\n" +
-                "108张独立牌堆，包含杀、闪、桃、决斗、无中生有、过河拆桥、顺手牵羊、南蛮入侵、万箭齐发、桃园结义、乐不思蜀及四种装备。弃牌堆耗尽后自动洗回。\n" +
+                "新局119张适配牌堆（兼容108张旧档），包含无懈可击、火攻、酒、闪电、铁索连环、兵粮寸断及杀、闪、桃、决斗、无中生有、过河拆桥、顺手牵羊、南蛮入侵、万箭齐发、桃园结义、乐不思蜀及四种装备。弃牌堆耗尽后自动洗回。\n" +
                 "距离沿存活角色座次取最短路径；的卢令他人计算与你的距离+1，马术令你计算与他人距离-1。杀通常范围1、每回合一次；青龙偃月刀范围3；连弩或咆哮解除次数限制。\n" +
-                "八卦阵自动判定，红色视为闪。乐不思蜀在下回合判定，非红桃跳过出牌阶段。锦囊无懈可击、闪电等尚未纳入首版。\n\n" +
+                "八卦阵可选择判定，红色视为闪，鬼才可在判定生效前改判。乐不思蜀在下回合判定，非红桃跳过出牌阶段。锦囊无懈可击、闪电等尚未纳入首版。\n\n" +
                 "【武将与技能】\n" +
-                "25名武将：魏7、蜀7、吴8、群3。选将时可查看每名武将的实际技能。主动技先选择手牌与目标，再点击左下技能按钮；黄盖苦肉不需手牌；貂蝉离间依次选择两名不同角色。甘宁、关羽、赵云、大乔的出牌转化需勾选“技能转化”。\n" +
-                "首版采用明确的精简技能：仁德为每回合给一张并回复1点；制衡更换一张；结姻给一张牌并双方回复；离间不限制性别。观星、突袭与刚烈的选择自动完成；遗计直接摸牌。仅实现武将说明中列出的技能，非标准版全技能复刻。\n\n" +
+                $"{Heroes.All.Count}名武将。已齐备标准核心、25名标准界将及神话风火林山；各武将的具体技能版本见选将说明（不含无名杀全部异版）。于吉点技能声明牌；左慈在开局与回合开始/结束弹窗选择化身中的单项技能，魂池仅本人可见。主动技先选择手牌与目标，再点击左下技能按钮；黄盖苦肉不需手牌；貂蝉离间依次选择两名不同角色。甘宁、关羽、赵云、大乔及发动双雄后的颜良文丑，出牌转化需勾选“技能转化”。典韦先选目标再按强袭，在弹窗选代价；烈弓、猛进、烈刃、再起与双雄的可选发动均有选择弹窗。\n" +
+                "标准25将已补齐主要交互：仁德累计两张回复、制衡任意数量、结姻弃两手牌且目标须受伤男性、离间两男性；观星/突袭/刚烈/遗计均可自选。刘备未选手牌时点击技能可激将主动出杀。关羽/甘宁/大乔/徐晃可通过技能按钮转化装备。新局119张适配牌堆，含无懈反无懈、火攻、酒和闪电；仍不是官方完整军争牌堆或无名杀全部脚本。公共主公技能由技能按钮选择；田、觉醒、限定技和额外回合状态随存档保存。\n\n" +
                 "【濒死、阵亡与AI】\n" +
                 "体力降至0或以下时，从濒死者开始按座次询问桃救援，回复至正数后继续。阵亡者的所有牌进入弃牌堆。身份局击败反贼摸三张，主公误杀忠臣弃置全部手牌与装备。你阵亡后可观看AI完成对局。\n" +
                 "AI依据自身身份进行阵营策略，会使用技能、装备、响应和救援；首版AI可知角色身份，属于本地规则对战。\n\n" +

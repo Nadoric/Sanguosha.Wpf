@@ -68,15 +68,21 @@ namespace Sanguosha.Desktop
         {
             game.Changed -= Refresh;
             game.CueRaised -= audio.Handle;
+            game.CueRaised -= RenderBattleCue;
+            audio.EliminationReady -= OnEliminationReady;
             audio.StopAll();
+            ClearBattleEffects();
             game = next;
             game.Changed += Refresh;
+            game.CueRaised += RenderBattleCue;
             game.CueRaised += audio.Handle;
+            audio.EliminationReady += OnEliminationReady;
         }
 
         private void Audio_Click(object sender, RoutedEventArgs e)
         {
             audio.StopAll();
+            ClearBattleEffects();
             AudioOverlay.Visibility = Visibility.Visible;
             RaiseAll();
         }
@@ -89,7 +95,8 @@ namespace Sanguosha.Desktop
 
         private void PreviewEffect_Click(object sender, RoutedEventArgs e)
         {
-            audio.PlayEffect("slash");
+            audio.StopAll();
+            audio.Handle(new GameCue(GameCueKind.CardPlayed, PreviewHero.Id, CardKind.Slash));
         }
 
         private void PreviewVoice_Click(object sender, RoutedEventArgs e)

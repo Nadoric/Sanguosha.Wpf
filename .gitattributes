@@ -11,3 +11,5 @@
 *.cmd text eol=crlf
 *.png binary
 *.mp3 binary
+*.ogg binary
+*.ico binary

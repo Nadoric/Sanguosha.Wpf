@@ -1,0 +1,47 @@
+{
+  "shoupo": {
+    "page": "shoupo_3.png",
+    "name": "yijidangxian",
+    "bounds": "1185,477,472,200",
+    "offsets": "17,12,489,212"
+  },
+  "lianpo": {
+    "page": "lianpo.png",
+    "name": "2/2_shiwushuang",
+    "bounds": "1817,814,514,183",
+    "offsets": "5,15,534,198",
+    "rotate": "90"
+  },
+  "sanpo": {
+    "page": "sanpo.png",
+    "name": "3/zi_gsj",
+    "bounds": "2,2,292,163",
+    "offsets": "23,0,329,163"
+  },
+  "sipo": {
+    "page": "sipo_2.png",
+    "name": "4/zi4",
+    "bounds": "683,753,293,133",
+    "offsets": "2,3,302,139"
+  },
+  "wupo": {
+    "page": "wupo.png",
+    "name": "5/5_tianxiawudi",
+    "bounds": "1839,4,496,161",
+    "offsets": "0,8,505,194",
+    "rotate": "90"
+  },
+  "liupo": {
+    "page": "liupo.png",
+    "name": "6/6_tongjiuzhou",
+    "bounds": "1865,1040,468,162",
+    "offsets": "4,5,475,174",
+    "rotate": "90"
+  },
+  "qipo": {
+    "page": "qipo.png",
+    "name": "7/7_qiangudiyiren",
+    "bounds": "420,5,491,160",
+    "offsets": "0,0,498,162"
+  }
+}

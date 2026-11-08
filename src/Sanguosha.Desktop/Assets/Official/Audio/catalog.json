@@ -21,8 +21,15 @@
     "win": "Effects/win.mp3",
     "lose": "Effects/lose.mp3",
     "click": "Effects/click.mp3",
-    "start": "Effects/start.mp3",
-    "card": "Effects/card.mp3"
+    "start": "Effects/SF_kaizhan_eff_putong.mp3",
+    "card": "Effects/card.mp3",
+    "kill:1": "Effects/newkill_shoupo.mp3",
+    "kill:2": "Effects/newkill_lianpo.mp3",
+    "kill:3": "Effects/newkill_sanpo.mp3",
+    "kill:4": "Effects/newkill_sipo.mp3",
+    "kill:5": "Effects/newkill_wupo.mp3",
+    "kill:6": "Effects/newkill_liupo.mp3",
+    "kill:7": "Effects/newkill_qipo.mp3"
   },
   "voices": {
     "liubei": {
@@ -301,6 +308,899 @@
       "death": [
         "Voices/diaochan/death.mp3"
       ]
+    },
+    "huaxiong": {
+      "耀武": [
+        "Voices/huaxiong/HuaXiongBiao_YaoWu_01.mp3",
+        "Voices/huaxiong/HuaXiongBiao_YaoWu_02.mp3"
+      ],
+      "death": [
+        "Voices/huaxiong/death.mp3"
+      ]
+    },
+    "huangzhong": {
+      "烈弓": [
+        "Voices/huangzhong/spell71_1.mp3",
+        "Voices/huangzhong/spell71_2.mp3"
+      ],
+      "death": [
+        "Voices/huangzhong/death.mp3"
+      ]
+    },
+    "weiyan": {
+      "狂骨": [
+        "Voices/weiyan/spell295_1.mp3",
+        "Voices/weiyan/spell295_2.mp3"
+      ],
+      "death": [
+        "Voices/weiyan/death.mp3"
+      ]
+    },
+    "dianwei": {
+      "强袭": [
+        "Voices/dianwei/spell91_1.mp3",
+        "Voices/dianwei/spell91_2.mp3"
+      ],
+      "death": [
+        "Voices/dianwei/death.mp3"
+      ]
+    },
+    "pangde": {
+      "death": [
+        "Voices/pangde/death.mp3"
+      ]
+    },
+    "yanliangwenchou": {
+      "双雄": [
+        "Voices/yanliangwenchou/spell101_1.mp3",
+        "Voices/yanliangwenchou/spell101_2.mp3"
+      ],
+      "death": [
+        "Voices/yanliangwenchou/death.mp3"
+      ]
+    },
+    "zhurong": {
+      "巨象": [
+        "Voices/zhurong/spell113_1.mp3",
+        "Voices/zhurong/spell113_2.mp3"
+      ],
+      "烈刃": [
+        "Voices/zhurong/spell114_1.mp3",
+        "Voices/zhurong/spell114_2.mp3"
+      ],
+      "death": [
+        "Voices/zhurong/death.mp3"
+      ]
+    },
+    "menghuo": {
+      "祸首": [
+        "Voices/menghuo/spell115_1.mp3",
+        "Voices/menghuo/spell115_2.mp3"
+      ],
+      "再起": [
+        "Voices/menghuo/spell116_1.mp3",
+        "Voices/menghuo/spell116_2.mp3"
+      ],
+      "death": [
+        "Voices/menghuo/death.mp3"
+      ]
+    },
+    "zhanghe": {
+      "巧变": [
+        "Voices/zhanghe/spell122_1.mp3",
+        "Voices/zhanghe/spell122_2.mp3"
+      ],
+      "death": [
+        "Voices/zhanghe/death.mp3"
+      ]
+    },
+    "re_caocao": {
+      "奸雄": [
+        "Voices/caocao/spell42_1.mp3",
+        "Voices/caocao/spell42_2.mp3"
+      ],
+      "护驾": [
+        "Voices/caocao/spell43_1.mp3",
+        "Voices/caocao/spell43_2.mp3"
+      ],
+      "death": [
+        "Voices/caocao/death.mp3"
+      ]
+    },
+    "re_huanggai": {
+      "苦肉": [
+        "Voices/huanggai/HuangGaiPo_KuRouPo_01.mp3",
+        "Voices/huanggai/HuangGaiPo_KuRouPo_02.mp3"
+      ],
+      "death": [
+        "Voices/huanggai/death.mp3"
+      ]
+    },
+    "re_diaochan": {
+      "闭月": [
+        "Voices/diaochan/spell67_1.mp3",
+        "Voices/diaochan/spell67_2.mp3"
+      ],
+      "离间": [
+        "Voices/diaochan/spell68_1.mp3",
+        "Voices/diaochan/spell68_2.mp3"
+      ],
+      "death": [
+        "Voices/diaochan/death.mp3"
+      ]
+    },
+    "re_zhouyu": {
+      "英姿": [
+        "Voices/zhouyu/spell55_1.mp3",
+        "Voices/zhouyu/spell55_2.mp3"
+      ],
+      "反间": [
+        "Voices/zhouyu/spell56_1.mp3",
+        "Voices/zhouyu/spell56_2.mp3"
+      ],
+      "death": [
+        "Voices/zhouyu/death.mp3"
+      ]
+    },
+    "xiahouyuan": {
+      "神速": [
+        "Voices/xiahouyuan/spell73_1.mp3",
+        "Voices/xiahouyuan/spell73_2.mp3"
+      ],
+      "death": [
+        "Voices/xiahouyuan/death.mp3"
+      ]
+    },
+    "caoren": {
+      "据守": [
+        "Voices/caoren/spell370_1.mp3",
+        "Voices/caoren/spell370_2.mp3"
+      ],
+      "death": [
+        "Voices/caoren/death.mp3"
+      ]
+    },
+    "xiaoqiao": {
+      "天香": [
+        "Voices/xiaoqiao/spell75_1.mp3",
+        "Voices/xiaoqiao/spell75_2.mp3"
+      ],
+      "death": [
+        "Voices/xiaoqiao/death.mp3"
+      ]
+    },
+    "zhoutai": {
+      "不屈": [
+        "Voices/zhoutai/spell466_1.mp3",
+        "Voices/zhoutai/spell466_2.mp3"
+      ],
+      "death": [
+        "Voices/zhoutai/death.mp3"
+      ]
+    },
+    "pangtong": {
+      "连环": [
+        "Voices/pangtong/spell94_1.mp3",
+        "Voices/pangtong/spell94_2.mp3"
+      ],
+      "涅槃": [
+        "Voices/pangtong/spell95_1.mp3",
+        "Voices/pangtong/spell95_2.mp3"
+      ],
+      "death": [
+        "Voices/pangtong/death.mp3"
+      ]
+    },
+    "taishici": {
+      "天义": [
+        "Voices/taishici/spell99_1.mp3",
+        "Voices/taishici/spell99_2.mp3"
+      ],
+      "death": [
+        "Voices/taishici/death.mp3"
+      ]
+    },
+    "xuhuang": {
+      "断粮": [
+        "Voices/xuhuang/XuHuang_DuanLiang_01.mp3",
+        "Voices/xuhuang/XuHuang_DuanLiang_02.mp3"
+      ],
+      "death": [
+        "Voices/xuhuang/death.mp3"
+      ]
+    },
+    "sunjian": {
+      "英魂": [
+        "Voices/sunjian/spell108_1.mp3",
+        "Voices/sunjian/spell108_2.mp3"
+      ],
+      "death": [
+        "Voices/sunjian/death.mp3"
+      ]
+    },
+    "lusu": {
+      "好施": [
+        "Voices/lusu/spell120_1.mp3",
+        "Voices/lusu/spell120_2.mp3"
+      ],
+      "缔盟": [
+        "Voices/lusu/spell121_1.mp3",
+        "Voices/lusu/spell121_2.mp3"
+      ],
+      "death": [
+        "Voices/lusu/death.mp3"
+      ]
+    },
+    "jiangwei": {
+      "挑衅": [
+        "Voices/jiangwei/JiangWei_TiaoXin_01.mp3",
+        "Voices/jiangwei/JiangWei_TiaoXin_02.mp3"
+      ],
+      "志继": [
+        "Voices/jiangwei/JiangWei_ZhiJi_01.mp3",
+        "Voices/jiangwei/JiangWei_ZhiJi_02.mp3"
+      ],
+      "death": [
+        "Voices/jiangwei/death.mp3"
+      ]
+    },
+    "zhangzhaozhanghong": {
+      "直谏": [
+        "Voices/zhangzhaozhanghong/spell133_1.mp3",
+        "Voices/zhangzhaozhanghong/spell133_2.mp3"
+      ],
+      "固政": [
+        "Voices/zhangzhaozhanghong/spell134_1.mp3",
+        "Voices/zhangzhaozhanghong/spell134_2.mp3"
+      ],
+      "death": [
+        "Voices/zhangzhaozhanghong/death.mp3"
+      ]
+    },
+    "caiwenji": {
+      "悲歌": [
+        "Voices/caiwenji/spell137_1.mp3",
+        "Voices/caiwenji/spell137_2.mp3"
+      ],
+      "断肠": [
+        "Voices/caiwenji/spell138_1.mp3",
+        "Voices/caiwenji/spell138_2.mp3"
+      ],
+      "death": []
+    },
+    "re_simayi": {
+      "反馈": [
+        "Voices/simayi/spell47_1.mp3",
+        "Voices/simayi/spell47_2.mp3"
+      ],
+      "鬼才": [
+        "Voices/simayi/spell48_1.mp3",
+        "Voices/simayi/spell48_2.mp3"
+      ],
+      "death": [
+        "Voices/simayi/death.mp3"
+      ]
+    },
+    "re_xuchu": {
+      "裸衣": [
+        "Voices/xuchu/spell50_1.mp3",
+        "Voices/xuchu/spell50_2.mp3"
+      ],
+      "death": [
+        "Voices/xuchu/death.mp3"
+      ]
+    },
+    "re_zhenji": {
+      "洛神": [
+        "Voices/zhenji/spell45_1.mp3",
+        "Voices/zhenji/spell45_2.mp3"
+      ],
+      "倾国": [
+        "Voices/zhenji/spell46_1.mp3",
+        "Voices/zhenji/spell46_2.mp3"
+      ],
+      "death": [
+        "Voices/zhenji/death.mp3"
+      ]
+    },
+    "re_lvbu": {
+      "无双": [
+        "Voices/lvbu/LvBu_WuShuang_01.mp3",
+        "Voices/lvbu/LvBu_WuShuang_02.mp3"
+      ],
+      "death": [
+        "Voices/lvbu/death.mp3"
+      ]
+    },
+    "re_sunshangxiang": {
+      "枭姬": [
+        "Voices/sunshangxiang/spell41_1.mp3",
+        "Voices/sunshangxiang/spell41_2.mp3"
+      ],
+      "结姻": [
+        "Voices/sunshangxiang/spell69_1.mp3",
+        "Voices/sunshangxiang/spell69_2.mp3"
+      ],
+      "death": [
+        "Voices/sunshangxiang/death.mp3"
+      ]
+    },
+    "zhangjiao": {
+      "鬼道": [
+        "Voices/zhangjiao/XinZhangJiao_GuiDao_01.mp3",
+        "Voices/zhangjiao/XinZhangJiao_GuiDao_02.mp3"
+      ],
+      "黄天": [
+        "Voices/zhangjiao/XinZhangJiao_HuangTian_01.mp3",
+        "Voices/zhangjiao/XinZhangJiao_HuangTian_02.mp3"
+      ],
+      "雷击": [
+        "Voices/zhangjiao/XinZhangJiao_LeiJi_01.mp3",
+        "Voices/zhangjiao/XinZhangJiao_LeiJi_02.mp3"
+      ],
+      "death": [
+        "Voices/zhangjiao/death.mp3"
+      ]
+    },
+    "xunyu": {
+      "驱虎": [
+        "Voices/xunyu/spell92_1.mp3",
+        "Voices/xunyu/spell92_2.mp3"
+      ],
+      "节命": [
+        "Voices/xunyu/spell93_1.mp3",
+        "Voices/xunyu/spell93_2.mp3"
+      ],
+      "death": [
+        "Voices/xunyu/death.mp3"
+      ]
+    },
+    "wolong": {
+      "八阵": [
+        "Voices/wolong/spell96_1.mp3",
+        "Voices/wolong/spell96_2.mp3"
+      ],
+      "火计": [
+        "Voices/wolong/spell97_1.mp3",
+        "Voices/wolong/spell97_2.mp3"
+      ],
+      "看破": [
+        "Voices/wolong/spell98_1.mp3",
+        "Voices/wolong/spell98_2.mp3"
+      ],
+      "death": [
+        "Voices/wolong/death.mp3"
+      ]
+    },
+    "yuanshao": {
+      "乱击": [
+        "Voices/yuanshao/YuanShao_LuanJi_01.mp3",
+        "Voices/yuanshao/YuanShao_LuanJi_02.mp3"
+      ],
+      "血裔": [
+        "Voices/yuanshao/YuanShao_XueYi_01.mp3",
+        "Voices/yuanshao/YuanShao_XueYi_02.mp3"
+      ],
+      "death": [
+        "Voices/yuanshao/death.mp3"
+      ]
+    },
+    "caopi": {
+      "行殇": [
+        "Voices/caopi/spell105_1.mp3",
+        "Voices/caopi/spell105_2.mp3"
+      ],
+      "放逐": [
+        "Voices/caopi/spell106_1.mp3",
+        "Voices/caopi/spell106_2.mp3"
+      ],
+      "颂威": [
+        "Voices/caopi/spell107_1.mp3",
+        "Voices/caopi/spell107_2.mp3"
+      ],
+      "death": [
+        "Voices/caopi/death.mp3"
+      ]
+    },
+    "dongzhuo": {
+      "酒池": [
+        "Voices/dongzhuo/DongZhuo_JiuChi_01.mp3",
+        "Voices/dongzhuo/DongZhuo_JiuChi_02.mp3"
+      ],
+      "肉林": [
+        "Voices/dongzhuo/DongZhuo_RouLin_01.mp3",
+        "Voices/dongzhuo/DongZhuo_RouLin_02.mp3"
+      ],
+      "崩坏": [
+        "Voices/dongzhuo/DongZhuo_BengHuai_01.mp3",
+        "Voices/dongzhuo/DongZhuo_BengHuai_02.mp3"
+      ],
+      "暴虐": [
+        "Voices/dongzhuo/DongZhuo_BaoNue_01.mp3",
+        "Voices/dongzhuo/DongZhuo_BaoNue_02.mp3"
+      ],
+      "death": [
+        "Voices/dongzhuo/death.mp3"
+      ]
+    },
+    "jiaxu": {
+      "完杀": [
+        "Voices/jiaxu/spell117_1.mp3",
+        "Voices/jiaxu/spell117_2.mp3"
+      ],
+      "乱武": [
+        "Voices/jiaxu/spell118_1.mp3",
+        "Voices/jiaxu/spell118_2.mp3"
+      ],
+      "帷幕": [
+        "Voices/jiaxu/spell119_1.mp3",
+        "Voices/jiaxu/spell119_2.mp3"
+      ],
+      "death": [
+        "Voices/jiaxu/death.mp3"
+      ]
+    },
+    "dengai": {
+      "屯田": [
+        "Voices/dengai/DengAi_TunTian_01.mp3",
+        "Voices/dengai/DengAi_TunTian_02.mp3"
+      ],
+      "凿险": [
+        "Voices/dengai/DengAi_ZaoXian_01.mp3",
+        "Voices/dengai/DengAi_ZaoXian_02.mp3"
+      ],
+      "death": [
+        "Voices/dengai/death.mp3"
+      ]
+    },
+    "liushan": {
+      "享乐": [
+        "Voices/liushan/spell127_1.mp3",
+        "Voices/liushan/spell127_2.mp3"
+      ],
+      "放权": [
+        "Voices/liushan/spell128_1.mp3",
+        "Voices/liushan/spell128_2.mp3"
+      ],
+      "若愚": [
+        "Voices/liushan/spell129_1.mp3",
+        "Voices/liushan/spell129_2.mp3"
+      ],
+      "death": [
+        "Voices/liushan/death.mp3"
+      ]
+    },
+    "sunce": {
+      "激昂": [
+        "Voices/sunce/SunCe_JiAng_01.mp3",
+        "Voices/sunce/SunCe_JiAng_02.mp3"
+      ],
+      "魂姿": [
+        "Voices/sunce/SunCe_HunZi_01.mp3",
+        "Voices/sunce/SunCe_HunZi_02.mp3"
+      ],
+      "制霸": [
+        "Voices/sunce/SunCe_ZhiBa_01.mp3",
+        "Voices/sunce/SunCe_ZhiBa_02.mp3"
+      ],
+      "death": [
+        "Voices/sunce/death.mp3"
+      ]
+    },
+    "yuejin": {
+      "骁果": [
+        "Voices/yuejin/YueJin_XiaoGuo_01.mp3",
+        "Voices/yuejin/YueJin_XiaoGuo_02.mp3"
+      ],
+      "death": []
+    },
+    "lidian": {
+      "恂恂": [
+        "Voices/lidian/spell725_1.mp3",
+        "Voices/lidian/spell725_2.mp3"
+      ],
+      "忘隙": [
+        "Voices/lidian/spell726_1.mp3",
+        "Voices/lidian/spell726_2.mp3"
+      ],
+      "death": []
+    },
+    "ganfuren": {
+      "淑慎": [
+        "Voices/ganfuren/GanFuRen_ShuShen_01.mp3",
+        "Voices/ganfuren/GanFuRen_ShuShen_02.mp3"
+      ],
+      "神智": [
+        "Voices/ganfuren/GanFuRen_ShenZhi_01.mp3",
+        "Voices/ganfuren/GanFuRen_ShenZhi_02.mp3"
+      ],
+      "death": [
+        "Voices/ganfuren/death.mp3"
+      ]
+    },
+    "panfeng": {
+      "狂斧": [
+        "Voices/panfeng/PanFeng_KuangFu_01.mp3",
+        "Voices/panfeng/PanFeng_KuangFu_02.mp3"
+      ],
+      "death": [
+        "Voices/panfeng/death.mp3"
+      ]
+    },
+    "gongsunzan": {
+      "义从": [
+        "Voices/gongsunzan/GongSunZan_YiCong_01.mp3",
+        "Voices/gongsunzan/GongSunZan_YiCong_02.mp3"
+      ],
+      "death": []
+    },
+    "yiji": {
+      "机捷": [
+        "Voices/yiji/Yiji_Jijie_01.mp3",
+        "Voices/yiji/Yiji_Jijie_02.mp3"
+      ],
+      "急援": [
+        "Voices/yiji/Yiji_Jiyuan_01.mp3",
+        "Voices/yiji/Yiji_Jiyuan_02.mp3"
+      ],
+      "death": []
+    },
+    "yuanshu": {
+      "death": [
+        "Voices/yuanshu/death.mp3"
+      ]
+    },
+    "re_huatuo": {
+      "急救": [
+        "Voices/huatuo/HuaTuo_JiJiu_01.mp3",
+        "Voices/huatuo/HuaTuo_JiJiu_02.mp3"
+      ],
+      "青囊": [
+        "Voices/huatuo/HuaTuo_QingNang_01.mp3",
+        "Voices/huatuo/HuaTuo_QingNang_02.mp3"
+      ],
+      "death": [
+        "Voices/huatuo/death.mp3"
+      ]
+    },
+    "re_daqiao": {
+      "国色": [
+        "Voices/daqiao/spell60_1.mp3",
+        "Voices/daqiao/spell60_2.mp3"
+      ],
+      "流离": [
+        "Voices/daqiao/spell61_1.mp3",
+        "Voices/daqiao/spell61_2.mp3"
+      ],
+      "death": [
+        "Voices/daqiao/death.mp3"
+      ]
+    },
+    "re_zhangliao": {
+      "突袭": [
+        "Voices/zhangliao/spell44_1.mp3",
+        "Voices/zhangliao/spell44_2.mp3"
+      ],
+      "death": [
+        "Voices/zhangliao/death.mp3"
+      ]
+    },
+    "re_guojia": {
+      "天妒": [
+        "Voices/guojia/spell51_1.mp3",
+        "Voices/guojia/spell51_2.mp3"
+      ],
+      "遗计": [
+        "Voices/guojia/spell52_1.mp3",
+        "Voices/guojia/spell52_2.mp3"
+      ],
+      "death": [
+        "Voices/guojia/death.mp3"
+      ]
+    },
+    "re_zhugeliang": {
+      "观星": [
+        "Voices/zhugeliang/spell35_1.mp3",
+        "Voices/zhugeliang/spell35_2.mp3"
+      ],
+      "空城": [
+        "Voices/zhugeliang/spell36_1.mp3",
+        "Voices/zhugeliang/spell36_2.mp3"
+      ],
+      "death": [
+        "Voices/zhugeliang/death.mp3"
+      ]
+    },
+    "re_huangyueying": {
+      "集智": [
+        "Voices/huangyueying/spell39_1.mp3",
+        "Voices/huangyueying/spell39_2.mp3"
+      ],
+      "death": [
+        "Voices/huangyueying/death.mp3"
+      ]
+    },
+    "re_liubei": {
+      "仁德": [
+        "Voices/liubei/spell31_1.mp3",
+        "Voices/liubei/spell31_2.mp3"
+      ],
+      "激将": [
+        "Voices/liubei/spell32_1.mp3",
+        "Voices/liubei/spell32_2.mp3"
+      ],
+      "death": [
+        "Voices/liubei/death.mp3"
+      ]
+    },
+    "re_sunquan": {
+      "制衡": [
+        "Voices/sunquan/spell53_1.mp3",
+        "Voices/sunquan/spell53_2.mp3"
+      ],
+      "救援": [
+        "Voices/sunquan/spell54_1.mp3",
+        "Voices/sunquan/spell54_2.mp3"
+      ],
+      "death": [
+        "Voices/sunquan/death.mp3"
+      ]
+    },
+    "re_zhaoyun": {
+      "龙胆": [
+        "Voices/zhaoyun/spell37_1.mp3",
+        "Voices/zhaoyun/spell37_2.mp3"
+      ],
+      "death": [
+        "Voices/zhaoyun/death.mp3"
+      ]
+    },
+    "re_zhangfei": {
+      "咆哮": [
+        "Voices/zhangfei/ZhangFei_PaoXiao_01.mp3",
+        "Voices/zhangfei/ZhangFei_PaoXiao_02.mp3"
+      ],
+      "death": [
+        "Voices/zhangfei/death.mp3"
+      ]
+    },
+    "re_ganning": {
+      "奇袭": [
+        "Voices/ganning/spell57_1.mp3",
+        "Voices/ganning/spell57_2.mp3"
+      ],
+      "death": [
+        "Voices/ganning/death.mp3"
+      ]
+    },
+    "re_lvmeng": {
+      "克己": [
+        "Voices/lvmeng/LvMengPo_KeJi_01.mp3",
+        "Voices/lvmeng/LvMengPo_KeJi_02.mp3"
+      ],
+      "death": [
+        "Voices/lvmeng/death.mp3"
+      ]
+    },
+    "yuji": {
+      "蛊惑": [
+        "Voices/yuji/YuJi_GuHuo_01.mp3",
+        "Voices/yuji/YuJi_GuHuo_02.mp3"
+      ],
+      "death": [
+        "Voices/yuji/death.mp3"
+      ]
+    },
+    "zuoci": {
+      "化身": [
+        "Voices/zuoci/spell135_1.mp3",
+        "Voices/zuoci/spell135_2.mp3"
+      ],
+      "新生": [
+        "Voices/zuoci/spell136_1.mp3",
+        "Voices/zuoci/spell136_2.mp3"
+      ],
+      "death": [
+        "Voices/zuoci/death.mp3"
+      ]
+    },
+    "re_guanyu": {
+      "武圣": [
+        "Voices/guanyu/spell33_1.mp3",
+        "Voices/guanyu/spell33_2.mp3"
+      ],
+      "death": [
+        "Voices/guanyu/death.mp3"
+      ]
+    },
+    "re_machao": {
+      "铁骑": [
+        "Voices/machao/spell38_1.mp3",
+        "Voices/machao/spell38_2.mp3"
+      ],
+      "death": [
+        "Voices/machao/death.mp3"
+      ]
+    },
+    "re_luxun": {
+      "谦逊": [
+        "Voices/luxun/LuXun_Qianxun_01.mp3",
+        "Voices/luxun/LuXun_Qianxun_02.mp3"
+      ],
+      "连营": [
+        "Voices/luxun/LuXun_Lianying_01.mp3",
+        "Voices/luxun/LuXun_Lianying_02.mp3"
+      ],
+      "death": [
+        "Voices/luxun/death.mp3"
+      ]
+    },
+    "re_xiahoudun": {
+      "刚烈": [
+        "Voices/xiahoudun/XiaHouDun_GangLie_01.mp3",
+        "Voices/xiahoudun/XiaHouDun_GangLie_02.mp3"
+      ],
+      "death": [
+        "Voices/xiahoudun/death.mp3"
+      ]
     }
+  },
+  "CardVoices": {
+    "Slash": [
+      "../../CardVoices/male/sha.mp3",
+      "../../CardVoices/female/sha.mp3"
+    ],
+    "Dodge": [
+      "../../CardVoices/male/shan.mp3",
+      "../../CardVoices/female/shan.mp3"
+    ],
+    "Duel": [
+      "../../CardVoices/male/juedou.mp3",
+      "../../CardVoices/female/juedou.mp3"
+    ],
+    "DrawTwo": [
+      "../../CardVoices/male/wuzhong.mp3",
+      "../../CardVoices/female/wuzhong.mp3"
+    ],
+    "Dismantle": [
+      "../../CardVoices/male/guohe.mp3",
+      "../../CardVoices/female/guohe.mp3"
+    ],
+    "Steal": [
+      "../../CardVoices/male/shunshou.mp3",
+      "../../CardVoices/female/shunshou.mp3"
+    ],
+    "Barbarians": [
+      "../../CardVoices/male/nanman.mp3",
+      "../../CardVoices/female/nanman.mp3"
+    ],
+    "Arrows": [
+      "../../CardVoices/male/wanjian.mp3",
+      "../../CardVoices/female/wanjian.mp3"
+    ],
+    "Feast": [
+      "../../CardVoices/male/taoyuan.mp3",
+      "../../CardVoices/female/taoyuan.mp3"
+    ],
+    "Indulgence": [
+      "../../CardVoices/male/lebu.mp3",
+      "../../CardVoices/female/lebu.mp3"
+    ],
+    "Crossbow": [
+      "../../CardVoices/male/zhuge.mp3",
+      "../../CardVoices/female/zhuge.mp3"
+    ],
+    "Blade": [
+      "../../CardVoices/male/qinglong.mp3",
+      "../../CardVoices/female/qinglong.mp3"
+    ],
+    "EightTrigrams": [
+      "../../CardVoices/male/bagua.mp3",
+      "../../CardVoices/female/bagua.mp3"
+    ],
+    "Horse": [
+      "../../CardVoices/male/dilu.mp3",
+      "../../CardVoices/female/dilu.mp3"
+    ],
+    "Peach": [
+      "../../CardVoices/male/peach.mp3",
+      "../../CardVoices/female/peach.mp3"
+    ]
+  },
+  "retrievedOn": "2026-11-07",
+  "missingVoices": {
+    "pangde": [
+      "猛进"
+    ],
+    "caiwenji": [
+      "death"
+    ],
+    "re_lvbu": [
+      "利驭"
+    ],
+    "dengai": [
+      "急袭"
+    ],
+    "liushan": [
+      "激将"
+    ],
+    "sunce": [
+      "英姿",
+      "英魂"
+    ],
+    "yuejin": [
+      "death"
+    ],
+    "lidian": [
+      "death"
+    ],
+    "gongsunzan": [
+      "death"
+    ],
+    "yiji": [
+      "death"
+    ],
+    "yuanshu": [
+      "妄尊",
+      "同疾"
+    ],
+    "re_zhaoyun": [
+      "涯角"
+    ],
+    "re_zhangfei": [
+      "替身"
+    ],
+    "re_ganning": [
+      "奋威"
+    ],
+    "re_lvmeng": [
+      "勤学",
+      "博图",
+      "攻心"
+    ],
+    "re_guanyu": [
+      "义绝"
+    ],
+    "re_xiahoudun": [
+      "清俭"
+    ],
+    "re_machao": [
+      "马术"
+    ]
+  },
+  "heroAliases": {
+    "re_caocao": "caocao",
+    "re_huanggai": "huanggai",
+    "re_diaochan": "diaochan",
+    "re_zhouyu": "zhouyu",
+    "re_simayi": "simayi",
+    "re_xuchu": "xuchu",
+    "re_zhenji": "zhenji",
+    "re_lvbu": "lvbu",
+    "re_sunshangxiang": "sunshangxiang",
+    "re_huatuo": "huatuo",
+    "re_daqiao": "daqiao",
+    "re_zhangliao": "zhangliao",
+    "re_guojia": "guojia",
+    "re_zhugeliang": "zhugeliang",
+    "re_huangyueying": "huangyueying",
+    "re_liubei": "liubei",
+    "re_sunquan": "sunquan",
+    "re_zhaoyun": "zhaoyun",
+    "re_zhangfei": "zhangfei",
+    "re_ganning": "ganning",
+    "re_lvmeng": "lvmeng",
+    "re_guanyu": "guanyu",
+    "re_machao": "machao",
+    "re_luxun": "luxun",
+    "re_xiahoudun": "xiahoudun"
+  },
+  "missingCardVoices": {
+    "SupplyShortage": "未取得可验证的新增卡牌报音，静默回退。",
+    "IronChain": "未取得可验证的新增卡牌报音，静默回退。",
+    "Nullification": "本批新增牌型尚无独立已核验报牌音，静默回退。",
+    "FireAttack": "本批新增牌型尚无独立已核验报牌音，静默回退。",
+    "Wine": "本批新增牌型尚无独立已核验报牌音，静默回退。",
+    "Lightning": "本批新增牌型尚无独立已核验报牌音，静默回退。"
   }
 }

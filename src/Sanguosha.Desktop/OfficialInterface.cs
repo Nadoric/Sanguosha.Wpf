@@ -25,6 +25,8 @@ namespace Sanguosha.Desktop
         public static BitmapSource WeaponSlot => Get("selfseat", "self_equip_wuqi.png");
         public static BitmapSource ArmorSlot => Get("selfseat", "self_equip_fangju.png");
         public static BitmapSource HorseSlot => Get("selfseat", "self_equip_jiayima.png");
+        public static BitmapSource TreasureSlot => Get("selfseat", "self_equip_baowu.png");
+        public static BitmapSource OffensiveHorseSlot => Get("selfseat", "self_equip_jianyima.png");
         public static BitmapSource HandBadge => Get("seat", "handCardsBg.png");
         public static BitmapSource NameBar => Get("seat", "TableSeatNameBg.png");
 
@@ -61,6 +63,9 @@ namespace Sanguosha.Desktop
             Sprites.Add(key, sprite);
             return sprite;
         }
+
+        public static BitmapSource DeathStamp(Player player, GameMode mode = GameMode.Identity4) =>
+            Get("seat", $"Seat_Dead_{(mode == GameMode.Team2V2 ? 0 : (int)player.Role + 1)}.png");
 
         public static BitmapSource Identity(Player player, GameEngine game)
         {
